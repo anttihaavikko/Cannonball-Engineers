@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - Limb
+  - BodyPart
   layers:
   - Default
   - TransparentFX
@@ -40,6 +41,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Bg
+    uniqueID: 2909587329
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

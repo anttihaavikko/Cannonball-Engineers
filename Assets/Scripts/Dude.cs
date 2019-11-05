@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class Dude : MonoBehaviour
 {
@@ -20,5 +21,15 @@ public class Dude : MonoBehaviour
         var dir = pos - body.transform.position;
 
         body.AddForce(dir * 150f, ForceMode2D.Impulse);
+    }
+
+    public void Die()
+    {
+        EffectManager.Instance.AddEffect(0, body.transform.position);
+        EffectManager.Instance.AddEffect(1, body.transform.position);
+
+        GetComponentsInChildren<Grabber>().ToList().ForEach(g => g.enabled = false);
+        GetComponentsInChildren<HingeJoint2D>().ToList().ForEach(j => j.enabled = false);
+        GetComponentsInChildren<Rigidbody2D>().ToList().ForEach(rb => rb.gameObject.tag = "BodyPart");
     }
 }

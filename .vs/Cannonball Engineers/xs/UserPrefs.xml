@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{1ADAFD7C-186E-74BB-F621-9D3BD15AF105}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Launcher.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Head.cs">
     <Files>
       <File FileName="Assets/Scripts/EffectCamera.cs" Line="34" Column="1" />
-      <File FileName="Assets/Scripts/Dude.cs" Line="30" Column="49" />
-      <File FileName="Assets/Scripts/Grabber.cs" Line="28" Column="89" />
+      <File FileName="Assets/Scripts/Grabber.cs" Line="30" Column="1" />
       <File FileName="Assets/Scripts/Face.cs" Line="186" Column="1" />
-      <File FileName="Assets/Scripts/Launcher.cs" Line="7" Column="22" />
+      <File FileName="Assets/Scripts/Dude.cs" Line="21" Column="1" />
+      <File FileName="Assets/Scripts/Launcher.cs" Line="29" Column="19" />
+      <File FileName="Assets/Scripts/Head.cs" Line="21" Column="9" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,7 +14,7 @@
           <Node name="Cannonball Engineers" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Launcher.cs" selected="True" />
+                <Node name="Head.cs" selected="True" />
               </Node>
             </Node>
           </Node>
