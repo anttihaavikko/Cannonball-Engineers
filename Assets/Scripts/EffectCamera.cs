@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.PostProcessing;
+//using UnityEngine.PostProcessing;
 
 public class EffectCamera : MonoBehaviour {
 
@@ -12,7 +12,7 @@ public class EffectCamera : MonoBehaviour {
 	private float cutoffPos = 0f;
 	private float transitionTime = 0.5f;
 
-	private PostProcessingBehaviour filters;
+	//private PostProcessingBehaviour filters;
 	private float chromaAmount = 0f;
 	private float chromaSpeed = 0.1f;
 
@@ -21,7 +21,7 @@ public class EffectCamera : MonoBehaviour {
 	private Vector3 originalPos;
 
 	void Start() {
-		filters = GetComponent<PostProcessingBehaviour>();
+		//filters = GetComponent<PostProcessingBehaviour>();
 		originalPos = transform.position;
 		Invoke ("StartFade", 0.5f);
 	}
@@ -33,12 +33,12 @@ public class EffectCamera : MonoBehaviour {
 		transitionMaterial.SetFloat ("_Cutoff", cutoff);
 
 		// chromatic aberration update
-		if (filters) {
-			chromaAmount = Mathf.MoveTowards (chromaAmount, 0, Time.deltaTime * chromaSpeed);
-			ChromaticAberrationModel.Settings g = filters.profile.chromaticAberration.settings;
-			g.intensity = chromaAmount;
-			filters.profile.chromaticAberration.settings = g;
-		}
+		//if (filters) {
+		//	chromaAmount = Mathf.MoveTowards (chromaAmount, 0, Time.deltaTime * chromaSpeed);
+		//	ChromaticAberrationModel.Settings g = filters.profile.chromaticAberration.settings;
+		//	g.intensity = chromaAmount;
+		//	filters.profile.chromaticAberration.settings = g;
+		//}
 
 		if (shakeTime > 0f) {
 			shakeTime -= Time.deltaTime;
