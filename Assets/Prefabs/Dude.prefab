@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joint: {fileID: 6935590484215881627}
+  dude: {fileID: 6935590484859690880}
 --- !u!70 &6935590484215881607
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -926,6 +927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joint: {fileID: 6935590485043466108}
+  dude: {fileID: 6935590484859690880}
 --- !u!70 &6935590485043466104
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1613,6 +1615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joint: {fileID: 6935590485349154349}
+  dude: {fileID: 6935590484859690880}
 --- !u!70 &6935590485349154345
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1841,6 +1844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joint: {fileID: 6935590485715439811}
+  dude: {fileID: 6935590484859690880}
 --- !u!70 &6935590485715439823
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

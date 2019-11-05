@@ -31,7 +31,38 @@ public class Tweener : MonoBehaviour {
 		}
 	}
 
-	private TweenAction AddTween(Transform obj, Vector3 target, TweenAction.Type type, float duration, float delay, System.Func<float, float> ease, int easeIndex = -1, bool removeOld = true) {
+    private TweenAction AddTween(Rigidbody2D obj, Vector3 target, TweenAction.Type type, float duration, float delay, System.Func<float, float> ease, int easeIndex = -1, bool removeOld = true)
+    {
+        // remove old ones of same object
+        if (removeOld)
+        {
+            for (int i = actions.Count - 1; i >= 0; i--)
+            {
+                if (actions[i].body == obj && actions[i].type == type)
+                {
+                    actions.RemoveAt(i);
+                }
+            }
+        }
+
+        TweenAction act = new TweenAction
+        {
+            type = type,
+            body = obj,
+            targetPos = target,
+            tweenPos = 0f,
+            tweenDuration = duration,
+            tweenDelay = delay,
+            customEasing = easeIndex
+        };
+        actions.Add(act);
+
+        act.easeFunction = ease;
+
+        return act;
+    }
+
+    private TweenAction AddTween(Transform obj, Vector3 target, TweenAction.Type type, float duration, float delay, System.Func<float, float> ease, int easeIndex = -1, bool removeOld = true) {
 		// remove old ones of same object
         if(removeOld)
         {
@@ -61,7 +92,20 @@ public class Tweener : MonoBehaviour {
 		return act;
 	}
 
-	public void MoveTo(Transform obj, Vector3 target, float duration, float delay, System.Func<float, float> ease = null, int easeIndex = -1, bool removeOld = true) {
+    public void MoveBodyTo(Rigidbody2D obj, Vector3 target, float duration, float delay, System.Func<float, float> ease = null, int easeIndex = -1, bool removeOld = true)
+    {
+
+        if (ease == null)
+        {
+            ease = TweenEasings.LinearInterpolation;
+        }
+
+        TweenAction act = AddTween(obj, target, TweenAction.Type.BodyPosition, duration, delay, ease, easeIndex, removeOld);
+        act.startPos = act.body.position;
+        StartCoroutine(act.SetBodyStartPos());
+    }
+
+    public void MoveTo(Transform obj, Vector3 target, float duration, float delay, System.Func<float, float> ease = null, int easeIndex = -1, bool removeOld = true) {
 
         if (ease == null) {
 			ease = TweenEasings.LinearInterpolation;

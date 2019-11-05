@@ -9,10 +9,12 @@ public class TweenAction {
 		LocalPosition,
 		Rotation,
 		Scale,
-		Color
+		Color,
+        BodyPosition
 	};
 
 	public Transform theObject;
+    public Rigidbody2D body;
 	public SpriteRenderer sprite;
 	public Vector3 startPos, targetPos;
 	public Quaternion startRot, targetRot;
@@ -63,6 +65,13 @@ public class TweenAction {
         startPos = theObject.transform.position;
     }
 
+    public IEnumerator SetBodyStartPos()
+    {
+        yield return new WaitForSeconds(tweenDelay);
+        hasBeenInit = true;
+        startPos = body.position;
+    }
+
     public IEnumerator SetStartLocalPos()
     {
         yield return new WaitForSeconds(tweenDelay);
@@ -93,7 +102,7 @@ public class TweenAction {
 
     public bool Process() {
 
-		if (!theObject) {
+		if (!theObject && !body) {
 			return true;
 		}
 
@@ -111,7 +120,12 @@ public class TweenAction {
 				theObject.position = Lerp (startPos, targetPos, DoEase ());
 			}
 
-			if (type == Type.LocalPosition) {
+            if (type == Type.BodyPosition)
+            {
+                body.MovePosition(Lerp(startPos, targetPos, DoEase()));
+            }
+
+            if (type == Type.LocalPosition) {
 				theObject.localPosition = Lerp (startPos, targetPos, DoEase ());
 			}
 

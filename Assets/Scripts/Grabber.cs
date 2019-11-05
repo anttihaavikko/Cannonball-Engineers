@@ -5,6 +5,7 @@ using UnityEngine;
 public class Grabber : MonoBehaviour
 {
     public HingeJoint2D joint;
+    public Dude dude;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,8 @@ public class Grabber : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (!dude.isAlive) return;
+
         if(collision.gameObject.tag == "Wall" || CanGrab(collision.gameObject))
         {
             joint.enabled = true;
@@ -30,6 +33,17 @@ public class Grabber : MonoBehaviour
 
     bool CanGrab(GameObject go)
     {
+        if(go.tag == "Block")
+        {
+            Block block = go.GetComponent<Block>();
+            if(!dude.HasActivated(block))
+            {
+                dude.ActivateBlock(block);
+                block.Activate();
+            }
+            return true;
+        }
+
         return go.tag == "Limb" && go.transform.parent != transform.parent;
     }
 }

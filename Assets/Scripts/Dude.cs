@@ -7,11 +7,14 @@ using System.Linq;
 public class Dude : MonoBehaviour
 {
     public Rigidbody2D body;
+    public bool isAlive = true;
+
+    private List<Block> activatedBlocks;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        activatedBlocks = new List<Block>();
     }
 
     // Update is called once per frame
@@ -23,8 +26,25 @@ public class Dude : MonoBehaviour
         body.AddForce(dir * 150f, ForceMode2D.Impulse);
     }
 
+    public void ActivateBlock(Block block)
+    {
+        activatedBlocks.Add(block);
+    }
+
+    public bool HasActivated(Block block)
+    {
+        return activatedBlocks.Contains(block);
+    }
+
     public void Die()
     {
+        isAlive = false;
+
+        if (activatedBlocks.Any())
+        {
+            activatedBlocks.ForEach(b => b.Deactivate());
+        }
+
         EffectManager.Instance.AddEffect(0, body.transform.position);
         EffectManager.Instance.AddEffect(1, body.transform.position);
 
