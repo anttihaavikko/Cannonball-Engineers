@@ -34,6 +34,8 @@ public class Grabber : MonoBehaviour
             joint.connectedBody = collision.rigidbody;
             joint.anchor = transform.InverseTransformPoint(collision.contacts[0].point);
             hasGrabbed = true;
+
+            EffectManager.Instance.AddEffect(2, collision.contacts[0].point);
         }
     }
 
