@@ -8,11 +8,13 @@ public class Dude : MonoBehaviour
 {
     public Rigidbody2D body;
     public bool isAlive = true;
+    public LineRenderer line;
 
     private List<Block> activatedBlocks;
     private List<Grabber> grabbers;
     private List<HingeJoint2D> joints;
     private List<Rigidbody2D> bodies;
+    private Material lineMaterial;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,8 @@ public class Dude : MonoBehaviour
         grabbers = GetComponentsInChildren<Grabber>().ToList();
         joints = GetComponentsInChildren<HingeJoint2D>().ToList();
         bodies = GetComponentsInChildren<Rigidbody2D>().ToList();
+
+        lineMaterial = line.material;
     }
 
     private void Update()
@@ -38,9 +42,21 @@ public class Dude : MonoBehaviour
         });
     }
 
+    public void UpdateLine()
+    {
+        var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        pos.z = 0;
+        line.SetPosition(0, body.position);
+        line.SetPosition(1, pos);
+
+        //lineMaterial.SetTextureScale("_MainTex", new Vector2((body.transform.position - pos).magnitude * 0.1f, 0.5f));
+    }
+
     // Update is called once per frame
     public void Launch()
     {
+        line.enabled = false;
+
         var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         var dir = pos - body.transform.position;
 
