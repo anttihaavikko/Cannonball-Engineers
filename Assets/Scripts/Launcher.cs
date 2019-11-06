@@ -47,7 +47,8 @@ public class Launcher : MonoBehaviour
 
     void AddDude()
     {
-        dude = Instantiate(dudePrefab, Vector3.zero, Quaternion.identity);
+        dude = Instantiate(dudePrefab, transform.position, Quaternion.identity);
+        dude.NudgeHands();
     }
 
     void ResetPos()

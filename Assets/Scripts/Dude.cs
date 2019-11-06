@@ -11,6 +11,7 @@ public class Dude : MonoBehaviour
     public LineRenderer line;
     public bool canDie = true;
     public bool canGrab = true;
+    public Rigidbody2D[] hands;
 
     private List<Block> activatedBlocks;
     private List<Grabber> grabbers;
@@ -70,6 +71,8 @@ public class Dude : MonoBehaviour
         var dir = pos - body.transform.position;
 
         body.AddForce(dir * 150f, ForceMode2D.Impulse);
+
+        hands.ToList().ForEach(h => h.AddForce(dir * Random.Range(5f, 10f), ForceMode2D.Impulse));
     }
 
     public void ActivateBlock(Block block)
@@ -85,6 +88,25 @@ public class Dude : MonoBehaviour
     public void UnFollow()
     {
         followCam.gameObject.SetActive(false);
+
+        //if(isAlive)
+        //    Invoke("Nudge", 1f);
+    }
+
+    void Nudge()
+    {
+        var dir = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+        body.AddForce(dir * 500f, ForceMode2D.Impulse);
+        Invoke("Nudge", 1f);
+    }
+
+    public void NudgeHands()
+    {
+        hands.ToList().ForEach(h =>
+        {
+            var dir = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+            h.AddForce(dir * 100f, ForceMode2D.Impulse);
+        });
     }
 
     public void Die()

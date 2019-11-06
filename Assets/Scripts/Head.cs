@@ -12,7 +12,6 @@ public class Head : MonoBehaviour
         {
             if(collision.relativeVelocity.magnitude > 30)
             {
-                Debug.Log(collision.relativeVelocity.magnitude);
                 dude.Die();
             }
         }
