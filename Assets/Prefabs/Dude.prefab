@@ -1538,6 +1538,7 @@ MonoBehaviour:
   body: {fileID: 6935590485253223725}
   isAlive: 1
   line: {fileID: 2964333486490189386}
+  canDie: 1
 --- !u!1 &6935590484921121087
 GameObject:
   m_ObjectHideFlags: 0
@@ -2169,6 +2170,7 @@ GameObject:
   - component: {fileID: 6935590485253223727}
   - component: {fileID: 6935590485253223726}
   - component: {fileID: 6935590485253223713}
+  - component: {fileID: 8264690744986665950}
   m_Layer: 0
   m_Name: Torso
   m_TagString: Limb
@@ -2372,6 +2374,20 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: -120
     m_UpperAngle: 120
+--- !u!114 &8264690744986665950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6935590485253223721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33b6761ea850941afaa15fb63af03a2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 6935590485253223725}
+  dude: {fileID: 6935590484859690880}
 --- !u!1 &6935590485349154519
 GameObject:
   m_ObjectHideFlags: 0

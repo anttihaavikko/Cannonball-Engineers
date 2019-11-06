@@ -9,6 +9,8 @@ public class Dude : MonoBehaviour
     public Rigidbody2D body;
     public bool isAlive = true;
     public LineRenderer line;
+    public bool canDie = true;
+    public bool canGrab = true;
 
     private List<Block> activatedBlocks;
     private List<Grabber> grabbers;
@@ -77,7 +79,7 @@ public class Dude : MonoBehaviour
 
     public void Die()
     {
-        if (!isAlive) return;
+        if (!isAlive || !canDie) return;
 
         isAlive = false;
 

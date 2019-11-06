@@ -2,15 +2,16 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Dude.cs">
     <Files>
       <File FileName="Assets/Scripts/EffectCamera.cs" Line="34" Column="1" />
-      <File FileName="Assets/Scripts/Grabber.cs" />
+      <File FileName="Assets/Scripts/Grabber.cs" Line="38" Column="47" />
       <File FileName="Assets/Scripts/Face.cs" />
-      <File FileName="Assets/Scripts/Dude.cs" Line="65" Column="81" />
-      <File FileName="Assets/Scripts/Launcher.cs" />
+      <File FileName="Assets/Scripts/Dude.cs" Line="18" Column="5" />
+      <File FileName="Assets/Scripts/Launcher.cs" Line="37" Column="104" />
       <File FileName="Assets/Scripts/Head.cs" />
       <File FileName="Assets/Scripts/Tweener.cs" />
       <File FileName="Assets/Scripts/TweenAction.cs" />
       <File FileName="Assets/Scripts/DeathCheck.cs" />
-      <File FileName="Assets/Scripts/Block.cs" Line="27" Column="1" />
+      <File FileName="Assets/Scripts/Block.cs" Line="27" Column="76" />
+      <File FileName="Assets/Scripts/GoalHomer.cs" Line="29" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

@@ -9,6 +9,7 @@ TagManager:
   - BodyPart
   - Block
   - Grabber
+  - Goal
   layers:
   - Default
   - TransparentFX

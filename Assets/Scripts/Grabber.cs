@@ -24,7 +24,7 @@ public class Grabber : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!dude.isAlive || hasGrabbed) return;
+        if (!dude.isAlive || hasGrabbed || !dude.canGrab) return;
 
         if (collision.otherCollider.tag != "Grabber") return;
 
