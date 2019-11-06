@@ -7,6 +7,8 @@ public class Grabber : MonoBehaviour
     public HingeJoint2D joint;
     public Dude dude;
 
+    private bool hasGrabbed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +18,13 @@ public class Grabber : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //if (joint.enabled)
+        //    Debug.Log(joint.anchor);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!dude.isAlive) return;
+        if (!dude.isAlive || hasGrabbed) return;
 
         if (collision.otherCollider.tag != "Grabber") return;
 
@@ -30,6 +33,7 @@ public class Grabber : MonoBehaviour
             joint.enabled = true;
             joint.connectedBody = collision.rigidbody;
             joint.anchor = transform.InverseTransformPoint(collision.contacts[0].point);
+            hasGrabbed = true;
         }
     }
 

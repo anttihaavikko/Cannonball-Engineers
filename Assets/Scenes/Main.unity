@@ -364,7 +364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33b972c5a809d4f5d9af9e1d7b483bdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 20, y: 0, z: 0}
+  direction: {x: 10, y: 0, z: 0}
   body: {fileID: 458654799}
 --- !u!61 &458654801
 BoxCollider2D:
@@ -1217,7 +1217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33b972c5a809d4f5d9af9e1d7b483bdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: -20, y: 0, z: 0}
+  direction: {x: -10, y: 0, z: 0}
   body: {fileID: 1639710819}
 --- !u!50 &1639710819
 Rigidbody2D:
