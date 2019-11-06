@@ -55,6 +55,8 @@ public class Dude : MonoBehaviour
     // Update is called once per frame
     public void Launch()
     {
+        body.bodyType = RigidbodyType2D.Dynamic;
+
         line.enabled = false;
 
         var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
