@@ -35,6 +35,8 @@ public class Grabber : MonoBehaviour
             joint.anchor = transform.InverseTransformPoint(collision.contacts[0].point);
             hasGrabbed = true;
 
+            dude.UnFollow();
+
             EffectManager.Instance.AddEffect(2, collision.contacts[0].point);
         }
     }

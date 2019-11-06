@@ -17,7 +17,7 @@ public class GoalHomer : MonoBehaviour
         if (homing)
         {
             var diff = goalPos - body.transform.position;
-            body.AddForce(diff * 1000f, ForceMode2D.Force);
+            body.AddForce(diff * 750f, ForceMode2D.Force);
         }
     }
 

@@ -7,6 +7,7 @@ public class Launcher : MonoBehaviour
 {
     public Dude dudePrefab;
     public Transform launcher;
+    public Cinemachine.CinemachineVirtualCamera followCam;
 
     private Dude dude;
     private Vector3 launcherPos;
@@ -26,7 +27,7 @@ public class Launcher : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0) && dude)
         {
-            dude.Launch();
+            dude.Launch(followCam);
             Invoke("AddDude", 2f);
 
             var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

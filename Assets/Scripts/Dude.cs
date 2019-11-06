@@ -17,6 +17,7 @@ public class Dude : MonoBehaviour
     private List<HingeJoint2D> joints;
     private List<Rigidbody2D> bodies;
     private Material lineMaterial;
+    private Cinemachine.CinemachineVirtualCamera followCam;
 
     // Start is called before the first frame update
     void Start()
@@ -55,8 +56,12 @@ public class Dude : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void Launch()
+    public void Launch(Cinemachine.CinemachineVirtualCamera cam)
     {
+        followCam = cam;
+        followCam.gameObject.SetActive(true);
+        followCam.Follow = body.transform;
+
         body.bodyType = RigidbodyType2D.Dynamic;
 
         line.enabled = false;
@@ -77,11 +82,18 @@ public class Dude : MonoBehaviour
         return activatedBlocks.Contains(block);
     }
 
+    public void UnFollow()
+    {
+        followCam.gameObject.SetActive(false);
+    }
+
     public void Die()
     {
         if (!isAlive || !canDie) return;
 
         isAlive = false;
+
+        UnFollow();
 
         if (activatedBlocks.Any())
         {
