@@ -23,6 +23,8 @@ public class Grabber : MonoBehaviour
     {
         if (!dude.isAlive) return;
 
+        if (collision.otherCollider.tag != "Grabber") return;
+
         if(collision.gameObject.tag == "Wall" || CanGrab(collision.gameObject))
         {
             joint.enabled = true;

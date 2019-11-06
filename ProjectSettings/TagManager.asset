@@ -8,6 +8,7 @@ TagManager:
   - Limb
   - BodyPart
   - Block
+  - Grabber
   layers:
   - Default
   - TransparentFX
