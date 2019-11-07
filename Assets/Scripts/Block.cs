@@ -9,6 +9,7 @@ public class Block : MonoBehaviour
     public Rigidbody2D body;
     public SpriteRenderer[] icons;
     public Door door;
+    public GameObject wire;
 
     private Vector3 startPos;
 
@@ -25,6 +26,9 @@ public class Block : MonoBehaviour
             EffectManager.Instance.AddEffect(3, i.transform.position);
         });
 
+        if (wire)
+            wire.SetActive(true);
+
         if (door)
         {
             door.Open();
@@ -36,7 +40,10 @@ public class Block : MonoBehaviour
 
     public void Deactivate()
     {
-        icons.ToList().ForEach(i => i.color = new Color(1f, 1f, 1f, 0.25f));
+        icons.ToList().ForEach(i => i.color = new Color(0.25f, 0.25f, 0.25f));
+
+        if(wire)
+            wire.SetActive(false);
 
         if (door)
         {
