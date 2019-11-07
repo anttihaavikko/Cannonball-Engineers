@@ -8,6 +8,7 @@ public class Launcher : MonoBehaviour
     public Dude dudePrefab;
     public Transform launcher;
     public Cinemachine.CinemachineVirtualCamera followCam;
+    public Transform torquePointer;
 
     private Dude dude;
     private Vector3 launcherPos;
@@ -23,7 +24,15 @@ public class Launcher : MonoBehaviour
     void Update()
     {
         if (dude)
+        {
             dude.UpdateLine();
+            var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            var dir = pos - dude.body.transform.position;
+
+            var angle = Mathf.Clamp(dir.x, -45f, 45f);
+
+            torquePointer.rotation = Quaternion.Euler(0, 0, angle);
+        }
 
         if (Input.GetMouseButtonUp(0) && dude)
         {

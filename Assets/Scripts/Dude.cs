@@ -71,6 +71,7 @@ public class Dude : MonoBehaviour
         var dir = pos - body.transform.position;
 
         body.AddForce(dir * 150f, ForceMode2D.Impulse);
+        body.AddTorque(dir.x * 100f, ForceMode2D.Impulse);
 
         hands.ToList().ForEach(h => h.AddForce(dir * Random.Range(5f, 10f), ForceMode2D.Impulse));
     }
@@ -87,7 +88,8 @@ public class Dude : MonoBehaviour
 
     public void UnFollow()
     {
-        followCam.gameObject.SetActive(false);
+        if(followCam && followCam.gameObject)
+            followCam.gameObject.SetActive(false);
 
         //if(isAlive)
         //    Invoke("Nudge", 1f);
