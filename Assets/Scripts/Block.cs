@@ -19,25 +19,31 @@ public class Block : MonoBehaviour
 
     public void Activate()
     {
-        if(door)
+        icons.ToList().ForEach(i =>
+        {
+            i.color = Color.white;
+            EffectManager.Instance.AddEffect(3, i.transform.position);
+        });
+
+        if (door)
         {
             door.Open();
             return;
         }
 
-        icons.ToList().ForEach(i => i.color = Color.white);
         Tweener.Instance.MoveBodyTo(body, startPos + direction, 1.5f, 0f, TweenEasings.LinearInterpolation);
     }
 
     public void Deactivate()
     {
+        icons.ToList().ForEach(i => i.color = new Color(1f, 1f, 1f, 0.25f));
+
         if (door)
         {
             door.Close();
             return;
         }
 
-        icons.ToList().ForEach(i => i.color = new Color(1f, 1f, 1f, 0.25f));
         Tweener.Instance.MoveBodyTo(body, startPos, 1.5f, 0f, TweenEasings.LinearInterpolation);
     }
 }

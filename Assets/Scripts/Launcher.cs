@@ -44,7 +44,7 @@ public class Launcher : MonoBehaviour
             var amt = Mathf.Min(Mathf.Max(0, dir.y), 50f);
             var speed = (50f - amt) / 50f;
 
-            Tweener.Instance.MoveTo(launcher, launcherPos + Vector3.up * amt * 0.2f, 0.3f + speed * 0.1f, 0f, TweenEasings.BounceEaseInOut);
+            Tweener.Instance.MoveTo(launcher, launcherPos + Vector3.up * amt * 0.2f, 0.1f + speed * 0.1f, 0f, TweenEasings.BounceEaseInOut);
             Invoke("ResetPos", 0.75f);
 
             dude = null;
@@ -57,6 +57,7 @@ public class Launcher : MonoBehaviour
     void AddDude()
     {
         dude = Instantiate(dudePrefab, transform.position, Quaternion.identity);
+        //EffectManager.Instance.AddEffect(1, transform.position);
         dude.NudgeHands();
     }
 
