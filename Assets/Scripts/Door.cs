@@ -1,14 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
-public class Block : MonoBehaviour
+public class Door : MonoBehaviour
 {
     public Vector3 direction;
     public Rigidbody2D body;
-    public SpriteRenderer[] icons;
-    public Door door;
 
     private Vector3 startPos;
 
@@ -17,27 +14,13 @@ public class Block : MonoBehaviour
         startPos = transform.position;
     }
 
-    public void Activate()
+    public void Open()
     {
-        if(door)
-        {
-            door.Open();
-            return;
-        }
-
-        icons.ToList().ForEach(i => i.color = Color.white);
         Tweener.Instance.MoveBodyTo(body, startPos + direction, 1.5f, 0f, TweenEasings.LinearInterpolation);
     }
 
-    public void Deactivate()
+    public void Close()
     {
-        if (door)
-        {
-            door.Close();
-            return;
-        }
-
-        icons.ToList().ForEach(i => i.color = new Color(1f, 1f, 1f, 0.25f));
         Tweener.Instance.MoveBodyTo(body, startPos, 1.5f, 0f, TweenEasings.LinearInterpolation);
     }
 }
