@@ -20,6 +20,7 @@ public class Dude : MonoBehaviour
     private List<Rigidbody2D> bodies;
     private Material lineMaterial;
     private Cinemachine.CinemachineVirtualCamera followCam;
+    private EffectCamera cam;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,8 @@ public class Dude : MonoBehaviour
         bodies = GetComponentsInChildren<Rigidbody2D>().ToList();
 
         lineMaterial = line.material;
+
+        cam = Camera.main.GetComponent<EffectCamera>();
     }
 
     private void Update()
@@ -58,11 +61,13 @@ public class Dude : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void Launch(Cinemachine.CinemachineVirtualCamera cam)
+    public void Launch(Cinemachine.CinemachineVirtualCamera fCam)
     {
         //limbs.ToList().ForEach(l => l.collisionDetectionMode = CollisionDetectionMode2D.Continuous);
 
-        followCam = cam;
+        //cam.BaseEffect(1.2f);
+
+        followCam = fCam;
         followCam.gameObject.SetActive(true);
         followCam.Follow = body.transform;
 
@@ -117,6 +122,8 @@ public class Dude : MonoBehaviour
     public void Die()
     {
         if (!isAlive || !canDie) return;
+
+        cam.BaseEffect(2f);
 
         isAlive = false;
 
