@@ -297,7 +297,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.24, y: 2.38}
+  m_Size: {x: 0.24, y: 1.41}
   m_Direction: 0
 --- !u!114 &5445709345519440054
 MonoBehaviour:
@@ -358,7 +358,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.24, y: 2.38}
+  m_Size: {x: 0.24, y: 1.41}
   m_Direction: 0
 --- !u!114 &8636146998957412218
 MonoBehaviour:
@@ -498,7 +498,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.24, y: 2.38}
+  m_Size: {x: 0.24, y: 1.41}
   m_Direction: 0
 --- !u!114 &2212569474905992056
 MonoBehaviour:
@@ -559,7 +559,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.24, y: 2.38}
+  m_Size: {x: 0.24, y: 1.41}
   m_Direction: 0
 --- !u!114 &5006920870536326025
 MonoBehaviour:
@@ -1782,6 +1782,11 @@ MonoBehaviour:
   hands:
   - {fileID: 6935590485043466105}
   - {fileID: 6935590485715439820}
+  limbs:
+  - {fileID: 6935590485349154518}
+  - {fileID: 6935590484215881604}
+  - {fileID: 6935590485715439820}
+  - {fileID: 6935590485043466105}
 --- !u!1 &6935590484921121087
 GameObject:
   m_ObjectHideFlags: 0

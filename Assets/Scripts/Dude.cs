@@ -12,6 +12,7 @@ public class Dude : MonoBehaviour
     public bool canDie = true;
     public bool canGrab = true;
     public Rigidbody2D[] hands;
+    public Rigidbody2D[] limbs;
 
     private List<Block> activatedBlocks;
     private List<Grabber> grabbers;
@@ -59,6 +60,8 @@ public class Dude : MonoBehaviour
     // Update is called once per frame
     public void Launch(Cinemachine.CinemachineVirtualCamera cam)
     {
+        //limbs.ToList().ForEach(l => l.collisionDetectionMode = CollisionDetectionMode2D.Continuous);
+
         followCam = cam;
         followCam.gameObject.SetActive(true);
         followCam.Follow = body.transform;

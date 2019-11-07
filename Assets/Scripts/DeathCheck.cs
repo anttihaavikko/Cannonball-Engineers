@@ -11,6 +11,23 @@ public class DeathCheck : MonoBehaviour
         var t = collision.gameObject.tag;
 
         if (t == "Wall" || t == "Block")
-            dude.Die();
+        {
+            Invoke("Die", 0.2f);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        var t = collision.gameObject.tag;
+
+        if (t == "Wall" || t == "Block")
+        {
+            CancelInvoke("Die");
+        }
+    }
+
+    private void Die()
+    {
+        dude.Die();
     }
 }
