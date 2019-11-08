@@ -10,7 +10,10 @@ public class Launcher : MonoBehaviour
     public Cinemachine.CinemachineVirtualCamera followCam;
     public Transform torquePointer;
 
-    private Dude dude;
+    public bool immortals;
+    public bool jumpers;
+
+    private Dude dude, reserveDude;
     private Vector3 launcherPos;
 
     // Start is called before the first frame update
@@ -39,7 +42,14 @@ public class Launcher : MonoBehaviour
             EffectManager.Instance.AddEffect(4, transform.position);
 
             dude.Launch(followCam);
-            Invoke("AddDude", 2f);
+
+            if (!reserveDude)
+            {
+                Invoke("AddDude", 2f);
+            } else
+            {
+                return;
+            }
 
             var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             var dir = pos - dude.body.transform.position;
@@ -49,7 +59,7 @@ public class Launcher : MonoBehaviour
             Tweener.Instance.MoveTo(launcher, launcherPos + Vector3.up * amt * 0.2f, 0.1f + speed * 0.1f, 0f, TweenEasings.BounceEaseInOut);
             Invoke("ResetPos", 0.75f);
 
-            dude = null;
+            //dude = null;
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -58,13 +68,32 @@ public class Launcher : MonoBehaviour
 
     void AddDude()
     {
-        dude = Instantiate(dudePrefab, transform.position, Quaternion.identity);
-        //EffectManager.Instance.AddEffect(1, transform.position);
-        dude.NudgeHands();
+        if (reserveDude) return;
+
+        reserveDude = Instantiate(dudePrefab, transform.position, Quaternion.identity);
+        reserveDude.launcher = this;
+        reserveDude.jumper = jumpers;
+        reserveDude.canDie = immortals;
+        reserveDude.NudgeHands();
+        reserveDude.line.enabled = false;
+
+        if(dude == null)
+        {
+            ActivateReserve();
+        }
     }
 
     void ResetPos()
     {
         Tweener.Instance.MoveTo(launcher, launcherPos, 0.3f, 0f, TweenEasings.QuadraticEaseIn);
+    }
+
+    public void ActivateReserve()
+    {
+        dude = reserveDude;
+
+        if (dude)
+            dude.line.enabled = true;
+        reserveDude = null;
     }
 }

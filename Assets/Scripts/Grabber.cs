@@ -8,23 +8,11 @@ public class Grabber : MonoBehaviour
     public Dude dude;
 
     private bool hasGrabbed;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //if (joint.enabled)
-        //    Debug.Log(joint.anchor);
-    }
+    private bool canGrab = true;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!dude.isAlive || hasGrabbed || !dude.canGrab) return;
+        if (!dude.isAlive || hasGrabbed || !dude.canGrab || !canGrab) return;
 
         if (collision.otherCollider.tag != "Grabber") return;
 
@@ -36,6 +24,7 @@ public class Grabber : MonoBehaviour
             hasGrabbed = true;
 
             dude.UnFollow();
+            dude.Attach();
 
             EffectManager.Instance.AddEffect(2, collision.contacts[0].point);
         }
@@ -55,5 +44,21 @@ public class Grabber : MonoBehaviour
         }
 
         return go.tag == "Limb" && go.transform.parent != transform.parent;
+    }
+
+    public void Detach()
+	{
+        canGrab = false;
+        dude.canDie = false;
+        joint.enabled = false;
+		hasGrabbed = false;
+
+        Invoke("EnableGrab", 0.2f);
+	}
+
+    void EnableGrab()
+    {
+        canGrab = true;
+        dude.canDie = true;
     }
 }

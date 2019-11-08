@@ -13,21 +13,24 @@ public class Dude : MonoBehaviour
     public bool canGrab = true;
     public Rigidbody2D[] hands;
     public Rigidbody2D[] limbs;
+    public List<Grabber> grabbers;
+    public bool jumper;
+    public Launcher launcher;
 
     private List<Block> activatedBlocks;
-    private List<Grabber> grabbers;
     private List<HingeJoint2D> joints;
     private List<Rigidbody2D> bodies;
     private Material lineMaterial;
     private Cinemachine.CinemachineVirtualCamera followCam;
     private EffectCamera cam;
+    private bool firstJump = true;
+    private bool isAttached;
 
     // Start is called before the first frame update
     void Start()
     {
         activatedBlocks = new List<Block>();
 
-        grabbers = GetComponentsInChildren<Grabber>().ToList();
         joints = GetComponentsInChildren<HingeJoint2D>().ToList();
         bodies = GetComponentsInChildren<Rigidbody2D>().ToList();
 
@@ -38,7 +41,7 @@ public class Dude : MonoBehaviour
 
     private void Update()
     {
-        joints.ForEach(j =>
+        joints.FindAll(j => j.enabled).ForEach(j =>
         {
             if (!j.connectedBody) return;
 
@@ -56,14 +59,32 @@ public class Dude : MonoBehaviour
         pos.z = 0;
         line.SetPosition(0, body.position);
         line.SetPosition(1, pos);
+    }
 
-        //lineMaterial.SetTextureScale("_MainTex", new Vector2((body.transform.position - pos).magnitude * 0.1f, 0.5f));
+    public void Attach()
+    {
+        if (isAttached) return;
+
+        isAttached = true;
+
+        if (jumper)
+            line.enabled = true;
+        else
+            launcher.ActivateReserve();
     }
 
     // Update is called once per frame
     public void Launch(Cinemachine.CinemachineVirtualCamera fCam)
     {
-        //limbs.ToList().ForEach(l => l.collisionDetectionMode = CollisionDetectionMode2D.Continuous);
+        if (!firstJump && !jumper)
+            return;
+
+        isAttached = false;
+
+        activatedBlocks.ForEach(b => b.Deactivate());
+        activatedBlocks.Clear();
+
+        grabbers.ForEach(g => g.Detach());
 
         cam.BaseEffect(1.2f);
 
@@ -79,9 +100,13 @@ public class Dude : MonoBehaviour
         var dir = pos - body.transform.position;
 
         body.AddForce(dir * 150f, ForceMode2D.Impulse);
-        body.AddTorque(dir.x * 100f, ForceMode2D.Impulse);
+
+        if(firstJump)
+            body.AddTorque(dir.x * 100f, ForceMode2D.Impulse);
 
         hands.ToList().ForEach(h => h.AddForce(dir * Random.Range(5f, 10f), ForceMode2D.Impulse));
+
+        firstJump = false;
     }
 
     public void ActivateBlock(Block block)
@@ -98,9 +123,6 @@ public class Dude : MonoBehaviour
     {
         if(followCam && followCam.gameObject)
             followCam.gameObject.SetActive(false);
-
-        //if(isAlive)
-        //    Invoke("Nudge", 1f);
     }
 
     void Nudge()
@@ -122,6 +144,11 @@ public class Dude : MonoBehaviour
     public void Die()
     {
         if (!isAlive || !canDie) return;
+
+        if(!isAttached)
+            launcher.ActivateReserve();
+
+        line.enabled = false;
 
         cam.BaseEffect(2f);
 

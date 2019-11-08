@@ -1,21 +1,11 @@
 ﻿<Properties StartupConfiguration="{1ADAFD7C-186E-74BB-F621-9D3BD15AF105}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Gear.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Dude.cs">
     <Files>
-      <File FileName="Assets/Scripts/EffectCamera.cs" Line="16" Column="34" />
-      <File FileName="Assets/Scripts/Grabber.cs" Line="38" Column="25" />
-      <File FileName="Assets/Scripts/Face.cs" Line="186" Column="1" />
-      <File FileName="Assets/Scripts/Dude.cs" Line="68" Column="30" />
-      <File FileName="Assets/Scripts/Launcher.cs" Line="63" Column="1" />
-      <File FileName="Assets/Scripts/Head.cs" Line="15" Column="28" />
-      <File FileName="Assets/Scripts/Tweener.cs" />
-      <File FileName="Assets/Scripts/TweenAction.cs" />
-      <File FileName="Assets/Scripts/DeathCheck.cs" Line="25" Column="31" />
-      <File FileName="Assets/Scripts/Block.cs" Line="10" Column="35" />
-      <File FileName="Assets/Scripts/GoalHomer.cs" Line="21" Column="10" />
-      <File FileName="Assets/Scripts/FakeParallax.cs" Line="25" Column="68" />
-      <File FileName="Assets/Scripts/Door.cs" Line="8" Column="29" />
-      <File FileName="Assets/Scripts/Cloud.cs" Line="26" Column="62" />
-      <File FileName="Assets/Scripts/Gear.cs" Line="7" Column="22" />
+      <File FileName="Assets/Scripts/Dude.cs" Line="72" Column="1" />
+      <File FileName="Assets/Scripts/Launcher.cs" />
+      <File FileName="Assets/Scripts/Block.cs" />
+      <File FileName="Assets/Scripts/Door.cs" />
+      <File FileName="Assets/Scripts/Grabber.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,7 +13,7 @@
           <Node name="Cannonball Engineers" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Gear.cs" selected="True" />
+                <Node name="Dude.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -33,7 +23,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7b539e4c-2094-4690-a4f9-a2ea1fbdc94d" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="069a7f5b-24e8-410a-8abb-f1e2f245163f" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
