@@ -10,6 +10,7 @@ public class Block : MonoBehaviour
     public SpriteRenderer[] icons;
     public Door door;
     public GameObject wire;
+    public List<Gear> gears;
 
     private Vector3 startPos;
 
@@ -29,6 +30,8 @@ public class Block : MonoBehaviour
         if (wire)
             wire.SetActive(true);
 
+        gears.ForEach(g => Tweener.Instance.RotateTo(g.transform, Quaternion.Euler(0, 0, g.amount), 1.5f, 0f, TweenEasings.LinearInterpolation));
+
         if (door)
         {
             door.Open();
@@ -44,6 +47,8 @@ public class Block : MonoBehaviour
 
         if(wire)
             wire.SetActive(false);
+
+        gears.ForEach(g => Tweener.Instance.RotateTo(g.transform, Quaternion.Euler(0, 0, 0), 1.5f, 0f, TweenEasings.LinearInterpolation));
 
         if (door)
         {
