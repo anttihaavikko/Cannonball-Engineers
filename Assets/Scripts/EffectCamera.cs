@@ -13,7 +13,7 @@ public class EffectCamera : MonoBehaviour {
 
     private PostProcessVolume ppVolume;
 	private float chromaAmount = 0f;
-	private float chromaSpeed = 0.1f;
+	private float chromaSpeed = 0.75f;
 
 	private float shakeAmount = 0f, shakeTime = 0f;
 
@@ -60,7 +60,7 @@ public class EffectCamera : MonoBehaviour {
 	public void BaseEffect(float mod = 1f) {
         impulseSource.GenerateImpulse(Vector3.one * mod * 40f);
         //Shake(0.04f * mod, 0.075f * mod);
-        Chromate (0.25f * mod, 0.1f * mod);
+        Chromate (0.5f * mod, 0.1f * mod);
 
 	}
 }

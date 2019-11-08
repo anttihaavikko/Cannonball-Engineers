@@ -65,7 +65,7 @@ public class Dude : MonoBehaviour
     {
         //limbs.ToList().ForEach(l => l.collisionDetectionMode = CollisionDetectionMode2D.Continuous);
 
-        //cam.BaseEffect(1.2f);
+        cam.BaseEffect(1.2f);
 
         followCam = fCam;
         followCam.gameObject.SetActive(true);
