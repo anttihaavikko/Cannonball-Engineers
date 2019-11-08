@@ -36,6 +36,8 @@ public class Launcher : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0) && dude)
         {
+            EffectManager.Instance.AddEffect(4, transform.position);
+
             dude.Launch(followCam);
             Invoke("AddDude", 2f);
 
