@@ -171,7 +171,11 @@ public class Dude : MonoBehaviour
         EffectManager.Instance.AddEffect(0, body.transform.position);
         EffectManager.Instance.AddEffect(1, body.transform.position);
 
-        grabbers.ForEach(g => g.enabled = false);
+        grabbers.ForEach(g =>
+        {
+            g.enabled = false;
+            g.DetachMultiBlock();
+        });
         joints.ForEach(j => j.enabled = false);
         bodies.ForEach(rb =>
         {

@@ -9,6 +9,8 @@ public class Grabber : MonoBehaviour
 
     private bool hasGrabbed;
     private bool canGrab = true;
+    private MultiBlock multiBlock;
+    private string grabDir;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -16,7 +18,7 @@ public class Grabber : MonoBehaviour
 
         if (collision.otherCollider.tag != "Grabber") return;
 
-        if(collision.gameObject.tag == "Wall" || CanGrab(collision.gameObject))
+        if(collision.gameObject.tag == "Wall" || CanGrab(collision.gameObject, collision.collider))
         {
             joint.enabled = true;
             joint.connectedBody = collision.rigidbody;
@@ -30,9 +32,17 @@ public class Grabber : MonoBehaviour
         }
     }
 
-    bool CanGrab(GameObject go)
+    bool CanGrab(GameObject go, Collider2D col)
     {
-        if(go.tag == "Block")
+        if (go.tag == "MultiBlock")
+        {
+            multiBlock = go.GetComponentInChildren<MultiBlock>();
+            grabDir = col.name;
+            multiBlock.Activate(col.name);
+            return true;
+        }
+
+        if (go.tag == "Block")
         {
             Block block = go.GetComponent<Block>();
             if(!dude.HasActivated(block))
@@ -56,9 +66,15 @@ public class Grabber : MonoBehaviour
         Invoke("EnableGrab", 0.2f);
 	}
 
+    public void DetachMultiBlock()
+    {
+        if (multiBlock)
+            multiBlock.Deactivate(grabDir);
+    }
+
     void EnableGrab()
     {
         canGrab = true;
-        dude.canDie = !dude.hardHat;
+        dude.canDie = true;
     }
 }

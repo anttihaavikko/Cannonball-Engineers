@@ -12,6 +12,7 @@ TagManager:
   - Goal
   - Left Legs
   - Right Legs
+  - MultiBlock
   layers:
   - Default
   - TransparentFX

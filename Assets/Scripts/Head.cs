@@ -8,7 +8,9 @@ public class Head : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Block")
+        if(collision.gameObject.tag == "Wall" ||
+            collision.gameObject.tag == "Block" ||
+            collision.gameObject.tag == "MultiBlock")
         {
             if(collision.relativeVelocity.magnitude > 30 && !dude.hardHat)
             {
