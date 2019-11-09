@@ -96,6 +96,7 @@ public class Dude : MonoBehaviour
         followCam.Follow = body.transform;
 
         body.bodyType = RigidbodyType2D.Dynamic;
+        limbs.ToList().ForEach(l => l.bodyType = RigidbodyType2D.Dynamic);
 
         line.enabled = false;
 

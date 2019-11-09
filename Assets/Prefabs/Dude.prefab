@@ -20136,7 +20136,7 @@ GameObject:
   - component: {fileID: 6935590484215881604}
   - component: {fileID: 6935590484215881627}
   - component: {fileID: 539990171581062261}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lower Limb (1)
   m_TagString: Limb
   m_Icon: {fileID: 0}
@@ -20248,7 +20248,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6935590484215881605}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -20259,7 +20259,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!233 &6935590484215881627
 HingeJoint2D:
@@ -20347,7 +20347,7 @@ GameObject:
   - component: {fileID: 6935590484448316680}
   - component: {fileID: 6935590484448316681}
   - component: {fileID: 5175712724389292074}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Upper Limb (1)
   m_TagString: Limb
   m_Icon: {fileID: 0}
@@ -20462,7 +20462,7 @@ HingeJoint2D:
   m_GameObject: {fileID: 6935590484448316726}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 1
+  m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 6935590484215881604}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
@@ -20654,7 +20654,7 @@ HingeJoint2D:
   m_GameObject: {fileID: 6935590484481733655}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 1
+  m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 6935590485715439820}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
@@ -20948,6 +20948,8 @@ MonoBehaviour:
   - {fileID: 6935590484215881624}
   - {fileID: 6935590485715439808}
   - {fileID: 6935590485043466109}
+  jumper: 0
+  launcher: {fileID: 0}
 --- !u!1 &6935590484921121087
 GameObject:
   m_ObjectHideFlags: 0
@@ -21077,7 +21079,7 @@ HingeJoint2D:
   m_GameObject: {fileID: 6935590484921121087}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 1
+  m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 6935590485043466105}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
@@ -21265,7 +21267,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6935590485043466086}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -21582,9 +21584,9 @@ GameObject:
   - component: {fileID: 6935590485196939221}
   - component: {fileID: 6935590485196939218}
   - component: {fileID: 1881307492656007782}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Upper Limb
-  m_TagString: Limb
+  m_TagString: Right Legs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21697,7 +21699,7 @@ HingeJoint2D:
   m_GameObject: {fileID: 6935590485196939219}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 1
+  m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 6935590485349154518}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
@@ -22058,7 +22060,7 @@ GameObject:
   - component: {fileID: 6935590485349154518}
   - component: {fileID: 6935590485349154349}
   - component: {fileID: 3664027539991826015}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Lower Limb
   m_TagString: Limb
   m_Icon: {fileID: 0}
@@ -22170,7 +22172,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6935590485349154519}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -22181,7 +22183,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!233 &6935590485349154349
 HingeJoint2D:
@@ -22451,7 +22453,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6935590485715439821}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

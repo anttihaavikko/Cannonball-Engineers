@@ -10,6 +10,8 @@ TagManager:
   - Block
   - Grabber
   - Goal
+  - Left Legs
+  - Right Legs
   layers:
   - Default
   - TransparentFX
@@ -19,8 +21,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Left LEgs
+  - Right Legs
   - 
   - 
   - 
