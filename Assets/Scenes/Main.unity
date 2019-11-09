@@ -7078,7 +7078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ChannelMask: 0
-  m_Gain: 1
+  m_Gain: 5
   m_Use2DDistance: 1
 --- !u!1 &1982171161
 GameObject:

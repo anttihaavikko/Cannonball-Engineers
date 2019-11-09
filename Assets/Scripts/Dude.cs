@@ -61,6 +61,11 @@ public class Dude : MonoBehaviour
         line.SetPosition(1, pos);
     }
 
+    public bool IsDone()
+    {
+        return !jumper && isAttached;
+    }
+
     public void Attach()
     {
         if (isAttached) return;
@@ -84,9 +89,7 @@ public class Dude : MonoBehaviour
         activatedBlocks.ForEach(b => b.Deactivate());
         activatedBlocks.Clear();
 
-        grabbers.ForEach(g => g.Detach());
-
-        cam.BaseEffect(1.2f);
+        grabbers.ForEach(g => g.Detach());        
 
         followCam = fCam;
         followCam.gameObject.SetActive(true);
@@ -102,7 +105,10 @@ public class Dude : MonoBehaviour
         body.AddForce(dir * 150f, ForceMode2D.Impulse);
 
         if(firstJump)
+        {
             body.AddTorque(dir.x * 100f, ForceMode2D.Impulse);
+            cam.BaseEffect(1.1f);
+        }
 
         hands.ToList().ForEach(h => h.AddForce(dir * Random.Range(5f, 10f), ForceMode2D.Impulse));
 
@@ -145,8 +151,7 @@ public class Dude : MonoBehaviour
     {
         if (!isAlive || !canDie) return;
 
-        if(!isAttached)
-            launcher.ActivateReserve();
+        launcher.ActivateReserve();
 
         line.enabled = false;
 

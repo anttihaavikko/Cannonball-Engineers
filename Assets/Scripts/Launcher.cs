@@ -15,6 +15,7 @@ public class Launcher : MonoBehaviour
 
     private Dude dude, reserveDude;
     private Vector3 launcherPos;
+    private bool hasReserve;
 
     // Start is called before the first frame update
     void Start()
@@ -39,17 +40,17 @@ public class Launcher : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0) && dude)
         {
-            EffectManager.Instance.AddEffect(4, transform.position);
-
             dude.Launch(followCam);
 
-            if (!reserveDude)
+            if (!hasReserve)
             {
                 Invoke("AddDude", 2f);
             } else
             {
                 return;
             }
+
+            EffectManager.Instance.AddEffect(4, transform.position);
 
             var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             var dir = pos - dude.body.transform.position;
@@ -68,7 +69,7 @@ public class Launcher : MonoBehaviour
 
     void AddDude()
     {
-        if (reserveDude) return;
+        if (hasReserve) return;
 
         reserveDude = Instantiate(dudePrefab, transform.position, Quaternion.identity);
         reserveDude.launcher = this;
@@ -76,8 +77,9 @@ public class Launcher : MonoBehaviour
         reserveDude.canDie = immortals;
         reserveDude.NudgeHands();
         reserveDude.line.enabled = false;
+        hasReserve = true;
 
-        if(dude == null)
+        if (dude == null || !dude.isAlive || dude.IsDone())
         {
             ActivateReserve();
         }
@@ -90,10 +92,14 @@ public class Launcher : MonoBehaviour
 
     public void ActivateReserve()
     {
+        if (!hasReserve)
+            return;
+
         dude = reserveDude;
 
         if (dude)
             dude.line.enabled = true;
-        reserveDude = null;
+
+        hasReserve = false;
     }
 }
