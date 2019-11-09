@@ -59,6 +59,6 @@ public class Grabber : MonoBehaviour
     void EnableGrab()
     {
         canGrab = true;
-        dude.canDie = true;
+        dude.canDie = !dude.hardHat;
     }
 }

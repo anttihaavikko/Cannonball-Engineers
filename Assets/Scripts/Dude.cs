@@ -15,6 +15,7 @@ public class Dude : MonoBehaviour
     public Rigidbody2D[] limbs;
     public List<Grabber> grabbers;
     public bool jumper;
+    public bool hardHat;
     public Launcher launcher;
 
     private List<Block> activatedBlocks;

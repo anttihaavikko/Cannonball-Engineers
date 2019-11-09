@@ -10,7 +10,7 @@ public class Head : MonoBehaviour
     {
         if(collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Block")
         {
-            if(collision.relativeVelocity.magnitude > 30)
+            if(collision.relativeVelocity.magnitude > 30 && !dude.hardHat)
             {
                 dude.Die();
             }

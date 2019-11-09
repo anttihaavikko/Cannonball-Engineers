@@ -19849,8 +19849,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 0.5019608}
-      key1: {r: 1, g: 1, b: 1, a: 0.2509804}
+      key0: {r: 1, g: 1, b: 1, a: 0.7529412}
+      key1: {r: 1, g: 1, b: 1, a: 0.7529412}
       key2: {r: 0, g: 0, b: 0, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -20949,6 +20949,7 @@ MonoBehaviour:
   - {fileID: 6935590485715439808}
   - {fileID: 6935590485043466109}
   jumper: 0
+  hardHat: 0
   launcher: {fileID: 0}
 --- !u!1 &6935590484921121087
 GameObject:
@@ -21278,7 +21279,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!233 &6935590485043466108
 HingeJoint2D:
@@ -22464,7 +22465,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!233 &6935590485715439811
 HingeJoint2D:

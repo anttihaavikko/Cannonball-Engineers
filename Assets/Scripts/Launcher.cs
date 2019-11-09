@@ -75,6 +75,7 @@ public class Launcher : MonoBehaviour
         reserveDude.launcher = this;
         reserveDude.jumper = jumpers;
         reserveDude.canDie = immortals;
+        reserveDude.hardHat = immortals;
         reserveDude.NudgeHands();
         reserveDude.line.enabled = false;
         hasReserve = true;
