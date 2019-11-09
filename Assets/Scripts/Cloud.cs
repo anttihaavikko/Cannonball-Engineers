@@ -23,7 +23,7 @@ public class Cloud : MonoBehaviour {
 		transform.localPosition = new Vector3 (transform.localPosition.x + Random.Range(-20, 20), transform.localPosition.y + Random.Range(-5, 5), 0);
 		//transform.localScale = new Vector3 (xdir * (1f + r), ydir * (1f + r), 1f);
 
-		sprite.color = new Color (1, 1, 1, 0.1f + Random.value / 10f);
+		sprite.color = new Color (1, 1, 1, 0.1f + Random.value / 5f);
 
 		speed = 0.1f + Random.value * 2f;
 	}
