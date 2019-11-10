@@ -41,7 +41,8 @@ public class MultiBlock : MonoBehaviour
             pos += activations[i] * directions[i] * size;
 
         Tweener.Instance.MoveBodyTo(body, originalPos + pos, 1.5f, 0f, TweenEasings.LinearInterpolation);
-        gears.ForEach(g => Tweener.Instance.RotateTo(g.transform, Quaternion.Euler(0, 0, g.amount), 1.5f, 0f, TweenEasings.LinearInterpolation));
+        Debug.Log(gears.First().transform.rotation.eulerAngles.z);
+        gears.ForEach(g => Tweener.Instance.RotateTo(g.transform, Quaternion.Euler(0, 0, g.amount + g.transform.rotation.eulerAngles.z), 1.5f, 0f, TweenEasings.LinearInterpolation));
     }
 
     public void Activate(string dir)
