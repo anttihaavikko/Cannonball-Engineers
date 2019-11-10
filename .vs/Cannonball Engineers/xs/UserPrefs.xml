@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{1ADAFD7C-186E-74BB-F621-9D3BD15AF105}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LightBlinker.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TutorialDude.cs">
     <Files>
       <File FileName="Assets/Scripts/Dude.cs" Line="177" Column="31" />
-      <File FileName="Assets/Scripts/Launcher.cs" Line="78" Column="28" />
+      <File FileName="Assets/Scripts/Launcher.cs" Line="11" Column="36" />
       <File FileName="Assets/Scripts/Block.cs" Line="33" Column="9" />
       <File FileName="Assets/Scripts/Door.cs" />
       <File FileName="Assets/Scripts/Grabber.cs" Line="77" Column="24" />
@@ -11,7 +11,9 @@
       <File FileName="Assets/Scripts/Cloud.cs" Line="26" Column="61" />
       <File FileName="Assets/Scripts/Head.cs" Line="11" Column="49" />
       <File FileName="Assets/Scripts/MultiBlock.cs" Line="45" Column="133" />
-      <File FileName="Assets/Scripts/LightBlinker.cs" Line="4" Column="18" />
+      <File FileName="Assets/Scripts/LightBlinker.cs" Line="29" Column="32" />
+      <File FileName="Assets/Scripts/SpeechBubble.cs" Line="125" Column="59" />
+      <File FileName="Assets/Scripts/TutorialDude.cs" Line="10" Column="26" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,7 +21,7 @@
           <Node name="Cannonball Engineers" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="LightBlinker.cs" selected="True" />
+                <Node name="TutorialDude.cs" selected="True" />
               </Node>
             </Node>
           </Node>

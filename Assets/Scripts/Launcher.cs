@@ -38,7 +38,7 @@ public class Launcher : MonoBehaviour
             torquePointer.rotation = Quaternion.Euler(0, 0, angle);
         }
 
-        if (Input.GetMouseButtonUp(0) && dude)
+        if (Input.GetMouseButtonUp(0) && dude && !TutorialDude.Instance.IsShowing())
         {
             dude.Launch(followCam);
 
