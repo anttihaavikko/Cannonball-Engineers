@@ -48,7 +48,6 @@ public class Launcher : MonoBehaviour
         {
             if (Manager.Instance.hoveredDude)
             {
-                Debug.Log("Has hover dude @" + Time.time);
                 return;
             }
 
@@ -90,7 +89,7 @@ public class Launcher : MonoBehaviour
         reserveDude.launcher = this;
         reserveDude.jumper = jumpers;
         reserveDude.canDie = immortals;
-        reserveDude.hardHat = immortals;
+        reserveDude.AddHardHat(immortals);
         reserveDude.NudgeHands();
         reserveDude.line.enabled = false;
         hasReserve = true;

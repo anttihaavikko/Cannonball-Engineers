@@ -18,6 +18,7 @@ public class Dude : MonoBehaviour
     public bool hardHat;
     public Launcher launcher;
     public List<GameObject> outlines;
+    public GameObject hat;
 
     private List<Block> activatedBlocks;
     private List<HingeJoint2D> joints;
@@ -39,6 +40,12 @@ public class Dude : MonoBehaviour
         lineMaterial = line.material;
 
         cam = Camera.main.GetComponent<EffectCamera>();
+    }
+
+    public void AddHardHat(bool h)
+    {
+        hardHat = h;
+        hat.SetActive(h);
     }
 
     private void Update()

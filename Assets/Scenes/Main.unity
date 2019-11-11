@@ -6226,7 +6226,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 24.68
+  orthographic size: 60
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6250,7 +6250,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.5, y: 4.4, z: -10}
+  m_LocalPosition: {x: 0, y: 45, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8220,6 +8220,11 @@ PrefabInstance:
     - target: {fileID: 2840234190464176437, guid: c9908d47c6529493191c82865407a90c,
         type: 3}
       propertyPath: jumpers
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840234190464176437, guid: c9908d47c6529493191c82865407a90c,
+        type: 3}
+      propertyPath: immortals
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2814418017673586593, guid: c9908d47c6529493191c82865407a90c,
@@ -15327,7 +15332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1242356803
 MonoBehaviour:
   m_ObjectHideFlags: 0
