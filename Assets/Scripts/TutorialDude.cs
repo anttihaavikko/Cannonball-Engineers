@@ -49,7 +49,8 @@ public class TutorialDude : MonoBehaviour
 
     void IntroMessage()
     {
-        ShowMessage("Oh no, we've ran out of hard hats! Be very careful!");
+        //ShowMessage("Oh no, we've ran out of hard hats! Be very careful!");
+        ShowMessage("You can command any engineer you want! Just point at them to give orders!");
     }
 
     void ShowMessage(string message)

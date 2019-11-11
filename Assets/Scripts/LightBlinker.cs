@@ -34,5 +34,7 @@ public class LightBlinker : MonoBehaviour
 
         activeLights[index] = lights[Random.Range(0, lights.Count)];
         Tweener.Instance.ColorTo(activeLights[index], Color.white, 0.2f, 0f, TweenEasings.QuadraticEaseOut);
+
+        //EffectManager.Instance.AddEffect(2, activeLights[index].transform.position);
     }
 }

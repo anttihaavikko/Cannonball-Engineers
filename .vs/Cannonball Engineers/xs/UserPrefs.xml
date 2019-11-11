@@ -1,19 +1,21 @@
 ﻿<Properties StartupConfiguration="{1ADAFD7C-186E-74BB-F621-9D3BD15AF105}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TutorialDude.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Manager.cs">
     <Files>
-      <File FileName="Assets/Scripts/Dude.cs" Line="177" Column="31" />
-      <File FileName="Assets/Scripts/Launcher.cs" Line="11" Column="36" />
+      <File FileName="Assets/Scripts/Dude.cs" Line="186" Column="6" />
+      <File FileName="Assets/Scripts/Launcher.cs" Line="32" Column="18" />
       <File FileName="Assets/Scripts/Block.cs" Line="33" Column="9" />
       <File FileName="Assets/Scripts/Door.cs" />
-      <File FileName="Assets/Scripts/Grabber.cs" Line="77" Column="24" />
+      <File FileName="Assets/Scripts/Grabber.cs" Line="31" Column="13" />
       <File FileName="Assets/Scripts/EffectCamera.cs" Line="63" Column="32" />
       <File FileName="Assets/Scripts/Tree.cs" Line="10" Column="1" />
       <File FileName="Assets/Scripts/Cloud.cs" Line="26" Column="61" />
       <File FileName="Assets/Scripts/Head.cs" Line="11" Column="49" />
       <File FileName="Assets/Scripts/MultiBlock.cs" Line="45" Column="133" />
-      <File FileName="Assets/Scripts/LightBlinker.cs" Line="29" Column="32" />
+      <File FileName="Assets/Scripts/LightBlinker.cs" Line="37" Column="1" />
       <File FileName="Assets/Scripts/SpeechBubble.cs" Line="125" Column="59" />
-      <File FileName="Assets/Scripts/TutorialDude.cs" Line="10" Column="26" />
+      <File FileName="Assets/Scripts/TutorialDude.cs" Line="58" Column="31" />
+      <File FileName="Assets/Scripts/DudeClicker.cs" Line="27" Column="47" />
+      <File FileName="Assets/Scripts/Manager.cs" Line="9" Column="15" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,7 +23,7 @@
           <Node name="Cannonball Engineers" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="TutorialDude.cs" selected="True" />
+                <Node name="Manager.cs" selected="True" />
               </Node>
             </Node>
           </Node>

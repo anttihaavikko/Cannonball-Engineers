@@ -17,6 +17,7 @@ public class Dude : MonoBehaviour
     public bool jumper;
     public bool hardHat;
     public Launcher launcher;
+    public List<GameObject> outlines;
 
     private List<Block> activatedBlocks;
     private List<HingeJoint2D> joints;
@@ -71,10 +72,14 @@ public class Dude : MonoBehaviour
     {
         if (isAttached) return;
 
+        //launcher.AddDude();
+
         isAttached = true;
 
         if (jumper)
+        {
             line.enabled = true;
+        }
         else
             launcher.ActivateReserve();
     }
@@ -153,7 +158,9 @@ public class Dude : MonoBehaviour
     {
         if (!isAlive || !canDie) return;
 
-        launcher.ActivateReserve();
+        ToggleOutline(false);
+
+        launcher.ActivateIfNeeded();
 
         line.enabled = false;
 
@@ -183,5 +190,12 @@ public class Dude : MonoBehaviour
             var dir = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
             rb.AddForce(dir * rb.mass * 100f, ForceMode2D.Impulse);
         });
+    }
+
+    public void ToggleOutline(bool state)
+    {
+        if (!firstJump && !isAttached) return;
+
+        outlines.ForEach(o => o.SetActive(state));
     }
 }

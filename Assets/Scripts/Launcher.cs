@@ -9,11 +9,12 @@ public class Launcher : MonoBehaviour
     public Transform launcher;
     public Cinemachine.CinemachineVirtualCamera followCam;
     public Transform torquePointer;
+    public Transform tutorialSpot;
 
     public bool immortals;
     public bool jumpers;
 
-    private Dude dude, reserveDude;
+    private Dude reserveDude;
     private Vector3 launcherPos;
     private bool hasReserve;
 
@@ -22,11 +23,16 @@ public class Launcher : MonoBehaviour
     {
         AddDude();
         launcherPos = launcher.transform.position;
+
+        var p = TutorialDude.Instance.transform.position;
+        TutorialDude.Instance.transform.position = new Vector3(tutorialSpot.position.x, p.y, p.z);
     }
 
     // Update is called once per frame
     void Update()
     {
+        var dude = Manager.Instance.activeDude;
+
         if (dude)
         {
             dude.UpdateLine();
@@ -40,12 +46,17 @@ public class Launcher : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0) && dude && !TutorialDude.Instance.IsShowing())
         {
+            if (Manager.Instance.hoveredDude)
+            {
+                Debug.Log("Has hover dude @" + Time.time);
+                return;
+            }
+
             dude.Launch(followCam);
 
-            if (!hasReserve)
-            {
-                Invoke("AddDude", 2f);
-            } else
+            Invoke("AddDude", 2f);
+
+            if (hasReserve)
             {
                 return;
             }
@@ -67,9 +78,13 @@ public class Launcher : MonoBehaviour
             SceneManager.LoadSceneAsync("Main");
     }
 
-    void AddDude()
+    public void AddDude()
     {
-        if (hasReserve) return;
+        if (hasReserve)
+        {
+            ActivateIfNeeded();
+            return;
+        }
 
         reserveDude = Instantiate(dudePrefab, transform.position, Quaternion.identity);
         reserveDude.launcher = this;
@@ -79,6 +94,13 @@ public class Launcher : MonoBehaviour
         reserveDude.NudgeHands();
         reserveDude.line.enabled = false;
         hasReserve = true;
+
+        ActivateIfNeeded();
+    }
+
+    public void ActivateIfNeeded()
+    {
+        var dude = Manager.Instance.activeDude;
 
         if (dude == null || !dude.isAlive || dude.IsDone())
         {
@@ -96,11 +118,21 @@ public class Launcher : MonoBehaviour
         if (!hasReserve)
             return;
 
-        dude = reserveDude;
+        Manager.Instance.activeDude = reserveDude;
 
-        if (dude)
-            dude.line.enabled = true;
+        if (Manager.Instance.activeDude)
+        {
+            Manager.Instance.activeDude.line.enabled = true;
+        }
 
         hasReserve = false;
+    }
+
+    public void ActivateIfReserve(Dude d)
+    {
+        if(d == reserveDude)
+        {
+            ActivateReserve();
+        }
     }
 }
