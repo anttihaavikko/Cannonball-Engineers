@@ -10,7 +10,8 @@ public class TweenAction {
 		Rotation,
 		Scale,
 		Color,
-        BodyPosition
+        BodyPosition,
+        BodyRotation
 	};
 
 	public Transform theObject;
@@ -69,6 +70,13 @@ public class TweenAction {
     {
         yield return new WaitForSeconds(tweenDelay);
         hasBeenInit = true;
+        startRot = body.transform.rotation;
+    }
+
+    public IEnumerator SetBodyStartRot()
+    {
+        yield return new WaitForSeconds(tweenDelay);
+        hasBeenInit = true;
         startPos = body.position;
     }
 
@@ -123,6 +131,11 @@ public class TweenAction {
             if (type == Type.BodyPosition)
             {
                 body.MovePosition(Lerp(startPos, targetPos, DoEase()));
+            }
+
+            if (type == Type.BodyRotation)
+            {
+                body.MoveRotation(Lerp(startRot, targetRot, DoEase()));
             }
 
             if (type == Type.LocalPosition) {

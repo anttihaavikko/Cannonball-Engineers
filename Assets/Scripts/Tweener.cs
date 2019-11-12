@@ -105,6 +105,19 @@ public class Tweener : MonoBehaviour {
         StartCoroutine(act.SetBodyStartPos());
     }
 
+    public void RotateBodyTo(Rigidbody2D obj, Quaternion rotation, float duration, float delay, System.Func<float, float> ease = null, int easeIndex = -1, bool removeOld = true)
+    {
+        if (ease == null)
+        {
+            ease = TweenEasings.LinearInterpolation;
+        }
+
+        TweenAction act = AddTween(obj, Vector3.zero, TweenAction.Type.BodyRotation, duration, delay, ease, easeIndex, removeOld);
+        act.startRot = act.body.transform.rotation;
+        act.targetRot = rotation;
+        StartCoroutine(act.SetBodyStartRot());
+    }
+
     public void MoveTo(Transform obj, Vector3 target, float duration, float delay, System.Func<float, float> ease = null, int easeIndex = -1, bool removeOld = true) {
 
         if (ease == null) {

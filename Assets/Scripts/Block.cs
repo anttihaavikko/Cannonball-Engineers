@@ -11,8 +11,11 @@ public class Block : MonoBehaviour
     public Door door;
     public GameObject wire;
     public List<Gear> gears;
+    public int angle;
+    public float moveTime = 1.5f;
 
     private Vector3 startPos;
+    private int activations;
 
     private void Start()
     {
@@ -21,6 +24,8 @@ public class Block : MonoBehaviour
 
     public void Activate()
     {
+        activations++;
+
         icons.ToList().ForEach(i =>
         {
             i.color = Color.white;
@@ -30,11 +35,17 @@ public class Block : MonoBehaviour
         if (wire)
             wire.SetActive(true);
 
-        gears.ForEach(g => Tweener.Instance.RotateTo(g.transform, Quaternion.Euler(0, 0, g.amount), 1.5f, 0f, TweenEasings.LinearInterpolation));
+        gears.ForEach(g => Tweener.Instance.RotateTo(g.transform, Quaternion.Euler(0, 0, g.amount), moveTime, 0f, TweenEasings.LinearInterpolation));
 
         if (door)
         {
             door.Open();
+            return;
+        }
+
+        if(angle != 0)
+        {
+            Invoke("DoRotation", 0.25f);
             return;
         }
 
@@ -43,12 +54,14 @@ public class Block : MonoBehaviour
 
     public void Deactivate()
     {
+        activations--;
+
         icons.ToList().ForEach(i => i.color = new Color(0.25f, 0.25f, 0.25f));
 
         if(wire)
             wire.SetActive(false);
 
-        gears.ForEach(g => Tweener.Instance.RotateTo(g.transform, Quaternion.Euler(0, 0, 0), 1.5f, 0f, TweenEasings.LinearInterpolation));
+        gears.ForEach(g => Tweener.Instance.RotateTo(g.transform, Quaternion.Euler(0, 0, 0), moveTime, 0f, TweenEasings.LinearInterpolation));
 
         if (door)
         {
@@ -56,6 +69,17 @@ public class Block : MonoBehaviour
             return;
         }
 
+        if(angle != 0)
+        {
+            Invoke("DoRotation", 0.25f);
+            return;
+        }
+
         Tweener.Instance.MoveBodyTo(body, startPos, 1.5f, 0f, TweenEasings.LinearInterpolation);
+    }
+
+    void DoRotation()
+    {
+        Tweener.Instance.RotateBodyTo(body, Quaternion.Euler(0, 0, angle * activations), moveTime - 0.25f, 0f, TweenEasings.LinearInterpolation);
     }
 }
