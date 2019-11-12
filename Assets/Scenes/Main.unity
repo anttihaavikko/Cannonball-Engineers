@@ -277,6 +277,11 @@ PrefabInstance:
       propertyPath: immortals
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2840234190464176437, guid: c9908d47c6529493191c82865407a90c,
+        type: 3}
+      propertyPath: introMessage
+      value: Oh no, we've ran out of hard hats! Be very careful!
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9908d47c6529493191c82865407a90c, type: 3}
 --- !u!4 &5798226 stripped
@@ -1785,7 +1790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.3500013
+  m_Length: 2.3500016
   m_ChildTransform: {fileID: 1312903718}
   m_AttachedIK: {fileID: 37611813}
 --- !u!1 &179691436
@@ -3933,7 +3938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.31
+  m_Length: 2.3099988
   m_ChildTransform: {fileID: 397969179}
   m_AttachedIK: {fileID: 1985882004}
 --- !u!1 &393276891
@@ -8227,6 +8232,11 @@ PrefabInstance:
       propertyPath: immortals
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2840234190464176437, guid: c9908d47c6529493191c82865407a90c,
+        type: 3}
+      propertyPath: introMessage
+      value: You can command any engineer you want! Just point at them to give orders!
+      objectReference: {fileID: 0}
     - target: {fileID: 2814418017673586593, guid: c9908d47c6529493191c82865407a90c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9700,7 +9710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.3099988
+  m_Length: 2.309998
   m_ChildTransform: {fileID: 1934061017}
   m_AttachedIK: {fileID: 906872400}
 --- !u!1 &804152412
@@ -12509,7 +12519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.3500013
+  m_Length: 2.3500018
   m_ChildTransform: {fileID: 120563892}
   m_AttachedIK: {fileID: 1817875917}
 --- !u!1 &1016329745

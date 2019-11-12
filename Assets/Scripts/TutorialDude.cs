@@ -9,6 +9,7 @@ public class TutorialDude : MonoBehaviour
     public Animator anim;
 
     private bool showing;
+    private string nextMessage;
 
     private static TutorialDude instance = null;
     public static TutorialDude Instance
@@ -29,14 +30,6 @@ public class TutorialDude : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        showing = true;
-        Invoke("IntroMessage", 1f);
-        Invoke("ZoomIn", 0.3f);
-    }
-
     private void Update()
     {
         if(showing && Input.anyKey)
@@ -47,10 +40,17 @@ public class TutorialDude : MonoBehaviour
         }
     }
 
+    public void Show(string message, float delay = 0f)
+    {
+        nextMessage = message;
+        showing = true;
+        Invoke("IntroMessage", delay + 0.7f);
+        Invoke("ZoomIn", delay);
+    }
+
     void IntroMessage()
     {
-        //ShowMessage("Oh no, we've ran out of hard hats! Be very careful!");
-        ShowMessage("You can command any engineer you want! Just point at them to give orders!");
+        ShowMessage(nextMessage);
     }
 
     void ShowMessage(string message)

@@ -10,6 +10,7 @@ public class Launcher : MonoBehaviour
     public Cinemachine.CinemachineVirtualCamera followCam;
     public Transform torquePointer;
     public Transform tutorialSpot;
+    public string introMessage;
 
     public bool immortals;
     public bool jumpers;
@@ -26,6 +27,11 @@ public class Launcher : MonoBehaviour
 
         var p = TutorialDude.Instance.transform.position;
         TutorialDude.Instance.transform.position = new Vector3(tutorialSpot.position.x, p.y, p.z);
+
+        if(introMessage != null && introMessage != string.Empty)
+        {
+            TutorialDude.Instance.Show(introMessage, 0.3f);
+        }
     }
 
     // Update is called once per frame
