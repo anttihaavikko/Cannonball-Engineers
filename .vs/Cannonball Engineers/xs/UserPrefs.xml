@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{1ADAFD7C-186E-74BB-F621-9D3BD15AF105}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TweenAction.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TutorialDude.cs">
     <Files>
       <File FileName="Assets/Scripts/Dude.cs" Line="48" Column="26" />
       <File FileName="Assets/Scripts/Launcher.cs" Line="31" Column="64" />
-      <File FileName="Assets/Scripts/Block.cs" Line="47" Column="31" />
+      <File FileName="Assets/Scripts/Block.cs" Line="83" Column="101" />
       <File FileName="Assets/Scripts/Door.cs" />
-      <File FileName="Assets/Scripts/Grabber.cs" Line="31" Column="13" />
+      <File FileName="Assets/Scripts/Grabber.cs" Line="13" Column="28" />
       <File FileName="Assets/Scripts/EffectCamera.cs" Line="63" Column="32" />
       <File FileName="Assets/Scripts/Tree.cs" Line="10" Column="1" />
       <File FileName="Assets/Scripts/Cloud.cs" Line="26" Column="61" />
@@ -13,9 +13,7 @@
       <File FileName="Assets/Scripts/MultiBlock.cs" Line="45" Column="133" />
       <File FileName="Assets/Scripts/LightBlinker.cs" Line="37" Column="1" />
       <File FileName="Assets/Scripts/SpeechBubble.cs" Line="125" Column="59" />
-      <File FileName="Assets/Scripts/TutorialDude.cs" Line="52" Column="6" />
-      <File FileName="Assets/Scripts/Tweener.cs" Line="115" Column="70" />
-      <File FileName="Assets/Scripts/TweenAction.cs" Line="17" Column="29" />
+      <File FileName="Assets/Scripts/TutorialDude.cs" Line="13" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,7 +21,7 @@
           <Node name="Cannonball Engineers" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="TweenAction.cs" selected="True" />
+                <Node name="TutorialDude.cs" selected="True" />
               </Node>
             </Node>
           </Node>

@@ -10,6 +10,7 @@ public class TutorialDude : MonoBehaviour
 
     private bool showing;
     private string nextMessage;
+    private bool appeared;
 
     private static TutorialDude instance = null;
     public static TutorialDude Instance
@@ -32,7 +33,7 @@ public class TutorialDude : MonoBehaviour
 
     private void Update()
     {
-        if(showing && Input.anyKey)
+        if(appeared && showing && Input.anyKey)
         {
             zoomCam.SetActive(false);
             bubble.Hide();
@@ -55,6 +56,7 @@ public class TutorialDude : MonoBehaviour
 
     void ShowMessage(string message)
     {
+        appeared = true;
         bubble.ShowMessage(message);
         anim.SetBool("pointing", true);
     }
@@ -72,6 +74,7 @@ public class TutorialDude : MonoBehaviour
 
     void AfterHide()
     {
+        appeared = false;
         showing = false;
         anim.SetBool("pointing", false);
     }
