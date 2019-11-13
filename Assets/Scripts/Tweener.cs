@@ -20,7 +20,7 @@ public class Tweener : MonoBehaviour {
 			instance = this;
 		}
 
-		actions = new List<TweenAction> ();
+        actions = new List<TweenAction> ();
 	}
 
 	void Update() {

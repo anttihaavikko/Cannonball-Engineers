@@ -78,9 +78,6 @@ public class Launcher : MonoBehaviour
 
             //dude = null;
         }
-
-        if (Input.GetKeyDown(KeyCode.R))
-            SceneManager.LoadSceneAsync("Main");
     }
 
     public void AddDude()

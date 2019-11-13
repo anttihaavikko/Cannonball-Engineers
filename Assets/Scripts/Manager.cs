@@ -8,6 +8,9 @@ public class Manager : MonoBehaviour {
 
     public Dude hoveredDude;
     public Dude activeDude;
+    public int levelToActivate = -1;
+
+    public List<string> levels;
 
 	private static Manager instance = null;
 	public static Manager Instance {
@@ -21,7 +24,9 @@ public class Manager : MonoBehaviour {
 		} else {
 			instance = this;
 		}
-	}
+
+        DontDestroyOnLoad(instance.gameObject);
+    }
 
     public void ChangeDude(Dude dude)
     {

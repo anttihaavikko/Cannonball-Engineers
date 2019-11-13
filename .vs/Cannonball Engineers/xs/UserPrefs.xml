@@ -1,19 +1,17 @@
 ﻿<Properties StartupConfiguration="{1ADAFD7C-186E-74BB-F621-9D3BD15AF105}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TutorialDude.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameManager.cs">
     <Files>
       <File FileName="Assets/Scripts/Dude.cs" Line="48" Column="26" />
-      <File FileName="Assets/Scripts/Launcher.cs" Line="31" Column="64" />
-      <File FileName="Assets/Scripts/Block.cs" Line="83" Column="101" />
+      <File FileName="Assets/Scripts/Launcher.cs" Line="86" Column="48" />
+      <File FileName="Assets/Scripts/Block.cs" />
       <File FileName="Assets/Scripts/Door.cs" />
-      <File FileName="Assets/Scripts/Grabber.cs" Line="13" Column="28" />
-      <File FileName="Assets/Scripts/EffectCamera.cs" Line="63" Column="32" />
-      <File FileName="Assets/Scripts/Tree.cs" Line="10" Column="1" />
-      <File FileName="Assets/Scripts/Cloud.cs" Line="26" Column="61" />
-      <File FileName="Assets/Scripts/Head.cs" Line="11" Column="49" />
-      <File FileName="Assets/Scripts/MultiBlock.cs" Line="45" Column="133" />
-      <File FileName="Assets/Scripts/LightBlinker.cs" Line="37" Column="1" />
-      <File FileName="Assets/Scripts/SpeechBubble.cs" Line="125" Column="59" />
-      <File FileName="Assets/Scripts/TutorialDude.cs" Line="13" Column="1" />
+      <File FileName="Assets/Scripts/TutorialDude.cs" Line="41" Column="10" />
+      <File FileName="Assets/Scripts/LevelActivator.cs" Line="13" Column="59" />
+      <File FileName="Assets/Scripts/Manager.cs" Line="17" Column="27" />
+      <File FileName="Assets/Scripts/LevelSelector.cs" Line="23" Column="6" />
+      <File FileName="Assets/Scripts/LevelTile.cs" Line="18" Column="17" />
+      <File FileName="Assets/Scripts/Blinders.cs" Line="28" Column="74" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="7" Column="14" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,7 +19,7 @@
           <Node name="Cannonball Engineers" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="TutorialDude.cs" selected="True" />
+                <Node name="GameManager.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -31,7 +29,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="069a7f5b-24e8-410a-8abb-f1e2f245163f" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="30925091-356d-4128-878b-7153869d2399" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
