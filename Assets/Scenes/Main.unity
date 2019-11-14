@@ -2362,7 +2362,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &186359602
 Transform:
   m_ObjectHideFlags: 0
@@ -6299,6 +6299,7 @@ MonoBehaviour:
   - {fileID: 69304723}
   angle: 0
   moveTime: 1.5
+  multipleActivations: 0
 --- !u!61 &458654801
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12106,6 +12107,7 @@ MonoBehaviour:
   - {fileID: 1441990500}
   angle: 90
   moveTime: 3
+  multipleActivations: 1
 --- !u!1 &894050599
 GameObject:
   m_ObjectHideFlags: 0
@@ -14741,6 +14743,7 @@ MonoBehaviour:
   - {fileID: 615997303}
   angle: 0
   moveTime: 1.5
+  multipleActivations: 0
 --- !u!61 &1075628156
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22593,6 +22596,7 @@ MonoBehaviour:
   - {fileID: 2096249437}
   angle: 0
   moveTime: 1.5
+  multipleActivations: 0
 --- !u!50 &1639710819
 Rigidbody2D:
   serializedVersion: 4
@@ -22771,6 +22775,7 @@ MonoBehaviour:
   - {fileID: 431369080}
   angle: 0
   moveTime: 1.5
+  multipleActivations: 0
 --- !u!61 &1648187225
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27805,6 +27810,7 @@ MonoBehaviour:
   - {fileID: 1982171163}
   angle: 0
   moveTime: 1.5
+  multipleActivations: 0
 --- !u!61 &2061380894
 BoxCollider2D:
   m_ObjectHideFlags: 0

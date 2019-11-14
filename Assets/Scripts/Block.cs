@@ -13,6 +13,7 @@ public class Block : MonoBehaviour
     public List<Gear> gears;
     public int angle;
     public float moveTime = 1.5f;
+    public bool multipleActivations;
 
     private Vector3 startPos;
     private int activations;
@@ -35,7 +36,8 @@ public class Block : MonoBehaviour
         if (wire)
             wire.SetActive(true);
 
-        gears.ForEach(g => Tweener.Instance.RotateTo(g.transform, Quaternion.Euler(0, 0, g.amount), moveTime, 0f, TweenEasings.LinearInterpolation));
+        float rotMulti = multipleActivations ? activations : 1f;
+        gears.ForEach(g => Tweener.Instance.RotateTo(g.transform, Quaternion.Euler(0, 0, g.amount * rotMulti), moveTime, 0f, TweenEasings.LinearInterpolation));
 
         if (door)
         {
@@ -61,7 +63,8 @@ public class Block : MonoBehaviour
         if(wire)
             wire.SetActive(false);
 
-        gears.ForEach(g => Tweener.Instance.RotateTo(g.transform, Quaternion.Euler(0, 0, 0), moveTime, 0f, TweenEasings.LinearInterpolation));
+        float rotMulti = multipleActivations ? activations : 1f;
+        gears.ForEach(g => Tweener.Instance.RotateTo(g.transform, Quaternion.Euler(0, 0, g.amount * rotMulti), moveTime, 0f, TweenEasings.LinearInterpolation));
 
         if (door)
         {

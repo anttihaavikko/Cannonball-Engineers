@@ -1,17 +1,17 @@
 ﻿<Properties StartupConfiguration="{1ADAFD7C-186E-74BB-F621-9D3BD15AF105}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Block.cs">
     <Files>
       <File FileName="Assets/Scripts/Dude.cs" Line="48" Column="26" />
-      <File FileName="Assets/Scripts/Launcher.cs" Line="86" Column="48" />
-      <File FileName="Assets/Scripts/Block.cs" />
+      <File FileName="Assets/Scripts/Launcher.cs" />
+      <File FileName="Assets/Scripts/Block.cs" Line="16" Column="13" />
       <File FileName="Assets/Scripts/Door.cs" />
-      <File FileName="Assets/Scripts/TutorialDude.cs" Line="41" Column="10" />
-      <File FileName="Assets/Scripts/LevelActivator.cs" Line="13" Column="59" />
-      <File FileName="Assets/Scripts/Manager.cs" Line="17" Column="27" />
-      <File FileName="Assets/Scripts/LevelSelector.cs" Line="23" Column="6" />
-      <File FileName="Assets/Scripts/LevelTile.cs" Line="18" Column="17" />
-      <File FileName="Assets/Scripts/Blinders.cs" Line="28" Column="74" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="7" Column="14" />
+      <File FileName="Assets/Scripts/TutorialDude.cs" />
+      <File FileName="Assets/Scripts/LevelActivator.cs" />
+      <File FileName="Assets/Scripts/Manager.cs" />
+      <File FileName="Assets/Scripts/LevelSelector.cs" />
+      <File FileName="Assets/Scripts/LevelTile.cs" Line="19" Column="55" />
+      <File FileName="Assets/Scripts/Blinders.cs" />
+      <File FileName="Assets/Scripts/GameManager.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,7 +19,7 @@
           <Node name="Cannonball Engineers" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="GameManager.cs" selected="True" />
+                <Node name="Block.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -29,7 +29,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="30925091-356d-4128-878b-7153869d2399" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0f2a5a35-e569-4e21-900c-d164b9995e38" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
