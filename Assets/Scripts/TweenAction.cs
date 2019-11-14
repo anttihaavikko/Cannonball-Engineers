@@ -63,7 +63,7 @@ public class TweenAction {
     {
         yield return new WaitForSeconds(tweenDelay);
         hasBeenInit = true;
-        startPos = theObject.transform.position;
+        startPos = theObject.position;
     }
 
     public IEnumerator SetBodyStartPos()
@@ -84,21 +84,21 @@ public class TweenAction {
     {
         yield return new WaitForSeconds(tweenDelay);
         hasBeenInit = true;
-        startPos = theObject.transform.localPosition;
+        startPos = theObject.localPosition;
     }
 
     public IEnumerator SetStartRot()
     {
         yield return new WaitForSeconds(tweenDelay);
         hasBeenInit = true;
-        startRot = theObject.transform.rotation;
+        startRot = theObject.rotation;
     }
 
     public IEnumerator SetStartScale()
     {
         yield return new WaitForSeconds(tweenDelay);
         hasBeenInit = true;
-        startPos = theObject.transform.localScale;
+        startPos = theObject.localScale;
     }
 
     public IEnumerator SetStartColor()

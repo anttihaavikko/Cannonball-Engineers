@@ -84,6 +84,11 @@ public class Dude : MonoBehaviour
 
         isAttached = true;
 
+        EndTurn();
+    }
+
+    void EndTurn()
+    {
         if (jumper)
         {
             line.enabled = true;
@@ -215,5 +220,6 @@ public class Dude : MonoBehaviour
     public void GetGrabbed()
     {
         isGrabbed = true;
+        EndTurn();
     }
 }

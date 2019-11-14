@@ -19,9 +19,13 @@ public class Launcher : MonoBehaviour
     private Vector3 launcherPos;
     private bool hasReserve;
 
+    private List<Dude> dudes;
+
     // Start is called before the first frame update
     void Start()
     {
+        dudes = new List<Dude>();
+
         AddDude();
         launcherPos = launcher.transform.position;
 
@@ -97,6 +101,9 @@ public class Launcher : MonoBehaviour
         reserveDude.line.enabled = false;
         hasReserve = true;
 
+        dudes.Add(reserveDude);
+        GarbageCollection();
+
         ActivateIfNeeded();
     }
 
@@ -136,5 +143,34 @@ public class Launcher : MonoBehaviour
         {
             ActivateReserve();
         }
+    }
+
+    void GarbageCollection()
+    {
+        int limit = 10;
+        var deads = dudes.FindAll(d => d != null && !d.isAlive);
+
+        if (dudes.Count > limit)
+            Invoke("GarbageCollection", 5f);
+
+        if (dudes.Count > limit && deads.Count > 0)
+        {
+            var toRemove = dudes.Find(d => !d.isAlive);
+            dudes.Remove(toRemove);
+            Destroy(toRemove.gameObject);
+        }
+
+        if(dudes.Count > 15)
+        {
+            var d = dudes[0];
+            d.Die();
+            Invoke("RemoveFirstDude", 5f);
+        }
+    }
+
+    void RemoveFirstDude()
+    {
+        Destroy(dudes[0].gameObject);
+        dudes.RemoveAt(0);
     }
 }
