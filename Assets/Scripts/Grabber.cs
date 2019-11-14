@@ -42,7 +42,7 @@ public class Grabber : MonoBehaviour
             return true;
         }
 
-        if (go.tag == "Block")
+        if (go.tag == "Block" || go.tag == "Slippery" && dude.IsAttachedOrGrabbed())
         {
             Block block = go.GetComponent<Block>();
             if(!dude.HasActivated(block))
@@ -53,7 +53,18 @@ public class Grabber : MonoBehaviour
             return true;
         }
 
-        return go.tag == "Limb" && go.transform.parent != transform.parent;
+        if(go.tag == "Limb" && go.transform.parent != transform.parent)
+        {
+            var d = go.GetComponentInParent<Dude>();
+            if(d && d.isAlive)
+            {
+                d.GetGrabbed();
+            }
+
+            return true;
+        }
+
+        return false;
     }
 
     public void Detach()

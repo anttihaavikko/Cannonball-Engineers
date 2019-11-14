@@ -13,6 +13,7 @@ TagManager:
   - Left Legs
   - Right Legs
   - MultiBlock
+  - Slippery
   layers:
   - Default
   - TransparentFX

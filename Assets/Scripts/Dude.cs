@@ -28,6 +28,7 @@ public class Dude : MonoBehaviour
     private EffectCamera cam;
     private bool firstJump = true;
     private bool isAttached;
+    private bool isGrabbed;
 
     // Start is called before the first frame update
     void Start()
@@ -204,5 +205,15 @@ public class Dude : MonoBehaviour
         if (!firstJump && !isAttached) return;
 
         outlines.ForEach(o => o.SetActive(state));
+    }
+
+    public bool IsAttachedOrGrabbed()
+    {
+        return isAttached || isGrabbed;
+    }
+
+    public void GetGrabbed()
+    {
+        isGrabbed = true;
     }
 }

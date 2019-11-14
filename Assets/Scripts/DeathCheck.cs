@@ -10,7 +10,7 @@ public class DeathCheck : MonoBehaviour
     {
         var t = collision.gameObject.tag;
 
-        if (t == "Wall" || t == "Block")
+        if (t == "Wall" || t == "Block" || t == "MultiBlock" || t == "Slippery")
         {
             Invoke("Die", 0.2f);
         }
@@ -20,7 +20,7 @@ public class DeathCheck : MonoBehaviour
     {
         var t = collision.gameObject.tag;
 
-        if (t == "Wall" || t == "Block")
+        if (t == "Wall" || t == "Block" || t == "MultiBlock" || t == "Slippery")
         {
             CancelInvoke("Die");
         }

@@ -10,7 +10,8 @@ public class Head : MonoBehaviour
     {
         if(collision.gameObject.tag == "Wall" ||
             collision.gameObject.tag == "Block" ||
-            collision.gameObject.tag == "MultiBlock")
+            collision.gameObject.tag == "MultiBlock" ||
+            collision.gameObject.tag == "Slippery")
         {
             if(collision.relativeVelocity.magnitude > 30 && !dude.hardHat)
             {

@@ -1,17 +1,13 @@
 ﻿<Properties StartupConfiguration="{1ADAFD7C-186E-74BB-F621-9D3BD15AF105}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Block.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Grabber.cs">
     <Files>
-      <File FileName="Assets/Scripts/Dude.cs" Line="48" Column="26" />
+      <File FileName="Assets/Scripts/Dude.cs" Line="211" Column="27" />
       <File FileName="Assets/Scripts/Launcher.cs" />
-      <File FileName="Assets/Scripts/Block.cs" Line="16" Column="13" />
+      <File FileName="Assets/Scripts/Block.cs" Line="39" Column="14" />
       <File FileName="Assets/Scripts/Door.cs" />
-      <File FileName="Assets/Scripts/TutorialDude.cs" />
-      <File FileName="Assets/Scripts/LevelActivator.cs" />
-      <File FileName="Assets/Scripts/Manager.cs" />
-      <File FileName="Assets/Scripts/LevelSelector.cs" />
       <File FileName="Assets/Scripts/LevelTile.cs" Line="19" Column="55" />
       <File FileName="Assets/Scripts/Blinders.cs" />
-      <File FileName="Assets/Scripts/GameManager.cs" />
+      <File FileName="Assets/Scripts/Grabber.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,7 +15,7 @@
           <Node name="Cannonball Engineers" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Block.cs" selected="True" />
+                <Node name="Grabber.cs" selected="True" />
               </Node>
             </Node>
           </Node>
