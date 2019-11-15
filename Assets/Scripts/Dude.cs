@@ -29,6 +29,7 @@ public class Dude : MonoBehaviour
     private bool firstJump = true;
     private bool isAttached;
     private bool isGrabbed;
+    private bool bounced;
 
     // Start is called before the first frame update
     void Start()
@@ -59,7 +60,10 @@ public class Dude : MonoBehaviour
             var p2 = j.connectedBody.transform.TransformPoint(j.connectedAnchor);
             var diff = (p1 - p2).magnitude;
 
-            if (diff > 1) Die();
+            if (diff > 1)
+            {
+                Die();
+            }
         });
     }
 
@@ -221,5 +225,17 @@ public class Dude : MonoBehaviour
     {
         isGrabbed = true;
         EndTurn();
+    }
+
+    public void Bounce()
+    {
+        canDie = false;
+        CancelInvoke("AfterBounce");
+        Invoke("AfterBounce", 0.3f);
+    }
+
+    void AfterBounce()
+    {
+        canDie = true;
     }
 }
