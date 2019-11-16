@@ -23,7 +23,7 @@ public class GoalHomer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!homing && collision.gameObject.tag == "Goal")
+        if (!homing && collision.gameObject.tag == "Goal" && dude.isAlive && !dude.IsAttachedOrGrabbed())
         {
             dude.canDie = false;
             dude.canGrab = false;
