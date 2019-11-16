@@ -37,6 +37,8 @@ public class EffectCamera : MonoBehaviour {
             ca.intensity.value = chromaAmount;
         }
 
+        Time.timeScale = Mathf.MoveTowards(Time.timeScale, 1f, Time.unscaledDeltaTime);
+
   //      if (shakeTime > 0f) {
 		//	shakeTime -= Time.deltaTime;
 		//	transform.position = transform.position + new Vector3 (Random.Range (-shakeAmount, shakeAmount), Random.Range (-shakeAmount, shakeAmount), 0);
@@ -62,5 +64,6 @@ public class EffectCamera : MonoBehaviour {
         //Shake(0.04f * mod, 0.075f * mod);
         Chromate (1.5f * mod, 2f * mod);
 
-	}
+        Time.timeScale = Mathf.Clamp(1f - 0.3f * mod, 0f, 1f);
+    }
 }
