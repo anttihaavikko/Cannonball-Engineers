@@ -112,6 +112,9 @@ public class Dude : MonoBehaviour
         if (!firstJump && !jumper)
             return;
 
+        if (!firstJump && !isAttached && !isGrabbed)
+            return;
+
         isAttached = false;
 
         activatedBlocks.ForEach(b => b.Deactivate());
@@ -209,7 +212,7 @@ public class Dude : MonoBehaviour
         joints.ForEach(j => j.enabled = false);
         bodies.ForEach(rb =>
         {
-            rb.gameObject.tag = "BodyPart";
+            //rb.gameObject.tag = "BodyPart";
             var dir = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
             rb.AddForce(dir * rb.mass * 100f, ForceMode2D.Impulse);
         });

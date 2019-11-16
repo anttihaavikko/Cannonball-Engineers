@@ -98,7 +98,8 @@ public class TweenAction {
     {
         yield return new WaitForSeconds(tweenDelay);
         hasBeenInit = true;
-        startPos = theObject.localScale;
+        if(theObject)
+            startPos = theObject.localScale;
     }
 
     public IEnumerator SetStartColor()
