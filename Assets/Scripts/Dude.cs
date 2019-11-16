@@ -77,7 +77,7 @@ public class Dude : MonoBehaviour
 
     public bool IsDone()
     {
-        return !jumper && isAttached;
+        return !jumper && isAttached && !isGrabbed;
     }
 
     public void Attach()
@@ -91,11 +91,16 @@ public class Dude : MonoBehaviour
         EndTurn();
     }
 
+    bool IsActiveOne()
+    {
+        return this != Manager.Instance.activeDude;
+    }
+
     void EndTurn()
     {
         if (jumper)
         {
-            line.enabled = true;
+            Manager.Instance.activeDude.line.enabled = true;
         }
         else
             launcher.ActivateReserve();
@@ -212,7 +217,7 @@ public class Dude : MonoBehaviour
 
     public void ToggleOutline(bool state)
     {
-        if (!firstJump && !isAttached) return;
+        if (!firstJump && !isAttached || !isAlive) return;
 
         outlines.ForEach(o => o.SetActive(state));
     }
