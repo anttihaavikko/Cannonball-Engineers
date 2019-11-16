@@ -34,8 +34,9 @@ public class DudeClicker : MonoBehaviour
         Manager.Instance.ChangeDude(dude);
         dude.ToggleOutline(false);
         EffectManager.Instance.AddEffect(5, dude.body.transform.position);
+        EffectManager.Instance.AddEffect(7, dude.body.transform.position);
 
-        if(dude.launcher)
+        if (dude.launcher)
         {
             dude.launcher.ActivateIfReserve(dude);
         }

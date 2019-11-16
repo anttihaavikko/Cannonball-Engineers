@@ -194,6 +194,7 @@ public class Dude : MonoBehaviour
 
         EffectManager.Instance.AddEffect(0, body.transform.position);
         EffectManager.Instance.AddEffect(1, body.transform.position);
+        EffectManager.Instance.AddEffect(6, body.transform.position);
 
         grabbers.ForEach(g =>
         {

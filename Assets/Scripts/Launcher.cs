@@ -71,6 +71,7 @@ public class Launcher : MonoBehaviour
             }
 
             EffectManager.Instance.AddEffect(4, transform.position);
+            EffectManager.Instance.AddEffect(7, transform.position);
 
             var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             var dir = pos - dude.body.transform.position;
