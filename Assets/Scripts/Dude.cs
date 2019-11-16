@@ -109,6 +109,9 @@ public class Dude : MonoBehaviour
     // Update is called once per frame
     public void Launch(Cinemachine.CinemachineVirtualCamera fCam)
     {
+        if (!isAlive)
+            return;
+
         if (!firstJump && !jumper)
             return;
 

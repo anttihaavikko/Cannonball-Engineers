@@ -20,6 +20,7 @@ public class Launcher : MonoBehaviour
     private bool hasReserve;
 
     private List<Dude> dudes;
+    private int launchCount;
 
     // Start is called before the first frame update
     void Start()
@@ -63,12 +64,16 @@ public class Launcher : MonoBehaviour
 
             dude.Launch(followCam);
 
+            CancelInvoke("AddDude");
             Invoke("AddDude", 2f);
 
             if (hasReserve)
             {
+                hasReserve = Manager.Instance.activeDude != reserveDude;
                 return;
             }
+
+            hasReserve = false;
 
             EffectManager.Instance.AddEffect(4, transform.position);
             EffectManager.Instance.AddEffect(7, transform.position);
@@ -102,6 +107,9 @@ public class Launcher : MonoBehaviour
         reserveDude.line.enabled = false;
         hasReserve = true;
 
+        launchCount++;
+        reserveDude.gameObject.name = "Dude #" + launchCount;
+
         dudes.Add(reserveDude);
         GarbageCollection();
 
@@ -134,8 +142,6 @@ public class Launcher : MonoBehaviour
         {
             Manager.Instance.activeDude.line.enabled = true;
         }
-
-        hasReserve = false;
     }
 
     public void ActivateIfReserve(Dude d)
