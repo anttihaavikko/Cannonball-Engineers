@@ -9,6 +9,7 @@ public class Block : MonoBehaviour
     public Rigidbody2D body;
     public SpriteRenderer[] icons;
     public Door door;
+    public List<Door> moreDoors;
     public GameObject wire;
     public List<Gear> gears;
     public int angle;
@@ -45,6 +46,11 @@ public class Block : MonoBehaviour
             return;
         }
 
+        if(moreDoors.Any())
+        {
+            moreDoors.ForEach(d => d.Open());
+        }
+
         if(angle != 0)
         {
             Invoke("DoRotation", 0.25f);
@@ -63,7 +69,7 @@ public class Block : MonoBehaviour
         if(wire)
             wire.SetActive(false);
 
-        float rotMulti = multipleActivations ? activations : 1f;
+        float rotMulti = multipleActivations ? activations : 0f;
         gears.ForEach(g => Tweener.Instance.RotateTo(g.transform, Quaternion.Euler(0, 0, g.amount * rotMulti), moveTime, 0f, TweenEasings.LinearInterpolation));
 
         if (door)
@@ -72,7 +78,12 @@ public class Block : MonoBehaviour
             return;
         }
 
-        if(angle != 0)
+        if (moreDoors.Any())
+        {
+            moreDoors.ForEach(d => d.Close());
+        }
+
+        if (angle != 0)
         {
             Invoke("DoRotation", 0.25f);
             return;
