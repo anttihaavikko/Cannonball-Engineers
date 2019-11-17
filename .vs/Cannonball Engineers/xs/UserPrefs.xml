@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{1ADAFD7C-186E-74BB-F621-9D3BD15AF105}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Launcher.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EffectCamera.cs">
     <Files>
-      <File FileName="Assets/Scripts/Dude.cs" Line="114" Column="1" />
-      <File FileName="Assets/Scripts/Launcher.cs" Line="122" Column="1" />
+      <File FileName="Assets/Scripts/Dude.cs" Line="134" Column="1" />
+      <File FileName="Assets/Scripts/Launcher.cs" Line="54" Column="21" />
       <File FileName="Assets/Scripts/Block.cs" Line="72" Column="64" />
       <File FileName="Assets/Scripts/Door.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/LevelTile.cs" Line="19" Column="55" />
@@ -14,7 +14,6 @@
       <File FileName="Assets/Splats/DisplaceCam.cs" Line="31" Column="1" />
       <File FileName="Assets/Scripts/DudeClicker.cs" Line="37" Column="9" />
       <File FileName="Assets/Scripts/EffectCamera.cs" Line="67" Column="46" />
-      <File FileName="Assets/Scripts/GoalHomer.cs" Line="26" Column="79" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,7 +21,7 @@
           <Node name="Cannonball Engineers" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Launcher.cs" selected="True" />
+                <Node name="EffectCamera.cs" selected="True" />
               </Node>
               <Node name="Splats" expanded="True" />
             </Node>
