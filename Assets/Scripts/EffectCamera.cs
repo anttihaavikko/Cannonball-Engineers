@@ -9,14 +9,14 @@ public class EffectCamera : MonoBehaviour {
 
     private float cutoff = 1f, targetCutoff = 1f;
 	private float prevCutoff = 1f;
-	private float cutoffPos = 0f;
+	private float cutoffPos;
 	private float transitionTime = 0.5f;
     public Cinemachine.CinemachineImpulseSource impulseSource;
 
     private PostProcessVolume ppVolume;
 	private float chromaAmount;
     private float bulgeAmount = defaultLensDistortion;
-    private float bulgeSpeed = 1f;
+    private float bulgeSpeed;
 	private float chromaSpeed = 1f;
 
 	private float shakeAmount = 0f, shakeTime = 0f;
@@ -78,7 +78,7 @@ public class EffectCamera : MonoBehaviour {
         impulseSource.GenerateImpulse(Vector3.one * mod * 40f);
         //Shake(0.04f * mod, 0.075f * mod);
         Chromate (1.5f * mod, 2f * mod);
-        Bulge(defaultLensDistortion * mod, 2f * mod);
+        Bulge(defaultLensDistortion * 1.75f * mod, 10f * mod);
 
         Time.timeScale = Mathf.Clamp(1f - 0.3f * mod, 0f, 1f);
     }
