@@ -56,6 +56,11 @@ public class Launcher : MonoBehaviour
         var seconds = total % 60;
         timer.text = $"{minutes}:{seconds.ToString("D2")}";
 
+        if(minutes >= 10)
+        {
+            timer.fontSize = 4f;
+        }
+
         var dude = Manager.Instance.activeDude;
 
         if (dude)
