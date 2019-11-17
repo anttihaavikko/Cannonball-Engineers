@@ -77,8 +77,8 @@ MonoBehaviour:
   - {fileID: -3943562509807608439}
   - {fileID: 7855382926111695114}
   - {fileID: -8981772576300828471}
-  - {fileID: 4810821498087723521}
---- !u!114 &4810821498087723521
+  - {fileID: 6576249651399648403}
+--- !u!114 &6576249651399648403
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,34 +87,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a34fa72bd4185749832024e9c8010bf, type: 3}
-  m_Name: ScreenSpaceReflections
+  m_Script: {fileID: 11500000, guid: 4fe00ef72a56f4b1d8a220f00e7c46e1, type: 3}
+  m_Name: ColorSplit
   m_EditorClassIdentifier: 
   active: 1
   enabled:
     overrideState: 1
     value: 1
-  preset:
-    overrideState: 1
-    value: 2
-  maximumIterationCount:
-    overrideState: 1
-    value: 16
-  resolution:
+  amount:
     overrideState: 1
     value: 0
-  thickness:
+  redOffset:
     overrideState: 1
-    value: 8
-  maximumMarchDistance:
+    value: {x: 1, y: 0}
+  greenOffset:
     overrideState: 1
-    value: 100
-  distanceFade:
+    value: {x: 0, y: 0}
+  blueOffset:
     overrideState: 1
-    value: 0.5
-  vignette:
-    overrideState: 1
-    value: 0.5
+    value: {x: 1, y: 0}
 --- !u!114 &6762508394786356172
 MonoBehaviour:
   m_ObjectHideFlags: 3

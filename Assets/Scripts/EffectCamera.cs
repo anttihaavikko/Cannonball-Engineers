@@ -14,17 +14,19 @@ public class EffectCamera : MonoBehaviour {
     public Cinemachine.CinemachineImpulseSource impulseSource;
 
     private PostProcessVolume ppVolume;
-	private float chromaAmount;
+	private float chromaAmount, splitAmount;
     private float bulgeAmount = defaultLensDistortion;
     private float bulgeSpeed;
 	private float chromaSpeed = 1f;
+    private float splitSpeed = 1f;
 
-	private float shakeAmount = 0f, shakeTime = 0f;
+    private float shakeAmount = 0f, shakeTime = 0f;
 
 	private Vector3 originalPos;
 
     private ChromaticAberration ca;
     private LensDistortion ld;
+    private ColorSplit cs;
 
     public Cinemachine.CinemachineBrain brain;
 
@@ -33,6 +35,7 @@ public class EffectCamera : MonoBehaviour {
         originalPos = transform.position;
         ppVolume.profile.TryGetSettings(out ca);
         ppVolume.profile.TryGetSettings(out ld);
+        ppVolume.profile.TryGetSettings(out cs);
     }
 
 	void Update() {
@@ -44,6 +47,9 @@ public class EffectCamera : MonoBehaviour {
 
             bulgeAmount = Mathf.MoveTowards(bulgeAmount, defaultLensDistortion, Time.deltaTime * bulgeSpeed);
             ld.intensity.value = bulgeAmount;
+
+            splitAmount = Mathf.MoveTowards(splitAmount, 0, Time.deltaTime * splitSpeed);
+            cs.amount.value = splitAmount;
         }
 
         Time.timeScale = Mathf.MoveTowards(Time.timeScale, 1f, Time.unscaledDeltaTime);
@@ -61,7 +67,10 @@ public class EffectCamera : MonoBehaviour {
 	public void Chromate(float amount, float speed) {
 		chromaAmount = amount;
 		chromaSpeed = speed;
-	}
+
+        splitAmount = amount * 0.003f;
+        splitSpeed = speed * 0.003f;
+    }
 
 	public void Shake(float amount, float time) {
         shakeAmount = amount;
