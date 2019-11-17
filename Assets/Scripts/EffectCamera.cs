@@ -80,6 +80,6 @@ public class EffectCamera : MonoBehaviour {
         Chromate (1.5f * mod, 2f * mod);
         Bulge(defaultLensDistortion * 1.1f * mod, 50f * mod);
 
-        Time.timeScale = Mathf.Clamp(1f - 0.1f * mod, 0f, 1f);
+        Time.timeScale = Mathf.Clamp(1f - 0.2f * mod, 0f, 1f);
     }
 }
