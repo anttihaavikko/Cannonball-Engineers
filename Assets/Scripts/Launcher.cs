@@ -11,6 +11,10 @@ public class Launcher : MonoBehaviour
     public Transform torquePointer;
     public Transform tutorialSpot;
     public string introMessage;
+    public TMPro.TextMeshPro threeLimit, twoLimit, timer;
+
+    public int threeStarLimit = 3;
+    public int twoStarLimit = 5;
 
     public bool immortals;
     public bool jumpers;
@@ -21,11 +25,14 @@ public class Launcher : MonoBehaviour
 
     private List<Dude> dudes;
     private int launchCount;
+    private float levelTime;
 
     // Start is called before the first frame update
     void Start()
     {
         dudes = new List<Dude>();
+
+        UpdateCounter();
 
         AddDude();
         launcherPos = launcher.transform.position;
@@ -42,6 +49,13 @@ public class Launcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        levelTime += Time.deltaTime;
+
+        var total = Mathf.FloorToInt(levelTime);
+        var minutes = total / 60;
+        var seconds = total % 60;
+        timer.text = $"{minutes}:{seconds.ToString("D2")}";
+
         var dude = Manager.Instance.activeDude;
 
         if (dude)
@@ -62,7 +76,7 @@ public class Launcher : MonoBehaviour
                 return;
             }
 
-            dude.Launch(followCam);
+            var wasLaunch = dude.Launch(followCam);
 
             CancelInvoke("AddDude");
             Invoke("AddDude", 2f);
@@ -70,8 +84,13 @@ public class Launcher : MonoBehaviour
             if (hasReserve)
             {
                 hasReserve = Manager.Instance.activeDude != reserveDude;
-                return;
             }
+
+            if (!wasLaunch) return;
+
+            launchCount++;
+
+            UpdateCounter();
 
             hasReserve = false;
 
@@ -88,6 +107,12 @@ public class Launcher : MonoBehaviour
 
             //dude = null;
         }
+    }
+
+    void UpdateCounter()
+    {
+        threeLimit.text = Mathf.Max(threeStarLimit - launchCount, 0).ToString();
+        twoLimit.text = Mathf.Max(twoStarLimit - launchCount, 0).ToString();
     }
 
     public void AddDude()
@@ -107,7 +132,6 @@ public class Launcher : MonoBehaviour
         reserveDude.line.enabled = false;
         hasReserve = true;
 
-        launchCount++;
         reserveDude.gameObject.name = "Dude #" + launchCount;
 
         dudes.Add(reserveDude);

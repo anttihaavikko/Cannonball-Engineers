@@ -107,16 +107,16 @@ public class Dude : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void Launch(Cinemachine.CinemachineVirtualCamera fCam)
+    public bool Launch(Cinemachine.CinemachineVirtualCamera fCam)
     {
         if (!isAlive)
-            return;
+            return false;
 
         if (!firstJump && !jumper)
-            return;
+            return false;
 
         if (!firstJump && !isAttached && !isGrabbed)
-            return;
+            return false;
 
         isAttached = false;
 
@@ -147,7 +147,11 @@ public class Dude : MonoBehaviour
 
         hands.ToList().ForEach(h => h.AddForce(dir * Random.Range(5f, 10f), ForceMode2D.Impulse));
 
+        var ret = firstJump;
+
         firstJump = false;
+
+        return ret;
     }
 
     public void ActivateBlock(Block block)
