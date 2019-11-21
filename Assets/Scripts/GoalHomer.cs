@@ -30,6 +30,13 @@ public class GoalHomer : MonoBehaviour
             homing = true;
             goalPos = collision.gameObject.transform.position;
             body.gravityScale = 0f;
+
+			Invoke("DoSuccess", 2f);
         }
     }
+
+    void DoSuccess()
+	{
+        GameManager.Instance.Success();
+	}
 }

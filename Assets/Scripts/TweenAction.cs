@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TweenAction {
 	
@@ -17,6 +18,7 @@ public class TweenAction {
 	public Transform theObject;
     public Rigidbody2D body;
 	public SpriteRenderer sprite;
+    public Image uiImage;
 	public Vector3 startPos, targetPos;
 	public Quaternion startRot, targetRot;
 	public Color startColor, targetColor;
@@ -106,7 +108,12 @@ public class TweenAction {
     {
         yield return new WaitForSeconds(tweenDelay);
         hasBeenInit = true;
-        startColor = sprite.color;
+
+        if(sprite)
+            startColor = sprite.color;
+
+        if (uiImage)
+            startColor = uiImage.color;
     }
 
     public bool Process() {
@@ -152,8 +159,12 @@ public class TweenAction {
 			}
 
 			if (type == Type.Color) {
-				sprite.color = Lerp (startColor, targetColor, DoEase ());
-			}
+                if (sprite)
+                    sprite.color = Lerp(startColor, targetColor, DoEase());
+
+                if (uiImage)
+                    uiImage.color = Lerp(startColor, targetColor, DoEase());
+            }
 		}
 
 		return (tweenPos >= 1f);

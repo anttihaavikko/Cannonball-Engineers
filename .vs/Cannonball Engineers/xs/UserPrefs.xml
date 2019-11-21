@@ -1,23 +1,12 @@
 ﻿<Properties StartupConfiguration="{1ADAFD7C-186E-74BB-F621-9D3BD15AF105}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/StartView.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Tweener.cs">
     <Files>
       <File FileName="Assets/Scripts/Dude.cs" Line="134" Column="1" />
-      <File FileName="Assets/Scripts/Launcher.cs" Line="61" Column="33" />
-      <File FileName="Assets/Scripts/Block.cs" Line="72" Column="64" />
-      <File FileName="Assets/Scripts/Door.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/LevelTile.cs" Line="19" Column="55" />
-      <File FileName="Assets/Scripts/Blinders.cs" />
-      <File FileName="Assets/Scripts/Grabber.cs" Line="67" Column="21" />
-      <File FileName="Assets/Scripts/TweenAction.cs" Line="102" Column="13" />
-      <File FileName="Assets/Scripts/Head.cs" Line="17" Column="14" />
-      <File FileName="Assets/Scripts/BouncePad.cs" Line="13" Column="10" />
-      <File FileName="Assets/Splats/DisplaceCam.cs" Line="31" Column="1" />
-      <File FileName="Assets/Scripts/DudeClicker.cs" Line="37" Column="9" />
-      <File FileName="Assets/Scripts/EffectCamera.cs" Line="46" Column="33" />
-      <File FileName="Assets/Effects/ColorSplit.cs" Line="25" Column="35" />
-      <File FileName="Assets/Effects/NewShader.shader" Line="27" Column="101" />
-      <File FileName="Assets/InvertedMaskImage.cs" Line="7" Column="1" />
-      <File FileName="Assets/StartView.cs" Line="7" Column="22" />
+      <File FileName="Assets/Scripts/Launcher.cs" />
+      <File FileName="Assets/Scripts/SuccessView.cs" Line="21" Column="30" />
+      <File FileName="Assets/Scripts/Toggler.cs" Line="24" Column="9" />
+      <File FileName="Assets/Scripts/Star.cs" Line="24" Column="1" />
+      <File FileName="Assets/Scripts/Tweener.cs" Line="199" Column="33" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -25,9 +14,10 @@
           <Node name="Cannonball Engineers" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Effects" expanded="True" />
-              <Node name="Scripts" expanded="True" />
+              <Node name="Scripts" expanded="True">
+                <Node name="Tweener.cs" selected="True" />
+              </Node>
               <Node name="Splats" expanded="True" />
-              <Node name="StartView.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -36,7 +26,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0f2a5a35-e569-4e21-900c-d164b9995e38" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0ba41d11-986b-4527-a94b-4e96318c9aea" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

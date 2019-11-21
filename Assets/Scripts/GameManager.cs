@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public Blinders blinders;
+    public SuccessView successView;
 
     private static GameManager instance = null;
     public static GameManager Instance
@@ -34,6 +35,11 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
             BackToLevelSelect();
+    }
+
+    public void Success()
+    {
+        successView.Appear();
     }
 
     public void BackToLevelSelect()

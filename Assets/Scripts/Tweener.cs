@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Tweener : MonoBehaviour {
 
@@ -181,6 +182,20 @@ public class Tweener : MonoBehaviour {
 		act.sprite = obj;
 		act.startColor = act.sprite.color;
 		act.targetColor = color;
+        StartCoroutine(act.SetStartColor());
+    }
+
+    public void ColorTo(Image obj, Color color, float duration, float delay, System.Func<float, float> ease = null, int easeIndex = -1, bool removeOld = true)
+    {
+        if (ease == null)
+        {
+            ease = TweenEasings.LinearInterpolation;
+        }
+
+        TweenAction act = AddTween(obj.transform, Vector3.zero, TweenAction.Type.Color, duration, delay, ease, easeIndex, removeOld);
+        act.uiImage = obj;
+        act.startColor = act.uiImage.color;
+        act.targetColor = color;
         StartCoroutine(act.SetStartColor());
     }
 }
