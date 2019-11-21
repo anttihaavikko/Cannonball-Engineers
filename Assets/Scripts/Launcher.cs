@@ -49,16 +49,19 @@ public class Launcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        levelTime += Time.deltaTime;
+        if (GameManager.Instance.running) {
+            levelTime += Time.deltaTime;
+            var total = Mathf.FloorToInt(levelTime);
+            var minutes = total / 60;
+            var seconds = total % 60;
+            timer.text = $"{minutes}:{seconds.ToString("D2")}";
 
-        var total = Mathf.FloorToInt(levelTime);
-        var minutes = total / 60;
-        var seconds = total % 60;
-        timer.text = $"{minutes}:{seconds.ToString("D2")}";
+            if (minutes >= 10)
+            {
+                timer.fontSize = 4f;
+            }
 
-        if(minutes >= 10)
-        {
-            timer.fontSize = 4f;
+            GameManager.Instance.time = timer.text;
         }
 
         var dude = Manager.Instance.activeDude;

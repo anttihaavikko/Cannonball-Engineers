@@ -22,7 +22,7 @@ public class Toggler : MonoBehaviour
     public void Show()
     {
         Tweener.Instance.ScaleTo(transform, shownSize, duration, showDelay, TweenEasings.BounceEaseOut);
-        Invoke("DoEffect", showDelay + duration);
+        Invoke("DoEffect", showDelay + duration * 0.8f);
     }
 
     public void Hide()

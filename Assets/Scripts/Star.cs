@@ -14,6 +14,7 @@ public class Star : MonoBehaviour
     {
         float dur = 0.33f;
         Tweener.Instance.ScaleTo(filling, Vector3.one, dur, delay, TweenEasings.BounceEaseOut);
+        Tweener.Instance.RotateTo(filling, Quaternion.Euler(0, 0, 0), dur * 0.5f, delay, TweenEasings.BounceEaseOut);
         Invoke("StartPulse", delay + dur);
     }
 

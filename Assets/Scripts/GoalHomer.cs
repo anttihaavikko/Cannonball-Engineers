@@ -32,6 +32,7 @@ public class GoalHomer : MonoBehaviour
             body.gravityScale = 0f;
 
 			Invoke("DoSuccess", 2f);
+            GameManager.Instance.running = false;
         }
     }
 

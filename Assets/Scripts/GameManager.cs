@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
     public Blinders blinders;
     public SuccessView successView;
+    public string time;
+    public bool running = true;
 
     private static GameManager instance = null;
     public static GameManager Instance
