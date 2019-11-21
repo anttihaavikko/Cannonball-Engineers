@@ -25,6 +25,9 @@ public class SuccessView : MonoBehaviour
 
     void ShowStars()
     {
-        stars.ForEach(s => s.Appear());
+        for(int i = 0; i < GameManager.Instance.starCount; i++)
+        {
+            stars[i].Appear();
+        }
     }
 }

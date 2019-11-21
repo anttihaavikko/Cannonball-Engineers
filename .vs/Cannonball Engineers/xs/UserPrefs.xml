@@ -1,13 +1,14 @@
 ﻿<Properties StartupConfiguration="{1ADAFD7C-186E-74BB-F621-9D3BD15AF105}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameButton.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SuccessView.cs">
     <Files>
       <File FileName="Assets/Scripts/Dude.cs" Line="134" Column="1" />
-      <File FileName="Assets/Scripts/Launcher.cs" Line="11" Column="36" />
-      <File FileName="Assets/Scripts/SuccessView.cs" Line="11" Column="33" />
-      <File FileName="Assets/Scripts/Toggler.cs" Line="25" Column="55" />
-      <File FileName="Assets/Scripts/Star.cs" Line="17" Column="81" />
-      <File FileName="Assets/Scripts/LevelTile.cs" Line="12" Column="28" />
-      <File FileName="Assets/Scripts/GameButton.cs" Line="13" Column="16" />
+      <File FileName="Assets/Scripts/Launcher.cs" Line="126" Column="26" />
+      <File FileName="Assets/Scripts/SuccessView.cs" Line="23" Column="33" />
+      <File FileName="Assets/Scripts/Toggler.cs" />
+      <File FileName="Assets/Scripts/Star.cs" />
+      <File FileName="Assets/Scripts/LevelTile.cs" />
+      <File FileName="Assets/Scripts/GameButton.cs" />
+      <File FileName="Assets/Scripts/GameManager.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,7 +17,7 @@
             <Node name="Assets" expanded="True">
               <Node name="Effects" expanded="True" />
               <Node name="Scripts" expanded="True">
-                <Node name="GameButton.cs" selected="True" />
+                <Node name="SuccessView.cs" selected="True" />
               </Node>
               <Node name="Splats" expanded="True" />
             </Node>
@@ -27,7 +28,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0ba41d11-986b-4527-a94b-4e96318c9aea" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="be47a719-ec33-4b7a-b31e-d8513f28feb6" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

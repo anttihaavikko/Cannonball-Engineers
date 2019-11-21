@@ -9,8 +9,9 @@ public class GameManager : MonoBehaviour
     public SuccessView successView;
     public string time;
     public bool running = true;
+	public int starCount = 3;
 
-    private static GameManager instance = null;
+	private static GameManager instance = null;
     public static GameManager Instance
     {
         get { return instance; }

@@ -121,6 +121,9 @@ public class Launcher : MonoBehaviour
     {
         threeLimit.text = Mathf.Max(threeStarLimit - launchCount, 0).ToString();
         twoLimit.text = Mathf.Max(twoStarLimit - launchCount, 0).ToString();
+
+        if (launchCount > threeStarLimit) GameManager.Instance.starCount = 2;
+        if (launchCount > twoStarLimit) GameManager.Instance.starCount = 1;
     }
 
     public void AddDude()
