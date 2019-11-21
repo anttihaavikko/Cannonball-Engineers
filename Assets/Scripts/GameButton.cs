@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -9,9 +10,15 @@ public class GameButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public Transform text;
     public Image bg;
     public Color normalColor, hoverColor;
+    public string activatesScene;
+    public UnityEvent action;
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (!string.IsNullOrEmpty(activatesScene))
+            SceneChanger.Instance.ChangeScene(activatesScene);
+
+        if (action != null) action.Invoke();
     }
 
     public void OnPointerEnter(PointerEventData eventData)

@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class StartView : MonoBehaviour
 {
     public EffectCamera cam;
-    public Blinders blinders;
 
     // Start is called before the first frame update
     void Start()
@@ -18,8 +17,7 @@ public class StartView : MonoBehaviour
     {
         if(Input.anyKeyDown)
         {
-            blinders.Close();
-            Invoke("ToLevelSelect", blinders.GetDuration());
+            SceneChanger.Instance.ChangeScene("Levels");
         } 
     }
 
@@ -29,8 +27,4 @@ public class StartView : MonoBehaviour
         Invoke("Glitch", 1f);
     }
 
-    void ToLevelSelect()
-    {
-        SceneManager.LoadSceneAsync("Levels");
-    }
 }

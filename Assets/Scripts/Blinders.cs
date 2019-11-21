@@ -5,12 +5,15 @@ using UnityEngine;
 public class Blinders : MonoBehaviour
 {
     public Transform left, right;
+    public bool startsOpen;
 
     private float duration = 0.5f;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (startsOpen) return;
+
         left.transform.localScale = new Vector3(1f, 1f, 1f);
         right.transform.localScale = new Vector3(1f, 1f, 1f);
         Invoke("Open", 0.3f);

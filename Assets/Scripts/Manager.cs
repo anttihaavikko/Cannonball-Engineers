@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class Manager : MonoBehaviour {
 
@@ -37,5 +38,11 @@ public class Manager : MonoBehaviour {
 
         activeDude = dude;
         activeDude.line.enabled = true;
+    }
+
+    internal void NextLevel()
+    {
+        levelToActivate++;
+        if (levelToActivate >= levels.Count) levelToActivate = 0;
     }
 }

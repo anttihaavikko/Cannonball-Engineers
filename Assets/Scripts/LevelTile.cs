@@ -10,18 +10,11 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public Text num1, num2;
     public Text text;
     public int levelNumber;
-	public Blinders blinders;
 
     public void OnPointerClick(PointerEventData eventData)
     {
         Manager.Instance.levelToActivate = levelNumber;
-        blinders.Close();
-        Invoke("ChangeLevel", blinders.GetDuration());
-    }
-
-    void ChangeLevel()
-    {
-        SceneManager.LoadSceneAsync("Main");
+        SceneChanger.Instance.ChangeScene("Main");
     }
 
     public void OnPointerEnter(PointerEventData eventData)

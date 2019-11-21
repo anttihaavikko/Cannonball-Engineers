@@ -6,7 +6,6 @@ using System.Linq;
 public class LevelSelector : MonoBehaviour
 {
     public LevelTile tilePrefab;
-    public Blinders blinders;
 
     // Start is called before the first frame update
     void Awake()
@@ -17,8 +16,13 @@ public class LevelSelector : MonoBehaviour
             tile.num1.text = tile.num2.text = num.ToString("D2");
             tile.text.text = num.ToString("D2") + ". " + l;
             tile.levelNumber = num - 1;
-            tile.blinders = blinders;
             num++;
         });
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            SceneChanger.Instance.ChangeScene("Start");
     }
 }

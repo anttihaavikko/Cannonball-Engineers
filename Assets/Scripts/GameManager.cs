@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public Blinders blinders;
     public SuccessView successView;
     public string time;
     public bool running = true;
@@ -37,6 +36,9 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
             BackToLevelSelect();
+
+        if (Input.GetKeyDown(KeyCode.N))
+            NextLevel();
     }
 
     public void Success()
@@ -46,23 +48,17 @@ public class GameManager : MonoBehaviour
 
     public void BackToLevelSelect()
     {
-        blinders.Close();
-        Invoke("GoBackToLevelSelect", blinders.GetDuration());
-    }
-
-    void GoBackToLevelSelect()
-    {
-        SceneManager.LoadSceneAsync("Levels");
+        SceneChanger.Instance.ChangeScene("Levels");
     }
 
     public void Restart()
     {
-        blinders.Close();
-        Invoke("DoRestart", blinders.GetDuration());
+        SceneChanger.Instance.ChangeScene("Main");
     }
 
-    void DoRestart()
+    public void NextLevel()
     {
-        SceneManager.LoadSceneAsync("Main");
+        Manager.Instance.NextLevel();
+        SceneChanger.Instance.ChangeScene("Main");
     }
 }
