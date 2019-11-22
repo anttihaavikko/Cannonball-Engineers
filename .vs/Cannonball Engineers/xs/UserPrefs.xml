@@ -1,17 +1,18 @@
 ﻿<Properties StartupConfiguration="{1ADAFD7C-186E-74BB-F621-9D3BD15AF105}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelSelector.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Block.cs">
     <Files>
-      <File FileName="Assets/Scripts/Dude.cs" Line="72" Column="71" />
+      <File FileName="Assets/Scripts/Dude.cs" Line="201" Column="34" />
       <File FileName="Assets/Scripts/Launcher.cs" Line="54" Column="1" />
-      <File FileName="Assets/Scripts/SuccessView.cs" Line="19" Column="43" />
+      <File FileName="Assets/Scripts/SuccessView.cs" Line="30" Column="9" />
       <File FileName="Assets/Scripts/Toggler.cs" />
       <File FileName="Assets/Scripts/Star.cs" />
-      <File FileName="Assets/Scripts/LevelTile.cs" Line="13" Column="22" />
+      <File FileName="Assets/Scripts/LevelTile.cs" Line="11" Column="22" />
       <File FileName="Assets/Scripts/GameButton.cs" Line="18" Column="51" />
       <File FileName="Assets/Scripts/GameManager.cs" Line="10" Column="24" />
       <File FileName="Assets/Scripts/DudeClicker.cs" Line="18" Column="14" />
-      <File FileName="Assets/Scripts/Manager.cs" Line="63" Column="10" />
-      <File FileName="Assets/Scripts/LevelSelector.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Manager.cs" Line="14" Column="35" />
+      <File FileName="Assets/Scripts/LevelSelector.cs" Line="43" Column="66" />
+      <File FileName="Assets/Scripts/Block.cs" Line="18" Column="29" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,7 +21,7 @@
             <Node name="Assets" expanded="True">
               <Node name="Effects" expanded="True" />
               <Node name="Scripts" expanded="True">
-                <Node name="LevelSelector.cs" selected="True" />
+                <Node name="Block.cs" selected="True" />
               </Node>
               <Node name="Splats" expanded="True" />
             </Node>

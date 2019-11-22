@@ -57,7 +57,7 @@ public class Block : MonoBehaviour
             return;
         }
 
-        Tweener.Instance.MoveBodyTo(body, startPos + direction, 1.5f, 0f, TweenEasings.LinearInterpolation);
+        Tweener.Instance.MoveBodyTo(body, startPos + direction, moveTime, 0f, TweenEasings.LinearInterpolation);
     }
 
     public void Deactivate()
@@ -89,7 +89,7 @@ public class Block : MonoBehaviour
             return;
         }
 
-        Tweener.Instance.MoveBodyTo(body, startPos, 1.5f, 0f, TweenEasings.LinearInterpolation);
+        Tweener.Instance.MoveBodyTo(body, startPos, moveTime, 0f, TweenEasings.LinearInterpolation);
     }
 
     void DoRotation()

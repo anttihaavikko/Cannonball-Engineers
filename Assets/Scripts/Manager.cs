@@ -52,6 +52,8 @@ public class Manager : MonoBehaviour {
 
     public void LevelCompleted()
     {
+        if (levelToActivate == -1) return;
+
         var level = levels[levelToActivate];
         var time = GameManager.Instance.timeAmount;
         var stars = GameManager.Instance.starCount;

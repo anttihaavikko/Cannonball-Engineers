@@ -46,6 +46,7 @@ MonoBehaviour:
   hoveredDude: {fileID: 0}
   activeDude: {fileID: 0}
   levelToActivate: -1
+  levelListPosition: 0
   levels:
   - Getting Started
   - Something New
@@ -57,3 +58,5 @@ MonoBehaviour:
   - Bouncy
   - Middle Man
   - Maze
+  - Baby Steps
+  - Suicide Mission
