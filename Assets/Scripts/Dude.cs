@@ -80,6 +80,11 @@ public class Dude : MonoBehaviour
         return !jumper && isAttached && !isGrabbed;
     }
 
+    public bool CanBeActivated()
+    {
+        return (jumper || firstJump) && isAlive && (firstJump || isAttached || isGrabbed);
+    }
+
     public void Attach()
     {
         if (isAttached) return;

@@ -15,7 +15,7 @@ public class DudeClicker : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (dude.IsDone() || dude == Manager.Instance.activeDude) return;
+        if (!dude.CanBeActivated() || dude == Manager.Instance.activeDude) return;
 
         Manager.Instance.hoveredDude = dude;
         dude.ToggleOutline(true);
@@ -29,7 +29,7 @@ public class DudeClicker : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (dude.IsDone()) return;
+        if (!dude.CanBeActivated()) return;
 
         Manager.Instance.ChangeDude(dude);
         dude.ToggleOutline(false);
