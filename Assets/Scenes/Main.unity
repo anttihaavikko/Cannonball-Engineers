@@ -1404,6 +1404,16 @@ PrefabInstance:
       propertyPath: jumpers
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2840234190464176437, guid: c9908d47c6529493191c82865407a90c,
+        type: 3}
+      propertyPath: threeStarLimit
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840234190464176437, guid: c9908d47c6529493191c82865407a90c,
+        type: 3}
+      propertyPath: twoStarLimit
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9908d47c6529493191c82865407a90c, type: 3}
 --- !u!4 &78309712 stripped
@@ -16301,12 +16311,12 @@ PrefabInstance:
     - target: {fileID: 2840234190464176437, guid: c9908d47c6529493191c82865407a90c,
         type: 3}
       propertyPath: threeStarLimit
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2840234190464176437, guid: c9908d47c6529493191c82865407a90c,
         type: 3}
       propertyPath: twoStarLimit
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2814418017673586593, guid: c9908d47c6529493191c82865407a90c,
         type: 3}
