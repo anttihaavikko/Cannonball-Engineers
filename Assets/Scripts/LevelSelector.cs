@@ -16,6 +16,16 @@ public class LevelSelector : MonoBehaviour
             tile.num1.text = tile.num2.text = num.ToString("D2");
             tile.text.text = num.ToString("D2") + ". " + l;
             tile.levelNumber = num - 1;
+            if(Manager.Instance.levelData.ContainsKey(l))
+            {
+                var ld = Manager.Instance.levelData[l];
+                tile.time.text = Manager.TimeToString(ld.time);
+
+                for (int i = 0; i < ld.stars; i++)
+                {
+                    tile.stars[i].SetActive(true);
+                }
+            }
             num++;
         });
     }

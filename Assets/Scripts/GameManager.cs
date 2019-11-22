@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public SuccessView successView;
     public string time;
+    public float timeAmount;
     public bool running = true;
 	public int starCount = 3;
 

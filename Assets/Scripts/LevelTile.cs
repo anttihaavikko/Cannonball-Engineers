@@ -10,6 +10,8 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public Text num1, num2;
     public Text text;
     public int levelNumber;
+    public Text time;
+    public List<GameObject> stars;
 
     public void OnPointerClick(PointerEventData eventData)
     {

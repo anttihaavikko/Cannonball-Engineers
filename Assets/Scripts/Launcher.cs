@@ -51,10 +51,11 @@ public class Launcher : MonoBehaviour
     {
         if (GameManager.Instance.running) {
             levelTime += Time.deltaTime;
+
             var total = Mathf.FloorToInt(levelTime);
             var minutes = total / 60;
-            var seconds = total % 60;
-            timer.text = $"{minutes}:{seconds.ToString("D2")}";
+
+            timer.text = Manager.TimeToString(levelTime);
 
             if (minutes >= 10)
             {
@@ -62,6 +63,7 @@ public class Launcher : MonoBehaviour
             }
 
             GameManager.Instance.time = timer.text;
+            GameManager.Instance.timeAmount = levelTime;
         }
 
         var dude = Manager.Instance.activeDude;

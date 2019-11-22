@@ -15,6 +15,8 @@ public class SuccessView : MonoBehaviour
         timeText.text = GameManager.Instance.time;
         dimmers.Close();
         Invoke("ShowTogglers", 0.6f);
+
+        Manager.Instance.LevelCompleted();
     }
 
     void ShowTogglers()

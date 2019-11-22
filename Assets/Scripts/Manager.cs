@@ -10,6 +10,7 @@ public class Manager : MonoBehaviour {
     public Dude hoveredDude;
     public Dude activeDude;
     public int levelToActivate = -1;
+    public Dictionary<string, LevelData> levelData;
 
     public List<string> levels;
 
@@ -25,6 +26,8 @@ public class Manager : MonoBehaviour {
 		} else {
 			instance = this;
 		}
+
+        levelData = new Dictionary<string, LevelData>();
 
         DontDestroyOnLoad(instance.gameObject);
     }
@@ -44,5 +47,57 @@ public class Manager : MonoBehaviour {
     {
         levelToActivate++;
         if (levelToActivate >= levels.Count) levelToActivate = 0;
+    }
+
+    public void LevelCompleted()
+    {
+        var level = levels[levelToActivate];
+        var time = GameManager.Instance.timeAmount;
+        var stars = GameManager.Instance.starCount;
+
+        if(levelData.ContainsKey(level))
+        {
+            Debug.Log("Updating scores for " + level);
+            levelData[level].AddTime(time);
+            levelData[level].AddStars(stars);
+        }
+        else
+        {
+            Debug.Log("Adding scores for " + level);
+            levelData.Add(level, new LevelData
+            {
+                time = time,
+                stars = stars
+            });
+        }
+    }
+
+    public static string TimeToString(float time)
+    {
+        var total = Mathf.FloorToInt(time);
+        var minutes = total / 60;
+        var seconds = total % 60;
+        return $"{minutes}:{seconds.ToString("D2")}";
+    }
+}
+
+public class LevelData
+{
+    public float time;
+    public int stars;
+
+    public bool IsCompleted()
+    {
+        return stars > 0;
+    }
+
+    public void AddTime(float t)
+    {
+        time = Mathf.Min(t, time);
+    }
+
+    public void AddStars(int s)
+    {
+        stars = Mathf.Max(stars, s);
     }
 }
