@@ -82,6 +82,8 @@ public class Dude : MonoBehaviour
 
     public bool CanBeActivated()
     {
+        if (this == Manager.Instance.activeDude) return false;
+
         return (jumper || firstJump) && isAlive && (firstJump || isAttached || isGrabbed);
     }
 
