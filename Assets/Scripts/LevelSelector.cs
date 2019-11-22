@@ -30,8 +30,18 @@ public class LevelSelector : MonoBehaviour
         });
     }
 
+    private void Start()
+    {
+        if(Manager.Instance.levelListPosition > 0)
+        {
+            transform.position = new Vector3(transform.position.x, Manager.Instance.levelListPosition);
+        }
+    }
+
     private void Update()
     {
+        Manager.Instance.levelListPosition = transform.position.y;
+
         if (Input.GetKeyDown(KeyCode.Escape))
             SceneChanger.Instance.ChangeScene("Start");
     }

@@ -11,6 +11,7 @@ public class Manager : MonoBehaviour {
     public Dude activeDude;
     public int levelToActivate = -1;
     public Dictionary<string, LevelData> levelData;
+    public float levelListPosition;
 
     public List<string> levels;
 
