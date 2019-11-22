@@ -19,6 +19,7 @@ public class Dude : MonoBehaviour
     public Launcher launcher;
     public List<GameObject> outlines;
     public GameObject hat;
+    public GameObject clicker;
 
     private List<Block> activatedBlocks;
     private List<HingeJoint2D> joints;
@@ -196,6 +197,8 @@ public class Dude : MonoBehaviour
     public void Die()
     {
         if (!isAlive || !canDie) return;
+
+        clicker.SetActive(false);
 
         ToggleOutline(false);
 

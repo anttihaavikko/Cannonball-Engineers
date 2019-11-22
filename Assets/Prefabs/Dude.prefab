@@ -22528,6 +22528,7 @@ MonoBehaviour:
   - {fileID: 4524088735387377010}
   - {fileID: 6307772779544937049}
   hat: {fileID: 5711862316475086571}
+  clicker: {fileID: 1027818513676173509}
 --- !u!1 &6935590484921121087
 GameObject:
   m_ObjectHideFlags: 0
