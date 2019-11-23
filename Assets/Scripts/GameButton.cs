@@ -29,6 +29,8 @@ public class GameButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             Tweener.Instance.ScaleTo(text, Vector3.one * 0.9f, 0.3f, 0f, TweenEasings.BounceEaseOut);
             Tweener.Instance.ColorTo(bg, hoverColor, 0.2f, 0f, TweenEasings.BounceEaseOut);
         }
+
+        SceneChanger.Instance.cursor.Grow();
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -39,5 +41,7 @@ public class GameButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             Tweener.Instance.ScaleTo(text, Vector3.one, 0.1f, 0f, TweenEasings.QuadraticEaseOut);
             Tweener.Instance.ColorTo(bg, normalColor, 0.1f, 0f, TweenEasings.BounceEaseOut);
         }
+
+        SceneChanger.Instance.cursor.Normalize();
     }
 }

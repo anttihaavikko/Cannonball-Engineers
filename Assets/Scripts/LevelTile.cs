@@ -22,12 +22,16 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public void OnPointerEnter(PointerEventData eventData)
     {
         if(Tweener.Instance)
-            Tweener.Instance.ScaleTo(transform, Vector3.one, 0.1f, 0f, TweenEasings.QuadraticEaseOut);
+            Tweener.Instance.ScaleTo(transform, Vector3.one, 0.1f, 0f, TweenEasings.BounceEaseOut);
+
+        SceneChanger.Instance.cursor.Grow();
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         if(Tweener.Instance)
-            Tweener.Instance.ScaleTo(transform, Vector3.one * 0.9f, 0.1f, 0f, TweenEasings.QuadraticEaseOut);
+            Tweener.Instance.ScaleTo(transform, Vector3.one * 0.9f, 0.1f, 0f, TweenEasings.BounceEaseOut);
+
+        SceneChanger.Instance.cursor.Normalize();
     }
 }

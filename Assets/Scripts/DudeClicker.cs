@@ -19,12 +19,16 @@ public class DudeClicker : MonoBehaviour
 
         Manager.Instance.hoveredDude = dude;
         dude.ToggleOutline(true);
+
+        SceneChanger.Instance.cursor.Shrink();
     }
 
     private void OnMouseExit()
     {
         dude.ToggleOutline(false);
         Manager.Instance.hoveredDude = null;
+
+        SceneChanger.Instance.cursor.Normalize();
     }
 
     private void OnMouseUp()
@@ -35,6 +39,8 @@ public class DudeClicker : MonoBehaviour
         dude.ToggleOutline(false);
         EffectManager.Instance.AddEffect(5, dude.body.transform.position);
         EffectManager.Instance.AddEffect(7, dude.body.transform.position);
+
+        SceneChanger.Instance.cursor.Normalize();
 
         if (dude.launcher)
         {

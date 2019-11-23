@@ -8,6 +8,7 @@ public class SceneChanger : MonoBehaviour
     public Blinders blinders;
     public Transform spinner;
     public string sceneToLoadAtStart;
+    public GameCursor cursor;
 
     private string sceneToLoad;
     private AsyncOperation operation;
