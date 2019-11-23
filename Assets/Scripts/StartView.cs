@@ -15,7 +15,13 @@ public class StartView : MonoBehaviour
 
     private void Update()
     {
-        if(Input.anyKeyDown)
+        if (Input.GetKeyUp(KeyCode.Escape) && Application.platform != RuntimePlatform.WebGLPlayer)
+        {
+            SceneChanger.Instance.blinders.Close();
+            Invoke("Quit", SceneChanger.Instance.blinders.GetDuration() + 0.2f);
+        }
+            
+        if(Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Escape))
         {
             SceneChanger.Instance.ChangeScene("Levels");
         } 
@@ -27,4 +33,8 @@ public class StartView : MonoBehaviour
         Invoke("Glitch", 1f);
     }
 
+    void Quit()
+    {
+        Application.Quit();
+    }
 }

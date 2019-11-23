@@ -42,7 +42,7 @@ public class LevelSelector : MonoBehaviour
     {
         Manager.Instance.levelListPosition = transform.position.y;
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Escape))
             SceneChanger.Instance.ChangeScene("Start");
     }
 }

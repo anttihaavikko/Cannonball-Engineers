@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{1ADAFD7C-186E-74BB-F621-9D3BD15AF105}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Effects/ColorSplit.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/StartView.cs">
     <Files>
       <File FileName="Assets/Scripts/Dude.cs" Line="201" Column="34" />
       <File FileName="Assets/Scripts/Launcher.cs" Line="54" Column="1" />
@@ -14,16 +14,17 @@
       <File FileName="Assets/Scripts/LevelSelector.cs" Line="43" Column="66" />
       <File FileName="Assets/Scripts/Block.cs" Line="92" Column="61" />
       <File FileName="Assets/Effects/ColorSplit.cs" Line="28" Column="2" />
+      <File FileName="Assets/Scripts/StartView.cs" Line="30" Column="16" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Cannonball Engineers" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Effects" expanded="True">
-                <Node name="ColorSplit.cs" selected="True" />
+              <Node name="Effects" expanded="True" />
+              <Node name="Scripts" expanded="True">
+                <Node name="StartView.cs" selected="True" />
               </Node>
-              <Node name="Scripts" expanded="True" />
               <Node name="Splats" expanded="True" />
             </Node>
           </Node>

@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
             Restart();
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Escape))
             BackToLevelSelect();
 
         if (Input.GetKeyDown(KeyCode.N))
