@@ -18,6 +18,8 @@ public class GameCursor : MonoBehaviour
     {
         normalSize = transform.localScale;
         normalSpeed = rotator.speed;
+
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -34,17 +36,20 @@ public class GameCursor : MonoBehaviour
     {
         speedMulti = 2f;
         Tweener.Instance.ScaleTo(transform, normalSize * 1.5f, 0.25f, 0f, TweenEasings.BounceEaseOut);
+        Cursor.visible = false;
     }
 
     public void Normalize()
     {
         speedMulti = 1f;
         Tweener.Instance.ScaleTo(transform, normalSize, 0.1f, 0f, TweenEasings.QuadraticEaseInOut);
+        Cursor.visible = false;
     }
 
     public void Shrink()
     {
         speedMulti = 2f;
         Tweener.Instance.ScaleTo(transform, normalSize * 0.6f, 0.1f, 0f, TweenEasings.QuadraticEaseInOut);
+        Cursor.visible = false;
     }
 }
