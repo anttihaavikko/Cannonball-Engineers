@@ -409,7 +409,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -6.6, y: 0}
+  m_AnchoredPosition: {x: -6.600006, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5924264879281804730
@@ -673,6 +673,9 @@ MonoBehaviour:
   - {fileID: 3747699994972128609}
   - {fileID: 777578913142220743}
   - {fileID: 283870377823713183}
+  normalColor: {r: 0.4745098, g: 0.31764707, b: 0.25882354, a: 1}
+  hoverColor: {r: 0.6431373, g: 0.34901962, b: 0.23921569, a: 1}
+  bg: {fileID: 5924264879322438692}
 --- !u!1 &5924264879993304938
 GameObject:
   m_ObjectHideFlags: 0
