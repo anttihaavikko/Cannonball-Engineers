@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{1ADAFD7C-186E-74BB-F621-9D3BD15AF105}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameCursor.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Bird.cs">
     <Files>
       <File FileName="Assets/Scripts/Dude.cs" Line="201" Column="34" />
       <File FileName="Assets/Scripts/Launcher.cs" Line="54" Column="1" />
       <File FileName="Assets/Scripts/Manager.cs" Line="56" Column="1" />
-      <File FileName="Assets/Scripts/GameCursor.cs" Line="22" Column="14" />
+      <File FileName="Assets/Scripts/GameCursor.cs" Line="22" Column="32" />
       <File FileName="Assets/Scripts/SceneChanger.cs" Line="11" Column="30" />
+      <File FileName="Assets/Scripts/Bird.cs" Line="26" Column="66" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,7 +15,7 @@
             <Node name="Assets" expanded="True">
               <Node name="Effects" expanded="True" />
               <Node name="Scripts" expanded="True">
-                <Node name="GameCursor.cs" selected="True" />
+                <Node name="Bird.cs" selected="True" />
               </Node>
               <Node name="Splats" expanded="True" />
             </Node>
