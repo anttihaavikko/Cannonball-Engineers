@@ -14,15 +14,24 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public List<GameObject> stars;
 	public Color normalColor, hoverColor;
 	public Image bg;
+	private bool done;
 
 	public void OnPointerClick(PointerEventData eventData)
     {
-        Manager.Instance.levelToActivate = levelNumber;
+		if (done) return;
+
+		Manager.Instance.levelToActivate = levelNumber;
         SceneChanger.Instance.ChangeScene("Main");
-    }
+
+		SceneChanger.Instance.cursor.Normalize();
+
+		done = true;
+	}
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+		if (done) return;
+
 		if (Tweener.Instance)
 		{
 			Tweener.Instance.ScaleTo(transform, Vector3.one, 0.1f, 0f, TweenEasings.BounceEaseOut);
@@ -34,6 +43,8 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     public void OnPointerExit(PointerEventData eventData)
     {
+		if (done) return;
+
 		if (Tweener.Instance)
 		{
 			Tweener.Instance.ScaleTo(transform, Vector3.one * 0.9f, 0.1f, 0f, TweenEasings.BounceEaseOut);
