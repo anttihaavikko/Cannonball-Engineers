@@ -1,14 +1,16 @@
 ﻿<Properties StartupConfiguration="{1ADAFD7C-186E-74BB-F621-9D3BD15AF105}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameButton.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SuccessView.cs">
     <Files>
-      <File FileName="Assets/Scripts/Dude.cs" Line="201" Column="34" />
-      <File FileName="Assets/Scripts/Launcher.cs" Line="54" Column="1" />
+      <File FileName="Assets/Scripts/Dude.cs" Line="207" Column="37" />
+      <File FileName="Assets/Scripts/Launcher.cs" Line="49" Column="59" />
       <File FileName="Assets/Scripts/Manager.cs" Line="56" Column="1" />
-      <File FileName="Assets/Scripts/GameCursor.cs" Line="22" Column="32" />
-      <File FileName="Assets/Scripts/SceneChanger.cs" Line="11" Column="30" />
-      <File FileName="Assets/Scripts/Bird.cs" Line="9" Column="24" />
-      <File FileName="Assets/Scripts/LevelTile.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GameButton.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameCursor.cs" />
+      <File FileName="Assets/Scripts/SceneChanger.cs" />
+      <File FileName="Assets/Scripts/Bird.cs" />
+      <File FileName="Assets/Scripts/LevelTile.cs" />
+      <File FileName="Assets/Scripts/GameButton.cs" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="15" Column="30" />
+      <File FileName="Assets/Scripts/SuccessView.cs" Line="30" Column="21" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,7 +19,7 @@
             <Node name="Assets" expanded="True">
               <Node name="Effects" expanded="True" />
               <Node name="Scripts" expanded="True">
-                <Node name="GameButton.cs" selected="True" />
+                <Node name="SuccessView.cs" selected="True" />
               </Node>
               <Node name="Splats" expanded="True" />
             </Node>
@@ -28,7 +30,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="be47a719-ec33-4b7a-b31e-d8513f28feb6" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d09fe1ae-2929-4c2c-829c-72e51092bff6" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

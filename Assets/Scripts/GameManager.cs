@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public float timeAmount;
     public bool running = true;
 	public int starCount = 3;
+	public int deaths;
+    public bool deathPunished;
 
 	private static GameManager instance = null;
     public static GameManager Instance

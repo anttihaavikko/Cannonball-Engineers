@@ -27,7 +27,9 @@ public class SuccessView : MonoBehaviour
 
     void ShowStars()
     {
-        for(int i = 0; i < GameManager.Instance.starCount; i++)
+        var deathMod = GameManager.Instance.deathPunished ? GameManager.Instance.deaths : 0;
+        var startAmount = Mathf.Max(1, GameManager.Instance.starCount - deathMod);
+        for (int i = 0; i < startAmount; i++)
         {
             stars[i].Appear();
         }

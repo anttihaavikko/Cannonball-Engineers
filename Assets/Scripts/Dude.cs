@@ -198,6 +198,8 @@ public class Dude : MonoBehaviour
     {
         if (!isAlive || !canDie) return;
 
+        GameManager.Instance.deaths++;
+
         clicker.SetActive(false);
 
         ToggleOutline(false);

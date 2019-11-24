@@ -15,6 +15,7 @@ public class Launcher : MonoBehaviour
 
     public int threeStarLimit = 3;
     public int twoStarLimit = 5;
+    public bool punishDeaths;
 
     public bool immortals;
     public bool jumpers;
@@ -44,6 +45,8 @@ public class Launcher : MonoBehaviour
         {
             TutorialDude.Instance.Show(introMessage, 0.3f);
         }
+
+        GameManager.Instance.deathPunished = punishDeaths;
     }
 
     // Update is called once per frame
