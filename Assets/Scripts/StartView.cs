@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 public class StartView : MonoBehaviour
 {
     public EffectCamera cam;
+    public Toggler toggler;
 
     // Start is called before the first frame update
     void Start()
     {
         //Glitch();
+        toggler.Show();
     }
 
     private void Update()

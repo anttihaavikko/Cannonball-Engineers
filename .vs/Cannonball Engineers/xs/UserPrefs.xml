@@ -1,18 +1,19 @@
 ﻿<Properties StartupConfiguration="{1ADAFD7C-186E-74BB-F621-9D3BD15AF105}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DudeClicker.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/StartView.cs">
     <Files>
-      <File FileName="Assets/Scripts/Dude.cs" Line="207" Column="37" />
-      <File FileName="Assets/Scripts/Launcher.cs" Line="223" Column="2" />
-      <File FileName="Assets/Scripts/Manager.cs" Line="56" Column="1" />
-      <File FileName="Assets/Scripts/GameCursor.cs" />
+      <File FileName="Assets/Scripts/Dude.cs" Line="152" Column="74" />
+      <File FileName="Assets/Scripts/Launcher.cs" Line="77" Column="18" />
+      <File FileName="Assets/Scripts/Manager.cs" Line="15" Column="37" />
+      <File FileName="Assets/Scripts/GameCursor.cs" Line="65" Column="28" />
       <File FileName="Assets/Scripts/SceneChanger.cs" />
       <File FileName="Assets/Scripts/Bird.cs" />
       <File FileName="Assets/Scripts/LevelTile.cs" />
       <File FileName="Assets/Scripts/GameButton.cs" Line="8" Column="40" />
       <File FileName="Assets/Scripts/GameManager.cs" Line="15" Column="30" />
       <File FileName="Assets/Scripts/SuccessView.cs" Line="32" Column="40" />
-      <File FileName="Assets/Scripts/TorqueControl.cs" Line="22" Column="6" />
+      <File FileName="Assets/Scripts/TorqueControl.cs" Line="33" Column="47" />
       <File FileName="Assets/Scripts/DudeClicker.cs" Line="16" Column="5" />
+      <File FileName="Assets/Scripts/StartView.cs" Line="9" Column="27" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,7 +22,7 @@
             <Node name="Assets" expanded="True">
               <Node name="Effects" expanded="True" />
               <Node name="Scripts" expanded="True">
-                <Node name="DudeClicker.cs" selected="True" />
+                <Node name="StartView.cs" selected="True" />
               </Node>
               <Node name="Splats" expanded="True" />
             </Node>
