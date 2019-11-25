@@ -115,7 +115,7 @@ public class Dude : MonoBehaviour
     }
 
     // Update is called once per frame
-    public bool Launch(Cinemachine.CinemachineVirtualCamera fCam)
+    public bool Launch(Cinemachine.CinemachineVirtualCamera fCam, bool manualTorque = false, float torqueAmount = 0f)
     {
         if (!isAlive)
             return false;
@@ -149,7 +149,8 @@ public class Dude : MonoBehaviour
 
         if(firstJump)
         {
-            body.AddTorque(dir.x * 100f, ForceMode2D.Impulse);
+            var amt = manualTorque ? torqueAmount * 3000f : dir.x * 100f;
+            body.AddTorque(amt, ForceMode2D.Impulse);
             cam.BaseEffect(1.1f);
         }
 

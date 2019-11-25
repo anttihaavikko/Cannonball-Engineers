@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameCursor : MonoBehaviour
 {
     public Rotator rotator;
+    public Sprite normalSprite, torqueSprite;
+    public Image cursorImage;
 
     private Vector3 normalSize;
     private float normalSpeed;
@@ -12,6 +15,7 @@ public class GameCursor : MonoBehaviour
     private float prevX;
     private float direction;
     private float limit = 1f;
+    private bool shouldRotate = true;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +30,9 @@ public class GameCursor : MonoBehaviour
     void Update()
     {
         transform.position = Input.mousePosition;
+
+        if (!shouldRotate) return;
+
         if (transform.position.x - prevX < -limit) direction = -1f;
         if (transform.position.x - prevX > limit) direction = 1f;
         rotator.speed = Mathf.MoveTowards(rotator.speed, normalSpeed * speedMulti * direction, Time.deltaTime * 30f);
@@ -51,5 +58,14 @@ public class GameCursor : MonoBehaviour
         speedMulti = 2f;
         Tweener.Instance.ScaleTo(transform, normalSize * 0.6f, 0.1f, 0f, TweenEasings.QuadraticEaseInOut);
         Cursor.visible = false;
+    }
+
+    public void TorqueControl(bool state)
+    {
+        rotator.enabled = !state;
+        shouldRotate = !state;
+        cursorImage.sprite = state ? torqueSprite : normalSprite;
+        rotator.speed = state ? 0f : normalSpeed;
+        transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 }

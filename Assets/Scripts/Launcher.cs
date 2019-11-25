@@ -28,6 +28,9 @@ public class Launcher : MonoBehaviour
     private int launchCount;
     private float levelTime;
 
+    private float manualTorque;
+    private bool useManualTorque;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -74,22 +77,23 @@ public class Launcher : MonoBehaviour
         if (dude)
         {
             dude.UpdateLine();
-            var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            var dir = pos - dude.body.transform.position;
 
-            var angle = Mathf.Clamp(dir.x, -45f, 45f);
-
-            torquePointer.rotation = Quaternion.Euler(0, 0, angle);
+            if(!useManualTorque)
+            {
+                var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                var dir = pos - dude.body.transform.position;
+                UpdateTorqueMeter(dir.x);
+            }
         }
 
-        if (Input.GetMouseButtonUp(0) && dude && !TutorialDude.Instance.IsShowing())
+        if (Input.GetMouseButtonDown(0) && dude && !TutorialDude.Instance.IsShowing())
         {
-            if (Manager.Instance.hoveredDude)
+            if (Manager.Instance.hoveredDude || Manager.Instance.isHoveringSomething)
             {
                 return;
             }
 
-            var wasLaunch = dude.Launch(followCam);
+            var wasLaunch = dude.Launch(followCam, useManualTorque, manualTorque);
 
             CancelInvoke("AddDude");
             Invoke("AddDude", 2f);
@@ -219,5 +223,18 @@ public class Launcher : MonoBehaviour
     {
         Destroy(dudes[0].gameObject);
         dudes.RemoveAt(0);
+    }
+
+    public void SetTorque(bool useManual, float torque = 0f)
+    {
+        useManualTorque = useManual;
+        manualTorque = torque;
+        UpdateTorqueMeter(torque * 90);
+    }
+
+    void UpdateTorqueMeter(float dir)
+    {
+        var angle = Mathf.Clamp(dir, -45f, 45f);
+        torquePointer.rotation = Quaternion.Euler(0, 0, angle);
     }
 }

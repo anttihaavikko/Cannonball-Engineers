@@ -102,6 +102,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotator: {fileID: 934203505}
+  normalSprite: {fileID: 21300000, guid: f0bd40bb03450463186ee2d145191431, type: 3}
+  torqueSprite: {fileID: 21300000, guid: be346cd5217694f76a49a812bb935701, type: 3}
+  cursorImage: {fileID: 934203506}
 --- !u!1 &5181507645196322120
 GameObject:
   m_ObjectHideFlags: 0

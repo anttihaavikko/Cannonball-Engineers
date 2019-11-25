@@ -12,6 +12,7 @@ public class Manager : MonoBehaviour {
     public int levelToActivate = -1;
     public Dictionary<string, LevelData> levelData;
     public float levelListPosition;
+    public bool isHoveringSomething;
 
     public List<string> levels;
 

@@ -4189,6 +4189,21 @@ PrefabInstance:
       propertyPath: immortals
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4659592271459610058, guid: c9908d47c6529493191c82865407a90c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4897373475358326797, guid: c9908d47c6529493191c82865407a90c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6009619857341767583, guid: c9908d47c6529493191c82865407a90c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9908d47c6529493191c82865407a90c, type: 3}
 --- !u!4 &394401915 stripped
@@ -11224,7 +11239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1012363606
 Transform:
   m_ObjectHideFlags: 0
