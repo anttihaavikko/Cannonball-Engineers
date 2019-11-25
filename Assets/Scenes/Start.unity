@@ -353,9 +353,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startsHidden: 1
-  hiddenSize: {x: 1.5, y: 0, z: 0}
+  hiddenSize: {x: 0.5, y: 0, z: 0}
   duration: 0.8
-  showDelay: 0.1
+  showDelay: 0
   hideDelay: 0
   effectCamera: {fileID: 0}
 --- !u!1 &632338973

@@ -27,7 +27,7 @@ public class Toggler : MonoBehaviour
 
     public void Hide()
     {
-        Tweener.Instance.ScaleTo(transform, shownSize, duration, showDelay, TweenEasings.QuadraticEaseIn);
+        Tweener.Instance.ScaleTo(transform, hiddenSize, duration * 0.5f, hideDelay, TweenEasings.QuadraticEaseOut);
     }
 
     // Update is called once per frame

@@ -44,10 +44,15 @@ public class SceneChanger : MonoBehaviour
     {
         if(operation != null && operation.isDone)
         {
-            blinders.Open();
-            Tweener.Instance.ScaleTo(spinner, Vector3.zero, 0.2f, 0f, TweenEasings.QuadraticEaseIn);
             operation = null;
+            Invoke("After", 0.1f);
         }
+    }
+
+    void After()
+    {
+        blinders.Open();
+        Tweener.Instance.ScaleTo(spinner, Vector3.zero, 0.2f, 0f, TweenEasings.QuadraticEaseIn);
     }
 
     public void ChangeScene(string sceneName)

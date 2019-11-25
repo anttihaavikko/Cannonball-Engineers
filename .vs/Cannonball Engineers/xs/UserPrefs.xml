@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{1ADAFD7C-186E-74BB-F621-9D3BD15AF105}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/StartView.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Toggler.cs">
     <Files>
       <File FileName="Assets/Scripts/Dude.cs" Line="152" Column="74" />
       <File FileName="Assets/Scripts/Launcher.cs" Line="77" Column="18" />
@@ -13,7 +13,8 @@
       <File FileName="Assets/Scripts/SuccessView.cs" Line="32" Column="40" />
       <File FileName="Assets/Scripts/TorqueControl.cs" Line="33" Column="47" />
       <File FileName="Assets/Scripts/DudeClicker.cs" Line="16" Column="5" />
-      <File FileName="Assets/Scripts/StartView.cs" Line="9" Column="27" />
+      <File FileName="Assets/Scripts/StartView.cs" Line="28" Column="25" />
+      <File FileName="Assets/Scripts/Toggler.cs" Line="30" Column="71" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,7 +23,7 @@
             <Node name="Assets" expanded="True">
               <Node name="Effects" expanded="True" />
               <Node name="Scripts" expanded="True">
-                <Node name="StartView.cs" selected="True" />
+                <Node name="Toggler.cs" selected="True" />
               </Node>
               <Node name="Splats" expanded="True" />
             </Node>
