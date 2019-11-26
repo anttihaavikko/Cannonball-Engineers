@@ -47,6 +47,7 @@ MonoBehaviour:
   activeDude: {fileID: 0}
   levelToActivate: -1
   levelListPosition: 0
+  isHoveringSomething: 0
   levels:
   - Getting Started
   - Something New
@@ -61,3 +62,4 @@ MonoBehaviour:
   - Baby Steps
   - Suicide Mission
   - Swinger
+  - Teamwork

@@ -15,6 +15,7 @@ public class Block : MonoBehaviour
     public int angle;
     public float moveTime = 1.5f;
     public bool multipleActivations;
+    public bool eachActivates;
 
     private Vector3 startPos;
     private int activations;
@@ -28,17 +29,24 @@ public class Block : MonoBehaviour
     {
         activations++;
 
+        var lightNum = 0;
         icons.ToList().ForEach(i =>
         {
-            i.color = Color.white;
-            EffectManager.Instance.AddEffect(3, i.transform.position);
+
+            if(!eachActivates || lightNum < activations)
+            {
+                i.color = Color.white;
+                EffectManager.Instance.AddEffect(3, i.transform.position);
+            }
+
+            lightNum++;
         });
 
         if (wire)
             wire.SetActive(true);
 
-        float rotMulti = multipleActivations ? activations : 1f;
-        gears.ForEach(g => Tweener.Instance.RotateTo(g.transform, Quaternion.Euler(0, 0, g.amount * rotMulti), moveTime, 0f, TweenEasings.LinearInterpolation));
+        float multi = multipleActivations || eachActivates ? activations : 1f;
+        gears.ForEach(g => Tweener.Instance.RotateTo(g.transform, Quaternion.Euler(0, 0, g.amount * multi), moveTime, 0f, TweenEasings.LinearInterpolation));
 
         if (door)
         {
@@ -57,7 +65,7 @@ public class Block : MonoBehaviour
             return;
         }
 
-        Tweener.Instance.MoveBodyTo(body, startPos + direction, moveTime, 0f, TweenEasings.LinearInterpolation);
+        Tweener.Instance.MoveBodyTo(body, startPos + direction * multi, moveTime, 0f, TweenEasings.LinearInterpolation);
     }
 
     public void Deactivate()

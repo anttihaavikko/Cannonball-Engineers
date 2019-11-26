@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{1ADAFD7C-186E-74BB-F621-9D3BD15AF105}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Toggler.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Block.cs">
     <Files>
       <File FileName="Assets/Scripts/Dude.cs" Line="152" Column="74" />
       <File FileName="Assets/Scripts/Launcher.cs" Line="77" Column="18" />
       <File FileName="Assets/Scripts/Manager.cs" Line="15" Column="37" />
       <File FileName="Assets/Scripts/GameCursor.cs" Line="65" Column="28" />
-      <File FileName="Assets/Scripts/SceneChanger.cs" />
+      <File FileName="Assets/Scripts/SceneChanger.cs" Line="48" Column="35" />
       <File FileName="Assets/Scripts/Bird.cs" />
       <File FileName="Assets/Scripts/LevelTile.cs" />
       <File FileName="Assets/Scripts/GameButton.cs" Line="8" Column="40" />
@@ -13,8 +13,9 @@
       <File FileName="Assets/Scripts/SuccessView.cs" Line="32" Column="40" />
       <File FileName="Assets/Scripts/TorqueControl.cs" Line="33" Column="47" />
       <File FileName="Assets/Scripts/DudeClicker.cs" Line="16" Column="5" />
-      <File FileName="Assets/Scripts/StartView.cs" Line="28" Column="25" />
-      <File FileName="Assets/Scripts/Toggler.cs" Line="30" Column="71" />
+      <File FileName="Assets/Scripts/StartView.cs" Line="28" Column="30" />
+      <File FileName="Assets/Scripts/Toggler.cs" Line="30" Column="70" />
+      <File FileName="Assets/Scripts/Block.cs" Line="18" Column="5" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,7 +24,7 @@
             <Node name="Assets" expanded="True">
               <Node name="Effects" expanded="True" />
               <Node name="Scripts" expanded="True">
-                <Node name="Toggler.cs" selected="True" />
+                <Node name="Block.cs" selected="True" />
               </Node>
               <Node name="Splats" expanded="True" />
             </Node>
