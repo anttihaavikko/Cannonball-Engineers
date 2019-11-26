@@ -25,7 +25,7 @@ public class StartView : MonoBehaviour
             
         if(Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Escape))
         {
-            toggler.Hide();
+            //toggler.Hide();
             SceneChanger.Instance.ChangeScene("Levels");
         } 
     }
