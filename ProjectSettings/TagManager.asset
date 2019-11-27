@@ -15,6 +15,7 @@ TagManager:
   - MultiBlock
   - Slippery
   - Bouncy
+  - ActivationArea
   layers:
   - Default
   - TransparentFX

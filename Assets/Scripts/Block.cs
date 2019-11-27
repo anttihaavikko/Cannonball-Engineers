@@ -16,6 +16,7 @@ public class Block : MonoBehaviour
     public float moveTime = 1.5f;
     public bool multipleActivations;
     public bool eachActivates;
+    public bool isActivator;
 
     private Vector3 startPos;
     private int activations;
@@ -25,8 +26,26 @@ public class Block : MonoBehaviour
         startPos = transform.position;
     }
 
-    public void Activate()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(isActivator && collision.gameObject.tag == "ActivationArea")
+        {
+            Activate(true);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (isActivator && collision.gameObject.tag == "ActivationArea")
+        {
+            Deactivate(true);
+        }
+    }
+
+    public void Activate(bool forced = false)
+    {
+        if (isActivator && !forced) return;
+
         activations++;
 
         var lightNum = 0;
@@ -50,13 +69,13 @@ public class Block : MonoBehaviour
 
         if (door)
         {
-            door.Open();
+            door.Open(moveTime);
             return;
         }
 
         if(moreDoors.Any())
         {
-            moreDoors.ForEach(d => d.Open());
+            moreDoors.ForEach(d => d.Open(moveTime));
         }
 
         if(angle != 0)
@@ -68,8 +87,10 @@ public class Block : MonoBehaviour
         Tweener.Instance.MoveBodyTo(body, startPos + direction * multi, moveTime, 0f, TweenEasings.LinearInterpolation);
     }
 
-    public void Deactivate()
+    public void Deactivate(bool forced = false)
     {
+        if (isActivator && !forced) return;
+
         activations--;
 
         icons.ToList().ForEach(i => i.color = new Color(0.25f, 0.25f, 0.25f));
@@ -82,13 +103,13 @@ public class Block : MonoBehaviour
 
         if (door)
         {
-            door.Close();
+            door.Close(moveTime * 0.5f);
             return;
         }
 
         if (moreDoors.Any())
         {
-            moreDoors.ForEach(d => d.Close());
+            moreDoors.ForEach(d => d.Close(moveTime));
         }
 
         if (angle != 0)

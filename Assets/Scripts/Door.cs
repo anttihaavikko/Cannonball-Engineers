@@ -14,13 +14,13 @@ public class Door : MonoBehaviour
         startPos = transform.position;
     }
 
-    public void Open()
+    public void Open(float duration = 1.5f)
     {
-        Tweener.Instance.MoveBodyTo(body, startPos + direction, 1.5f, 0f, TweenEasings.LinearInterpolation);
+        Tweener.Instance.MoveBodyTo(body, startPos + direction, duration, 0f, TweenEasings.LinearInterpolation);
     }
 
-    public void Close()
+    public void Close(float duration = 1.5f)
     {
-        Tweener.Instance.MoveBodyTo(body, startPos, 1.5f, 0f, TweenEasings.LinearInterpolation);
+        Tweener.Instance.MoveBodyTo(body, startPos, duration, 0f, TweenEasings.LinearInterpolation);
     }
 }

@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{1ADAFD7C-186E-74BB-F621-9D3BD15AF105}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EffectCamera.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Door.cs">
     <Files>
       <File FileName="Assets/Scripts/Dude.cs" Line="152" Column="74" />
-      <File FileName="Assets/Scripts/Launcher.cs" Line="106" Column="37" />
+      <File FileName="Assets/Scripts/Launcher.cs" Line="158" Column="56" />
       <File FileName="Assets/Scripts/Manager.cs" Line="15" Column="37" />
       <File FileName="Assets/Scripts/GameCursor.cs" Line="9" Column="39" />
       <File FileName="Assets/Scripts/SceneChanger.cs" Line="44" Column="31" />
@@ -12,12 +12,13 @@
       <File FileName="Assets/Scripts/GameManager.cs" Line="38" Column="46" />
       <File FileName="Assets/Scripts/SuccessView.cs" Line="32" Column="40" />
       <File FileName="Assets/Scripts/TorqueControl.cs" Line="33" Column="47" />
-      <File FileName="Assets/Scripts/DudeClicker.cs" Line="16" Column="5" />
+      <File FileName="Assets/Scripts/DudeClicker.cs" Line="40" Column="9" />
       <File FileName="Assets/Scripts/StartView.cs" Line="17" Column="9" />
       <File FileName="Assets/Scripts/Toggler.cs" Line="30" Column="70" />
-      <File FileName="Assets/Scripts/Block.cs" Line="43" Column="12" />
+      <File FileName="Assets/Scripts/Block.cs" Line="93" Column="1" />
       <File FileName="Assets/Scripts/LevelSelector.cs" Line="36" Column="1" />
       <File FileName="Assets/Scripts/EffectCamera.cs" Line="92" Column="65" />
+      <File FileName="Assets/Scripts/Door.cs" Line="17" Column="37" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -26,7 +27,7 @@
             <Node name="Assets" expanded="True">
               <Node name="Effects" expanded="True" />
               <Node name="Scripts" expanded="True">
-                <Node name="EffectCamera.cs" selected="True" />
+                <Node name="Door.cs" selected="True" />
               </Node>
               <Node name="Splats" expanded="True" />
             </Node>
