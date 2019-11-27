@@ -5,8 +5,8 @@ public class Bird : MonoBehaviour {
 
 	public float speed;
 
-	private float min = -150f;
-	private float max = 150f;
+	private float min = -120f;
+	private float max = 120f;
 
 	// Use this for initialization
 	void Awake () {
