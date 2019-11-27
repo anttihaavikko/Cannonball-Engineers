@@ -154,6 +154,9 @@ public class Launcher : MonoBehaviour
         reserveDude.line.enabled = false;
         hasReserve = true;
 
+        EffectManager.Instance.AddEffect(5, reserveDude.body.transform.position);
+        EffectManager.Instance.AddEffect(7, reserveDude.body.transform.position);
+
         reserveDude.gameObject.name = "Dude #" + launchCount;
 
         dudes.Add(reserveDude);
