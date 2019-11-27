@@ -100,8 +100,10 @@ public class Launcher : MonoBehaviour
 
             if (hasReserve)
             {
-                hasReserve = Manager.Instance.activeDude != reserveDude;
+                hasReserve = dude != reserveDude;
             }
+
+            dude.canDie = immortals;
 
             if (!wasLaunch) return;
 
@@ -146,7 +148,7 @@ public class Launcher : MonoBehaviour
         reserveDude = Instantiate(dudePrefab, transform.position, Quaternion.identity);
         reserveDude.launcher = this;
         reserveDude.jumper = jumpers;
-        reserveDude.canDie = immortals;
+        reserveDude.canDie = false;
         reserveDude.AddHardHat(immortals);
         reserveDude.NudgeHands();
         reserveDude.line.enabled = false;
