@@ -199,6 +199,8 @@ public class Dude : MonoBehaviour
     {
         if (!isAlive || !canDie) return;
 
+        AudioManager.Instance.curMusic.pitch = 0.85f;
+
         GameManager.Instance.deaths++;
 
         clicker.SetActive(false);
