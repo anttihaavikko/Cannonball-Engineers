@@ -9,6 +9,7 @@ public class SceneChanger : MonoBehaviour
     public Transform spinner;
     public string sceneToLoadAtStart;
     public GameCursor cursor;
+    public Canvas canvas;
 
     private string sceneToLoad;
     private AsyncOperation operation;
@@ -38,6 +39,11 @@ public class SceneChanger : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(sceneToLoadAtStart))
             ChangeScene(sceneToLoadAtStart);
+    }
+
+    public void AttachCamera()
+    {
+        canvas.worldCamera = Camera.main;
     }
 
     private void Update()

@@ -33,6 +33,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        SceneChanger.Instance.AttachCamera();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))

@@ -29,7 +29,8 @@ public class GameCursor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Input.mousePosition;
+        var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.position = new Vector3(pos.x, pos.y, 0);
 
         if (!shouldRotate) return;
 

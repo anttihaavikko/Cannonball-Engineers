@@ -230,7 +230,7 @@ Canvas:
   m_GameObject: {fileID: 5181507645828866260}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -239,8 +239,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: 516406843
+  m_SortingOrder: 500
   m_TargetDisplay: 0
 --- !u!114 &5181507645828866258
 MonoBehaviour:
@@ -297,6 +297,7 @@ MonoBehaviour:
   spinner: {fileID: 5181507645196322119}
   sceneToLoadAtStart: 
   cursor: {fileID: 934203508}
+  canvas: {fileID: 5181507645828866257}
 --- !u!1 &5181507646433902504
 GameObject:
   m_ObjectHideFlags: 0

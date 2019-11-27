@@ -13,6 +13,8 @@ public class StartView : MonoBehaviour
     {
         //Glitch();
         toggler.Show();
+
+        SceneChanger.Instance.AttachCamera();
     }
 
     private void Update()
