@@ -103,6 +103,8 @@ public class Launcher : MonoBehaviour
                 hasReserve = dude != reserveDude;
             }
 
+            AudioManager.Instance.PlayEffectAt(Random.Range(63, 70), dude.body.transform.position, 2f);
+
             dude.canDie = immortals;
 
             if (!wasLaunch) return;
@@ -156,6 +158,9 @@ public class Launcher : MonoBehaviour
 
         EffectManager.Instance.AddEffect(5, reserveDude.body.transform.position);
         EffectManager.Instance.AddEffect(7, reserveDude.body.transform.position);
+
+        AudioManager.Instance.PlayEffectAt(Random.Range(70, 78), reserveDude.body.transform.position, 0.5f);
+        AudioManager.Instance.PlayEffectAt(Random.Range(50, 63), reserveDude.body.transform.position, 0.5f);
 
         reserveDude.gameObject.name = "Dude #" + launchCount;
 

@@ -26,6 +26,13 @@ public class TorqueControl : MonoBehaviour
         launcher.SetTorque(true, -localPos.x);
     }
 
+    private void OnMouseUp()
+    {
+        AudioManager.Instance.PlayEffectAt(2, transform.position, 1f);
+        AudioManager.Instance.PlayEffectAt(9, transform.position, 1f);
+        AudioManager.Instance.PlayEffectAt(17, transform.position, 0.43f);
+    }
+
     private void OnMouseDrag()
     {
         var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

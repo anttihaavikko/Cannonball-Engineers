@@ -152,7 +152,18 @@ public class Dude : MonoBehaviour
             var amt = manualTorque ? torqueAmount * 3000f : dir.x * 100f;
             body.AddTorque(amt, ForceMode2D.Impulse);
             cam.BaseEffect(1.1f);
+
+            AudioManager.Instance.PlayEffectAt(32, transform.position, 2f);
+            AudioManager.Instance.PlayEffectAt(29, transform.position, 0.489f);
+            AudioManager.Instance.PlayEffectAt(47, transform.position, 0.852f);
+            AudioManager.Instance.PlayEffectAt(49, transform.position, 1f);
         }
+
+        AudioManager.Instance.PlayEffectAt(31, transform.position, 0.723f);
+        AudioManager.Instance.PlayEffectAt(25, transform.position, 1.104f);
+        AudioManager.Instance.PlayEffectAt(37, transform.position, 1.241f);
+        AudioManager.Instance.PlayEffectAt(40, transform.position, 1f);
+        AudioManager.Instance.PlayEffectAt(42, transform.position, 0.643f);
 
         hands.ToList().ForEach(h => h.AddForce(dir * Random.Range(5f, 10f), ForceMode2D.Impulse));
 
@@ -200,6 +211,14 @@ public class Dude : MonoBehaviour
         if (!isAlive || !canDie) return;
 
         AudioManager.Instance.curMusic.pitch = 0.85f;
+
+        AudioManager.Instance.PlayEffectAt(1, body.transform.position, 1.285f);
+        AudioManager.Instance.PlayEffectAt(4, body.transform.position, 1.653f);
+        AudioManager.Instance.PlayEffectAt(6, body.transform.position, 1.828f);
+        AudioManager.Instance.PlayEffectAt(10, body.transform.position, 1.4f);
+        AudioManager.Instance.PlayEffectAt(18, body.transform.position, 0.876f);
+
+        AudioManager.Instance.PlayEffectAt(Random.Range(70, 78), body.transform.position, 1.5f);
 
         GameManager.Instance.deaths++;
 

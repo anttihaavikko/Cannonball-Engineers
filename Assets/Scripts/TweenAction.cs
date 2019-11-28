@@ -125,48 +125,47 @@ public class TweenAction {
         if (!hasBeenInit)
             return false;
 
-		if (tweenDelay > 0f) {
+        tweenPos += Time.deltaTime / tweenDuration;
 
-			tweenDelay -= Time.deltaTime;
+        if (type == Type.Position)
+        {
+            theObject.position = Lerp(startPos, targetPos, DoEase());
+        }
 
-		} else {
-			tweenPos += Time.deltaTime / tweenDuration;
+        if (type == Type.BodyPosition)
+        {
+            body.MovePosition(Lerp(startPos, targetPos, DoEase()));
+        }
 
-			if (type == Type.Position) {
-				theObject.position = Lerp (startPos, targetPos, DoEase ());
-			}
+        if (type == Type.BodyRotation)
+        {
+            body.MoveRotation(Lerp(startRot, targetRot, DoEase()));
+        }
 
-            if (type == Type.BodyPosition)
-            {
-                body.MovePosition(Lerp(startPos, targetPos, DoEase()));
-            }
+        if (type == Type.LocalPosition)
+        {
+            theObject.localPosition = Lerp(startPos, targetPos, DoEase());
+        }
 
-            if (type == Type.BodyRotation)
-            {
-                body.MoveRotation(Lerp(startRot, targetRot, DoEase()));
-            }
+        if (type == Type.Rotation)
+        {
+            theObject.rotation = Lerp(startRot, targetRot, DoEase());
+        }
 
-            if (type == Type.LocalPosition) {
-				theObject.localPosition = Lerp (startPos, targetPos, DoEase ());
-			}
+        if (type == Type.Scale)
+        {
+            theObject.localScale = Lerp(startPos, targetPos, DoEase());
+        }
 
-			if (type == Type.Rotation) {
-				theObject.rotation = Lerp (startRot, targetRot, DoEase ());
-			}
+        if (type == Type.Color)
+        {
+            if (sprite)
+                sprite.color = Lerp(startColor, targetColor, DoEase());
 
-			if (type == Type.Scale) {
-				theObject.localScale = Lerp (startPos, targetPos, DoEase ());
-			}
+            if (uiImage)
+                uiImage.color = Lerp(startColor, targetColor, DoEase());
+        }
 
-			if (type == Type.Color) {
-                if (sprite)
-                    sprite.color = Lerp(startColor, targetColor, DoEase());
-
-                if (uiImage)
-                    uiImage.color = Lerp(startColor, targetColor, DoEase());
-            }
-		}
-
-		return (tweenPos >= 1f);
+        return (tweenPos >= 1f);
 	}
 }

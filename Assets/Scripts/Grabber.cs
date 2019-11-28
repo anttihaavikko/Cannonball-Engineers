@@ -20,6 +20,13 @@ public class Grabber : MonoBehaviour
 
         if(collision.gameObject.tag == "Wall" || CanGrab(collision.gameObject, collision.collider))
         {
+            float vol = 0.7f;
+            AudioManager.Instance.PlayEffectAt(12, transform.position, vol * 1.268f);
+            AudioManager.Instance.PlayEffectAt(13, transform.position, vol * 1.277f);
+            AudioManager.Instance.PlayEffectAt(15, transform.position, vol * 0.551f);
+            AudioManager.Instance.PlayEffectAt(45, transform.position, vol * 1.13f);
+            AudioManager.Instance.PlayEffectAt(28, transform.position, vol * 1f);
+
             joint.enabled = true;
             joint.connectedBody = collision.rigidbody;
             joint.anchor = transform.InverseTransformPoint(collision.contacts[0].point);
@@ -29,6 +36,11 @@ public class Grabber : MonoBehaviour
             dude.Attach();
 
             EffectManager.Instance.AddEffect(2, collision.contacts[0].point);
+
+            if(collision.relativeVelocity.magnitude > 10f)
+            {
+                AudioManager.Instance.PlayEffectAt(Random.Range(70, 78), transform.position, 1f);
+            }
         }
     }
 

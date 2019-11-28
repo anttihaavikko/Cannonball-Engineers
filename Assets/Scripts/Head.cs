@@ -16,6 +16,12 @@ public class Head : MonoBehaviour
             if(collision.relativeVelocity.magnitude > 30 && !dude.hardHat)
             {
                 dude.Die();
+            } else
+
+            if (collision.relativeVelocity.magnitude > 5f && !dude.hardHat)
+            {
+                AudioManager.Instance.PlayEffectAt(34, transform.position, 1f);
+                AudioManager.Instance.PlayEffectAt(29, transform.position, 1f);
             }
         }
     }

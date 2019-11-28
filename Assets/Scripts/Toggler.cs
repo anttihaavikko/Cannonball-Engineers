@@ -9,6 +9,8 @@ public class Toggler : MonoBehaviour
     public float duration = 0.2f;
     public float showDelay, hideDelay;
     public EffectCamera effectCamera;
+    public bool doSound;
+    public float volume = 1f;
 
     private Vector3 shownSize;
 
@@ -23,6 +25,18 @@ public class Toggler : MonoBehaviour
     {
         Tweener.Instance.ScaleTo(transform, shownSize, duration, showDelay, TweenEasings.BounceEaseOut);
         Invoke("DoEffect", showDelay + duration * 0.8f);
+
+        if (doSound)
+            Invoke("DoSound", showDelay * 1.1f);
+    }
+
+    void DoSound()
+    {
+        AudioManager.Instance.PlayEffectAt(1, transform.position, 1.285f * volume);
+        AudioManager.Instance.PlayEffectAt(4, transform.position, 1.653f * volume);
+        AudioManager.Instance.PlayEffectAt(6, transform.position, 1.828f * volume);
+        AudioManager.Instance.PlayEffectAt(10, transform.position, 1.4f * volume);
+        AudioManager.Instance.PlayEffectAt(18, transform.position, 0.876f * volume);
     }
 
     public void Hide()

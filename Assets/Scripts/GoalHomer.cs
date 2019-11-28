@@ -33,6 +33,15 @@ public class GoalHomer : MonoBehaviour
 
 			Invoke("DoSuccess", 2f);
             GameManager.Instance.running = false;
+
+            AudioManager.Instance.PlayEffectAt(21, transform.position, 1.48f);
+            AudioManager.Instance.PlayEffectAt(27, transform.position, 0.259f);
+            AudioManager.Instance.PlayEffectAt(39, transform.position, 1.205f);
+            AudioManager.Instance.PlayEffectAt(33, transform.position, 1.444f);
+
+            AudioManager.Instance.PlayEffectAt(Random.Range(63, 70), transform.position, 2f);
+
+            AudioManager.Instance.Lowpass();
         }
     }
 

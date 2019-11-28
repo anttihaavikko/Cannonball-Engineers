@@ -61,6 +61,12 @@ public class Block : MonoBehaviour
             lightNum++;
         });
 
+        AudioManager.Instance.PlayEffectAt(2, transform.position, 1f);
+        AudioManager.Instance.PlayEffectAt(3, transform.position, 1f);
+        AudioManager.Instance.PlayEffectAt(5, transform.position, 1f);
+        AudioManager.Instance.PlayEffectAt(0, transform.position, 1f);
+        AudioManager.Instance.PlayEffectAt(14, transform.position, 1f);
+
         if (wire)
             wire.SetActive(true);
 
@@ -85,6 +91,7 @@ public class Block : MonoBehaviour
         }
 
         Tweener.Instance.MoveBodyTo(body, startPos + direction * multi, moveTime, 0f, TweenEasings.LinearInterpolation);
+        DoSounds(moveTime);
     }
 
     public void Deactivate(bool forced = false)
@@ -95,7 +102,11 @@ public class Block : MonoBehaviour
 
         icons.ToList().ForEach(i => i.color = new Color(0.25f, 0.25f, 0.25f));
 
-        if(wire)
+        AudioManager.Instance.PlayEffectAt(13, transform.position, 1f);
+        AudioManager.Instance.PlayEffectAt(14, transform.position, 0.226f);
+        AudioManager.Instance.PlayEffectAt(23, transform.position, 0.729f);
+
+        if (wire)
             wire.SetActive(false);
 
         float rotMulti = multipleActivations ? activations : 0f;
@@ -109,7 +120,7 @@ public class Block : MonoBehaviour
 
         if (moreDoors.Any())
         {
-            moreDoors.ForEach(d => d.Close(moveTime));
+            moreDoors.ForEach(d => d.Close(moveTime * 0.5f));
         }
 
         if (angle != 0)
@@ -119,10 +130,39 @@ public class Block : MonoBehaviour
         }
 
         Tweener.Instance.MoveBodyTo(body, startPos, moveTime, 0f, TweenEasings.LinearInterpolation);
+        DoSounds(moveTime);
     }
 
     void DoRotation()
     {
         Tweener.Instance.RotateBodyTo(body, Quaternion.Euler(0, 0, angle * activations), moveTime - 0.25f, 0f, TweenEasings.LinearInterpolation);
+        DoSounds(moveTime - 0.25f);
+    }
+
+    void DoSounds(float duration)
+    {
+        CancelInvoke("Clang");
+        CancelInvoke("DoSound");
+
+        Invoke("Clang", duration);
+
+        for (float d = 0f; d < duration - 1f; d += 1.3f)
+            Invoke("DoSound", d);
+    }
+
+    void DoSound()
+    {
+        AudioManager.Instance.PlayEffectAt(23, transform.position, 0.747f);
+        AudioManager.Instance.PlayEffectAt(24, transform.position, 0.796f);
+        AudioManager.Instance.PlayEffectAt(37, transform.position, 1f);
+    }
+
+    void Clang()
+    {
+        AudioManager.Instance.PlayEffectAt(1, transform.position, 0.579f);
+        AudioManager.Instance.PlayEffectAt(11, transform.position, 1f);
+        AudioManager.Instance.PlayEffectAt(17, transform.position, 0.705f);
+        AudioManager.Instance.PlayEffectAt(16, transform.position, 0.587f);
+        AudioManager.Instance.PlayEffectAt(39, transform.position, 1.12f);
     }
 }
