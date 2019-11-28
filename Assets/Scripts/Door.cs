@@ -23,7 +23,7 @@ public class Door : MonoBehaviour
     public void Close(float duration = 1.5f)
     {
         Tweener.Instance.MoveBodyTo(body, startPos, duration, 0f, TweenEasings.LinearInterpolation);
-        DoSounds(duration * 0.5f);
+        DoSounds(duration);
     }
 
     void DoSounds(float duration)
