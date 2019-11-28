@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{1ADAFD7C-186E-74BB-F621-9D3BD15AF105}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Blinders.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SceneChanger.cs">
     <Files>
       <File FileName="Assets/Scripts/Dude.cs" Line="221" Column="9" />
       <File FileName="Assets/Scripts/Launcher.cs" Line="106" Column="13" />
@@ -11,12 +11,13 @@
       <File FileName="Assets/Scripts/GameButton.cs" Line="69" Column="9" />
       <File FileName="Assets/Scripts/LevelTile.cs" Line="66" Column="76" />
       <File FileName="Assets/Scripts/Grabber.cs" Line="42" Column="17" />
-      <File FileName="Assets/Scripts/Door.cs" Line="26" Column="26" />
+      <File FileName="Assets/Scripts/Door.cs" Line="49" Column="9" />
       <File FileName="Assets/Scripts/Block.cs" Line="107" Column="76" />
       <File FileName="Assets/Scripts/Head.cs" Line="21" Column="58" />
       <File FileName="Assets/Scripts/SpeechBubble.cs" Line="65" Column="25" />
       <File FileName="Assets/Scripts/GoalHomer.cs" Line="42" Column="70" />
-      <File FileName="Assets/Scripts/Blinders.cs" Line="42" Column="1" />
+      <File FileName="Assets/Scripts/Blinders.cs" Line="21" Column="13" />
+      <File FileName="Assets/Scripts/SceneChanger.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -25,7 +26,7 @@
             <Node name="Assets" expanded="True">
               <Node name="Effects" expanded="True" />
               <Node name="Scripts" expanded="True">
-                <Node name="Blinders.cs" selected="True" />
+                <Node name="SceneChanger.cs" selected="True" />
               </Node>
               <Node name="Splats" expanded="True" />
             </Node>

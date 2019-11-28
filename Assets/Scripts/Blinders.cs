@@ -5,22 +5,29 @@ using UnityEngine;
 public class Blinders : MonoBehaviour
 {
     public Transform left, right;
-    public bool startsOpen;
+    public bool startsOpen, openAtStart = true;
 
     private float duration = 0.5f;
+    private bool isOpen;
 
     // Start is called before the first frame update
     void Start()
     {
+        isOpen = startsOpen;
+
         if (startsOpen) return;
 
         left.transform.localScale = new Vector3(1f, 1f, 1f);
         right.transform.localScale = new Vector3(1f, 1f, 1f);
-        Invoke("Open", 0.3f);
+
+        if(openAtStart)
+            Invoke("Open", 0.3f);
     }
 
     public void Close()
     {
+        if (!isOpen) return;
+
         Tweener.Instance.ScaleTo(left, Vector3.one, duration, 0f, TweenEasings.BounceEaseOut);
         Tweener.Instance.ScaleTo(right, Vector3.one, duration, 0f, TweenEasings.BounceEaseOut);
 
@@ -30,6 +37,8 @@ public class Blinders : MonoBehaviour
         AudioManager.Instance.PlayEffectAt(4, transform.position, 0.75f);
 
         Invoke("Clang", duration * 0.6f);
+
+        isOpen = false;
     }
 
     public void Open()
@@ -41,6 +50,8 @@ public class Blinders : MonoBehaviour
         AudioManager.Instance.PlayEffectAt(21, transform.position, 1.205f);
         AudioManager.Instance.PlayEffectAt(45, transform.position, 1.175f);
         AudioManager.Instance.PlayEffectAt(4, transform.position, 0.75f);
+
+        isOpen = true;
     }
 
     public float GetDuration()
