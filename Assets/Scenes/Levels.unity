@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -157,8 +157,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: -20}
-  m_Pivot: {x: 0, y: 1}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &208493118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,7 +334,7 @@ PrefabInstance:
     - target: {fileID: 5181507645828866258, guid: 9bfdd55cbc01149aaa5ea6ccc0f90ccb,
         type: 3}
       propertyPath: m_MatchWidthOrHeight
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bfdd55cbc01149aaa5ea6ccc0f90ccb, type: 3}
@@ -803,7 +803,7 @@ PrefabInstance:
     - target: {fileID: 5924264879660942614, guid: f93f3e8996bb94956914fcab343f2b5d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -46.6
+      value: -46.600006
       objectReference: {fileID: 0}
     - target: {fileID: 5924264879660942614, guid: f93f3e8996bb94956914fcab343f2b5d,
         type: 3}
@@ -1498,11 +1498,11 @@ RectTransform:
   m_Father: {fileID: 208493117}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.0000076293945}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 800, y: 0}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1737108375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1523,7 +1523,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 730, y: 93.2}
+  m_CellSize: {x: 800, y: 93.2}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -1864,11 +1864,11 @@ RectTransform:
   m_Father: {fileID: 906250428}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -58.299973}
-  m_SizeDelta: {x: -40, y: -116.6}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -139.5}
+  m_SizeDelta: {x: 800, y: 447.8}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1974504141
 MonoBehaviour:
   m_ObjectHideFlags: 0
