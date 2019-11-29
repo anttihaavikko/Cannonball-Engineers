@@ -6,6 +6,7 @@ using System.Linq;
 public class LevelSelector : MonoBehaviour
 {
     public LevelTile tilePrefab;
+    public TMPro.TextMeshProUGUI starCount, totalTime;
 
     // Start is called before the first frame update
     void Awake()
@@ -38,6 +39,12 @@ public class LevelSelector : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, Manager.Instance.levelListPosition);
         }
+
+        var sum = Manager.Instance.levelData.Aggregate(0, (total, l) => total + l.Value.stars);
+        var tot = Manager.Instance.levelData.Aggregate(0f, (total, l) => total + l.Value.time);
+
+        starCount.text = $"{sum}/{Manager.Instance.levels.Count * 3}";
+        totalTime.text = Manager.TimeToString(tot);
     }
 
     private void Update()
