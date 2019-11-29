@@ -22498,6 +22498,7 @@ MonoBehaviour:
   - {fileID: 6307772779544937049}
   hat: {fileID: 5711862316475086571}
   clicker: {fileID: 1027818513676173509}
+  goalHomer: {fileID: 8264690744986665950}
 --- !u!1 &6935590484921121087
 GameObject:
   m_ObjectHideFlags: 0
@@ -23550,6 +23551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 6935590485253223725}
   dude: {fileID: 6935590484859690880}
+  isIntro: 0
 --- !u!114 &9197388858669545623
 MonoBehaviour:
   m_ObjectHideFlags: 0

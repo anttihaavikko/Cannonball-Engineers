@@ -6,6 +6,7 @@ public class GoalHomer : MonoBehaviour
 {
     public Rigidbody2D body;
     public Dude dude;
+	public bool isIntro;
 
     private bool homing;
     private Vector3 goalPos;
@@ -41,12 +42,21 @@ public class GoalHomer : MonoBehaviour
 
             AudioManager.Instance.PlayEffectAt(Random.Range(63, 70), transform.position, 2f);
 
-            AudioManager.Instance.Lowpass();
+            if(!isIntro)
+                AudioManager.Instance.Lowpass();
+
+			if (isIntro)
+				Invoke("ToStart", 3f);
         }
     }
 
     void DoSuccess()
 	{
         GameManager.Instance.Success();
+	}
+
+    void ToStart()
+	{
+        SceneChanger.Instance.ChangeScene("Start");
 	}
 }

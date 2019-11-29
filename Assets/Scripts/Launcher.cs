@@ -20,6 +20,8 @@ public class Launcher : MonoBehaviour
     public bool immortals;
     public bool jumpers;
 
+    public bool intro;
+
     private Dude reserveDude;
     private Vector3 launcherPos;
     private bool hasReserve;
@@ -41,12 +43,15 @@ public class Launcher : MonoBehaviour
         AddDude();
         launcherPos = launcher.transform.position;
 
-        var p = TutorialDude.Instance.transform.position;
-        TutorialDude.Instance.transform.position = new Vector3(tutorialSpot.position.x, p.y, p.z);
-
-        if(introMessage != null && introMessage != string.Empty)
+        if(!intro)
         {
-            TutorialDude.Instance.Show(introMessage, 0.3f);
+            var p = TutorialDude.Instance.transform.position;
+            TutorialDude.Instance.transform.position = new Vector3(tutorialSpot.position.x, p.y, p.z);
+
+            if (introMessage != null && introMessage != string.Empty)
+            {
+                TutorialDude.Instance.Show(introMessage, 0.3f);
+            }
         }
 
         GameManager.Instance.deathPunished = punishDeaths;
@@ -72,6 +77,8 @@ public class Launcher : MonoBehaviour
             GameManager.Instance.timeAmount = levelTime;
         }
 
+        if (intro) return;
+
         var dude = Manager.Instance.activeDude;
 
         if (dude)
@@ -93,41 +100,49 @@ public class Launcher : MonoBehaviour
                 return;
             }
 
-            var wasLaunch = dude.Launch(followCam, useManualTorque, manualTorque);
-
-            CancelInvoke("AddDude");
-            Invoke("AddDude", 2f);
-
-            if (hasReserve)
-            {
-                hasReserve = dude != reserveDude;
-            }
-
-            AudioManager.Instance.PlayEffectAt(Random.Range(63, 70), dude.body.transform.position, 2f);
-
-            dude.canDie = immortals;
-
-            if (!wasLaunch) return;
-
-            launchCount++;
-
-            UpdateCounter();
-
-            hasReserve = false;
-
-            EffectManager.Instance.AddEffect(4, transform.position);
-            EffectManager.Instance.AddEffect(7, transform.position);
-
             var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             var dir = pos - dude.body.transform.position;
-            var amt = Mathf.Min(Mathf.Max(0, dir.y), 50f);
-            var speed = (50f - amt) / 50f;
 
-            Tweener.Instance.MoveTo(launcher, launcherPos + Vector3.up * amt * 0.2f, 0.1f + speed * 0.1f, 0f, TweenEasings.BounceEaseInOut);
-            Invoke("ResetPos", 0.75f);
+            Launch(dir);
 
             //dude = null;
         }
+    }
+
+    public void Launch(Vector3 dir)
+    {
+        var dude = Manager.Instance.activeDude;
+
+        var wasLaunch = dude.Launch(followCam, dir, useManualTorque, manualTorque);
+
+        CancelInvoke("AddDude");
+        Invoke("AddDude", 2f);
+
+        if (hasReserve)
+        {
+            hasReserve = dude != reserveDude;
+        }
+
+        AudioManager.Instance.PlayEffectAt(Random.Range(63, 70), dude.body.transform.position, 2f);
+
+        dude.canDie = immortals;
+
+        if (!wasLaunch) return;
+
+        launchCount++;
+
+        UpdateCounter();
+
+        hasReserve = false;
+
+        EffectManager.Instance.AddEffect(4, transform.position);
+        EffectManager.Instance.AddEffect(7, transform.position);
+        
+        var amt = Mathf.Min(Mathf.Max(0, dir.y), 50f);
+        var speed = (50f - amt) / 50f;
+
+        Tweener.Instance.MoveTo(launcher, launcherPos + Vector3.up * amt * 0.2f, 0.1f + speed * 0.1f, 0f, TweenEasings.BounceEaseInOut);
+        Invoke("ResetPos", 0.75f);
     }
 
     void UpdateCounter()
@@ -155,6 +170,11 @@ public class Launcher : MonoBehaviour
         reserveDude.NudgeHands();
         reserveDude.line.enabled = false;
         hasReserve = true;
+
+        if(intro)
+        {
+            reserveDude.goalHomer.isIntro = true;
+        }
 
         EffectManager.Instance.AddEffect(5, reserveDude.body.transform.position);
         EffectManager.Instance.AddEffect(7, reserveDude.body.transform.position);
@@ -192,7 +212,7 @@ public class Launcher : MonoBehaviour
 
         Manager.Instance.activeDude = reserveDude;
 
-        if (Manager.Instance.activeDude)
+        if (Manager.Instance.activeDude && !intro)
         {
             Manager.Instance.activeDude.line.enabled = true;
         }

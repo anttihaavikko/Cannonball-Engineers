@@ -52,7 +52,8 @@ public class GameManager : MonoBehaviour
 
     public void Success()
     {
-        successView.Appear();
+        if(successView)
+            successView.Appear();
     }
 
     public void BackToLevelSelect()

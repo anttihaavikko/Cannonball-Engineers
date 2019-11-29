@@ -20,6 +20,7 @@ public class Dude : MonoBehaviour
     public List<GameObject> outlines;
     public GameObject hat;
     public GameObject clicker;
+    public GoalHomer goalHomer;
 
     private List<Block> activatedBlocks;
     private List<HingeJoint2D> joints;
@@ -63,6 +64,7 @@ public class Dude : MonoBehaviour
 
             if (diff > 1)
             {
+                //AudioManager.Instance.PlayEffectAt(89, p1, 4f);
                 Die();
             }
         });
@@ -115,7 +117,7 @@ public class Dude : MonoBehaviour
     }
 
     // Update is called once per frame
-    public bool Launch(Cinemachine.CinemachineVirtualCamera fCam, bool manualTorque = false, float torqueAmount = 0f)
+    public bool Launch(Cinemachine.CinemachineVirtualCamera fCam, Vector3 dir, bool manualTorque = false, float torqueAmount = 0f)
     {
         if (!isAlive)
             return false;
@@ -141,9 +143,6 @@ public class Dude : MonoBehaviour
         limbs.ToList().ForEach(l => l.bodyType = RigidbodyType2D.Dynamic);
 
         line.enabled = false;
-
-        var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        var dir = pos - body.transform.position;
 
         body.AddForce(dir * 150f, ForceMode2D.Impulse);
 

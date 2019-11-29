@@ -141,6 +141,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f268bb6a6affe4444a6de2875e1b9f1d, type: 3}
   - {fileID: 8300000, guid: b6b1f88388732457bbb600e9b2cd1255, type: 3}
   - {fileID: 8300000, guid: 27d6088c2c3084aecbbd3def00514bc3, type: 3}
+  - {fileID: 8300000, guid: ace01bb90b4a94cd2ab03d298bb23daf, type: 3}
   lowpass: {fileID: 5435034007801425461}
   highpass: {fileID: 5435034007801425460}
 --- !u!82 &5435034007801425450
@@ -153,7 +154,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 49b446670bcb84ca8876aeb15a7cd7b9, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c75883c37cf7d4cf3a8aef4bd340594f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
