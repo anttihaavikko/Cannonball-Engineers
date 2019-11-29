@@ -21,11 +21,10 @@ public class StartView : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Escape) && Application.platform != RuntimePlatform.WebGLPlayer)
         {
-            SceneChanger.Instance.blinders.Close();
-            Invoke("Quit", SceneChanger.Instance.blinders.GetDuration() + 0.2f);
+			DelayedQuit();
         }
             
-        if(Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Escape))
+        if(Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Escape) && !Manager.Instance.isHoveringSomething)
         {
             //toggler.Hide();
             SceneChanger.Instance.ChangeScene("Levels");
@@ -37,6 +36,12 @@ public class StartView : MonoBehaviour
         cam.Chromate(0.3f, 1f);
         Invoke("Glitch", 1f);
     }
+
+    public void DelayedQuit()
+	{
+		SceneChanger.Instance.blinders.Close();
+		Invoke("Quit", SceneChanger.Instance.blinders.GetDuration() + 0.2f);
+	}
 
     void Quit()
     {

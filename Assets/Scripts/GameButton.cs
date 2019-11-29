@@ -53,6 +53,8 @@ public class GameButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         AudioManager.Instance.PlayEffectAt(14, transform.position, 0.271f);
 
         SceneChanger.Instance.cursor.Grow();
+
+        Manager.Instance.isHoveringSomething = true;
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -71,5 +73,7 @@ public class GameButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         AudioManager.Instance.PlayEffectAt(17, transform.position, 0.502f);
 
         SceneChanger.Instance.cursor.Normalize();
+
+        Manager.Instance.isHoveringSomething = false;
     }
 }
