@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -31329,6 +31329,11 @@ PrefabInstance:
         type: 3}
       propertyPath: immortals
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840234190464176437, guid: c9908d47c6529493191c82865407a90c,
+        type: 3}
+      propertyPath: introMessage
+      value: These doors are a bit different from the previous ones.
       objectReference: {fileID: 0}
     - target: {fileID: 4659592271459610058, guid: c9908d47c6529493191c82865407a90c,
         type: 3}

@@ -892,7 +892,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
 --- !u!1 &204501335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,7 +1391,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 30
+  orthographic size: 53.27
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1594,7 +1594,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 326545283}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.427437, y: 6.0663776, z: -112.15566}
+  m_LocalPosition: {x: -107.72744, y: 76.566376, z: -112.15566}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
