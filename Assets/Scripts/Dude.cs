@@ -152,7 +152,12 @@ public class Dude : MonoBehaviour
 
         body.AddForce(dir * 150f, ForceMode2D.Impulse);
 
-        if(firstJump)
+        if (activatedBlocks.Any())
+        {
+            activatedBlocks.ForEach(b => b.Deactivate());
+        }
+
+        if (firstJump)
         {
             var amt = manualTorque ? torqueAmount * 3000f : dir.x * 100f;
             body.AddTorque(amt, ForceMode2D.Impulse);

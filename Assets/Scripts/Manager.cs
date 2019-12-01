@@ -33,9 +33,12 @@ public class Manager : MonoBehaviour {
         "Suicide Mission",
         "Swinger",
         "Time to Crate",
-        "Center",
+        "Center of Mass",
         "Swinging Activator",
+        "Strange Attractor",
         "Tricky Crate",
+        "Long Mover",
+        "Trickier Crate",
         "Buffer Overflow",
         "Null Pointer"
     };

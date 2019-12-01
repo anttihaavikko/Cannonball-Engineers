@@ -1,15 +1,16 @@
 ﻿<Properties StartupConfiguration="{1ADAFD7C-186E-74BB-F621-9D3BD15AF105}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DeathCheck.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Box.cs">
     <Files>
       <File FileName="Assets/Scripts/Dude.cs" Line="68" Column="17" />
       <File FileName="Assets/Scripts/Launcher.cs" Line="211" Column="20" />
-      <File FileName="Assets/Scripts/Manager.cs" Line="126" Column="1" />
+      <File FileName="Assets/Scripts/Manager.cs" Line="138" Column="1" />
       <File FileName="Assets/Scripts/LevelTile.cs" Line="65" Column="21" />
       <File FileName="Assets/Scripts/LevelSelector.cs" Line="48" Column="1" />
       <File FileName="Assets/Scripts/Head.cs" Line="20" Column="17" />
       <File FileName="Assets/Scripts/TorqueControl.cs" Line="44" Column="47" />
       <File FileName="Assets/Scripts/Grabber.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/DeathCheck.cs" Line="36" Column="117" />
+      <File FileName="Assets/Scripts/DeathCheck.cs" Line="31" Column="20" />
+      <File FileName="Assets/Scripts/Box.cs" Line="9" Column="28" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,7 +19,7 @@
             <Node name="Assets" expanded="True">
               <Node name="Effects" expanded="True" />
               <Node name="Scripts" expanded="True">
-                <Node name="DeathCheck.cs" selected="True" />
+                <Node name="Box.cs" selected="True" />
               </Node>
               <Node name="Splats" expanded="True" />
             </Node>
