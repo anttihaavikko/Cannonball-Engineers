@@ -17,6 +17,8 @@ public class Block : MonoBehaviour
     public bool multipleActivations;
     public bool eachActivates;
     public bool isActivator;
+    public bool isBoss;
+    public List<BossHand> deactivatesHands;
 
     private Vector3 startPos;
     private int activations;
@@ -67,6 +69,8 @@ public class Block : MonoBehaviour
         AudioManager.Instance.PlayEffectAt(0, transform.position, 1f);
         AudioManager.Instance.PlayEffectAt(14, transform.position, 1f);
 
+        deactivatesHands.ForEach(h => h.isWorking = false);
+
         if (wire)
             wire.SetActive(true);
 
@@ -92,6 +96,24 @@ public class Block : MonoBehaviour
 
         Tweener.Instance.MoveBodyTo(body, startPos + direction * multi, moveTime, 0f, TweenEasings.LinearInterpolation);
         DoSounds(moveTime);
+
+        if(isBoss && activations >= 7) {
+            GameManager.Instance.running = false;
+
+            AudioManager.Instance.PlayEffectAt(21, transform.position, 1.48f);
+            AudioManager.Instance.PlayEffectAt(27, transform.position, 0.259f);
+            AudioManager.Instance.PlayEffectAt(39, transform.position, 1.205f);
+            AudioManager.Instance.PlayEffectAt(33, transform.position, 1.444f);
+
+            AudioManager.Instance.PlayEffectAt(Random.Range(63, 70), transform.position, 2f);
+
+            Invoke("DoSuccess", 1f);
+        }
+    }
+
+    void DoSuccess()
+    {
+        GameManager.Instance.Success();
     }
 
     public void Deactivate(bool forced = false)
@@ -108,6 +130,8 @@ public class Block : MonoBehaviour
 
         if (wire)
             wire.SetActive(false);
+
+        deactivatesHands.ForEach(h => h.isWorking = true);
 
         float rotMulti = multipleActivations ? activations : 0f;
         gears.ForEach(g => Tweener.Instance.RotateTo(g.transform, Quaternion.Euler(0, 0, g.amount * rotMulti), moveTime, 0f, TweenEasings.LinearInterpolation));

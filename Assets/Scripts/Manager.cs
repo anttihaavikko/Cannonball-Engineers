@@ -40,7 +40,8 @@ public class Manager : MonoBehaviour {
         "Long Mover",
         "Trickier Crate",
         "Buffer Overflow",
-        "Null Pointer"
+        "Null Pointer",
+        "Doomsday Source"
     };
 
 	private static Manager instance = null;

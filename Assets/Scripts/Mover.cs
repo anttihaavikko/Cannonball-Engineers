@@ -8,6 +8,7 @@ public class Mover : MonoBehaviour {
 	public float offset = 0f;
 	public bool noNegatives = false;
 	public Vector3 direction = Vector3.up;
+    public Rigidbody2D body;
 
 	private Vector3 originalPosition;
 
@@ -20,6 +21,15 @@ public class Mover : MonoBehaviour {
 	void Update () {
 		float sinVal = Mathf.Sin (Time.time * speed + offset * Mathf.PI);
 		sinVal = noNegatives ? Mathf.Abs (sinVal) : sinVal;
-		transform.localPosition = originalPosition + direction * sinVal;
+
+        if(body)
+        {
+            var p = originalPosition + direction * sinVal;
+            body.MovePosition(transform.TransformPoint(p));
+        }
+        else
+        {
+            transform.localPosition = originalPosition + direction * sinVal;
+        }
 	}
 }
