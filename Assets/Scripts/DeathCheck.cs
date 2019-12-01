@@ -29,5 +29,11 @@ public class DeathCheck : MonoBehaviour
     private void Die()
     {
         dude.Die();
+
+        if (!Manager.Instance.hasOverlapped)
+        {
+            Manager.Instance.hasOverlapped = true;
+            TutorialDude.Instance.Show("Aw man, that must have hurt like hell. Try not to crush them!", 0.5f);
+        }
     }
 }

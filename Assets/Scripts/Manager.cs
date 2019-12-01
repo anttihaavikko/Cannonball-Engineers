@@ -15,6 +15,8 @@ public class Manager : MonoBehaviour {
 	public float levelListPosition;
 	public bool isHoveringSomething;
 
+    public bool hasDoneTorque, hasSeenSnap, hasBashedHead, hasOverlapped;
+
 	public static string[] levels = {
         "Hello World",
         "Double",
@@ -115,8 +117,12 @@ public class Manager : MonoBehaviour {
     {
         var data = new SaveData()
         {
-            levels = levelData.ToArray()
-        };
+            levels = levelData.ToArray(),
+            hasDoneTorque = hasDoneTorque,
+            hasSeenSnap = hasSeenSnap,
+            hasBashedHead = hasBashedHead,
+            hasOverlapped = hasOverlapped
+    };
 
         var json = JsonUtility.ToJson(data);
         PlayerPrefs.SetString("Data", json);
@@ -129,6 +135,10 @@ public class Manager : MonoBehaviour {
             var json = PlayerPrefs.GetString("Data");
             var data = JsonUtility.FromJson<SaveData>(json);
             levelData = data.levels.ToList();
+            hasDoneTorque = data.hasDoneTorque;
+            hasSeenSnap = data.hasSeenSnap;
+            hasBashedHead = data.hasBashedHead;
+            hasOverlapped = data.hasOverlapped;
         }
     }
 }
@@ -137,6 +147,7 @@ public class Manager : MonoBehaviour {
 public class SaveData
 {
     public LevelData[] levels;
+    public bool hasDoneTorque, hasSeenSnap, hasBashedHead, hasOverlapped;
 }
 
 [Serializable]

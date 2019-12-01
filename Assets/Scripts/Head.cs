@@ -16,6 +16,13 @@ public class Head : MonoBehaviour
             if(collision.relativeVelocity.magnitude > 30 && !dude.hardHat)
             {
                 dude.Die();
+
+                if (!Manager.Instance.hasBashedHead)
+                {
+                    Manager.Instance.hasBashedHead = true;
+                    TutorialDude.Instance.Show("Head is a very vunerable spot unless it is protected with a helmet!", 0.5f);
+                }
+
             } else
 
             if (collision.relativeVelocity.magnitude > 5f && !dude.hardHat)

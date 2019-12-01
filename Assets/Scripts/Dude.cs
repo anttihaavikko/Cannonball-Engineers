@@ -66,6 +66,12 @@ public class Dude : MonoBehaviour
             {
                 //AudioManager.Instance.PlayEffectAt(89, p1, 4f);
                 Die();
+
+                if(!Manager.Instance.hasSeenSnap)
+                {
+                    Manager.Instance.hasSeenSnap = true;
+                    TutorialDude.Instance.Show("Try to not rip their limbs apart!", 0.5f);
+                }
             }
         });
     }
@@ -208,6 +214,11 @@ public class Dude : MonoBehaviour
     public void Die()
     {
         if (!isAlive || !canDie) return;
+
+        if (!Manager.Instance.hasDoneTorque && Manager.Instance.levelToActivate > 0)
+        {
+            TutorialDude.Instance.Show("You can also manually control the launch torque from the meter under the cannon.", 0.5f);
+        }
 
         AudioManager.Instance.curMusic.pitch = 0.85f;
 
