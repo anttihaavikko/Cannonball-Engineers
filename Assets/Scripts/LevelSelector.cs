@@ -11,13 +11,24 @@ public class LevelSelector : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        var sum = Manager.Instance.levelData.Aggregate(0, (total, l) => total + l.Value.stars);
+
         var num = 1;
         Manager.levels.ToList().ForEach(l => {
             var tile = Instantiate(tilePrefab, transform);
             tile.num1.text = tile.num2.text = num.ToString("D2");
-            tile.text.text = num.ToString("D2") + ". " + l;
+            var lname = "???";
             tile.levelNumber = num - 1;
-            if(Manager.Instance.levelData.ContainsKey(l))
+
+            if (sum >= num - 1)
+            {
+                tile.Unlock();
+                lname = l;
+            }
+
+            tile.text.text = num.ToString("D2") + ". " + lname;
+
+            if (Manager.Instance.levelData.ContainsKey(l))
             {
                 var ld = Manager.Instance.levelData[l];
                 tile.time.text = Manager.TimeToString(ld.time);

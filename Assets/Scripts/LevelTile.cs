@@ -14,11 +14,20 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public List<GameObject> stars;
 	public Color normalColor, hoverColor;
 	public Image bg;
+    public GameObject locker;
+
 	private bool done;
+    private bool locked = true;
+
+    public void Unlock()
+    {
+        locker.SetActive(false);
+        locked = false;
+    }
 
 	public void OnPointerClick(PointerEventData eventData)
     {
-		if (done) return;
+		if (done || locked) return;
 
 		Manager.Instance.levelToActivate = levelNumber;
         SceneChanger.Instance.ChangeScene("Main");
@@ -36,7 +45,7 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-		if (done) return;
+		if (done || locked) return;
 
 		if (Tweener.Instance)
 		{
@@ -53,7 +62,7 @@ public class LevelTile : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     public void OnPointerExit(PointerEventData eventData)
     {
-		if (done) return;
+		if (done || locked) return;
 
 		if (Tweener.Instance)
 		{
