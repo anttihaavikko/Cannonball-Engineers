@@ -21,6 +21,7 @@ public class Manager : MonoBehaviour {
         "Doors",
         "Lost Delivery",
         "Bends",
+        "The Vault",
         "Hatch",
         "Ferris Wheel",
         "Maze",
@@ -84,9 +85,9 @@ public class Manager : MonoBehaviour {
 
         if(levelData.Any(l => l.name == level))
         {
-            Debug.Log("Updating scores for " + level);
-            levelData[levelToActivate].AddTime(time);
-            levelData[levelToActivate].AddStars(stars);
+            var lv = levelData.Find(l => l.name == level);
+            lv.AddTime(time);
+            lv.AddStars(stars);
         }
         else
         {
