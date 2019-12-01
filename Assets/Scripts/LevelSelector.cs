@@ -11,7 +11,7 @@ public class LevelSelector : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        var sum = Manager.Instance.levelData.Aggregate(0, (total, l) => total + l.Value.stars);
+        var sum = Manager.Instance.levelData.Aggregate(0, (total, l) => total + l.stars);
 
         var num = 1;
         Manager.levels.ToList().ForEach(l => {
@@ -28,9 +28,9 @@ public class LevelSelector : MonoBehaviour
 
             tile.text.text = num.ToString("D2") + ". " + lname;
 
-            if (Manager.Instance.levelData.ContainsKey(l))
+            if (Manager.Instance.levelData.Any(lv => lv.name == lname))
             {
-                var ld = Manager.Instance.levelData[l];
+                var ld = Manager.Instance.levelData.Find(lv => lv.name == lname);
                 tile.time.text = Manager.TimeToString(ld.time);
 
                 for (int i = 0; i < ld.stars; i++)
@@ -51,8 +51,8 @@ public class LevelSelector : MonoBehaviour
             transform.position = new Vector3(transform.position.x, Manager.Instance.levelListPosition);
         }
 
-        var sum = Manager.Instance.levelData.Aggregate(0, (total, l) => total + l.Value.stars);
-        var tot = Manager.Instance.levelData.Aggregate(0f, (total, l) => total + l.Value.time);
+        var sum = Manager.Instance.levelData.Aggregate(0, (total, l) => total + l.stars);
+        var tot = Manager.Instance.levelData.Aggregate(0f, (total, l) => total + l.time);
 
         starCount.text = $"{sum}/{Manager.levels.Length * 3}";
         totalTime.text = Manager.TimeToString(tot);

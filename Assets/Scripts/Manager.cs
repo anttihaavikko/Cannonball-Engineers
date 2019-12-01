@@ -4,13 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
+using System.Linq;
 
 public class Manager : MonoBehaviour {
 
 	public Dude hoveredDude;
 	public Dude activeDude;
 	public int levelToActivate = -1;
-	public Dictionary<string, LevelData> levelData;
+	public List<LevelData> levelData;
 	public float levelListPosition;
 	public bool isHoveringSomething;
 
@@ -48,7 +49,9 @@ public class Manager : MonoBehaviour {
 			instance = this;
 		}
 
-        levelData = new Dictionary<string, LevelData>();
+        levelData = new List<LevelData>();
+
+        LoadData();
 
         DontDestroyOnLoad(instance.gameObject);
     }
@@ -78,21 +81,24 @@ public class Manager : MonoBehaviour {
         var time = GameManager.Instance.timeAmount;
         var stars = GameManager.Instance.starCount;
 
-        if(levelData.ContainsKey(level))
+        if(levelData.Any(l => l.name == level))
         {
             Debug.Log("Updating scores for " + level);
-            levelData[level].AddTime(time);
-            levelData[level].AddStars(stars);
+            levelData[levelToActivate].AddTime(time);
+            levelData[levelToActivate].AddStars(stars);
         }
         else
         {
             Debug.Log("Adding scores for " + level);
-            levelData.Add(level, new LevelData
+            levelData.Add(new LevelData
             {
+                name = level,
                 time = time,
                 stars = stars
             });
         }
+
+        SaveData();
     }
 
     public static string TimeToString(float time)
@@ -102,10 +108,39 @@ public class Manager : MonoBehaviour {
         var seconds = total % 60;
         return $"{minutes}:{seconds.ToString("D2")}";
     }
+
+    void SaveData()
+    {
+        var data = new SaveData()
+        {
+            levels = levelData.ToArray()
+        };
+
+        var json = JsonUtility.ToJson(data);
+        PlayerPrefs.SetString("Data", json);
+    }
+
+    void LoadData()
+    {
+        if(PlayerPrefs.HasKey("Data"))
+        {
+            var json = PlayerPrefs.GetString("Data");
+            var data = JsonUtility.FromJson<SaveData>(json);
+            levelData = data.levels.ToList();
+        }
+    }
 }
 
+[Serializable]
+public class SaveData
+{
+    public LevelData[] levels;
+}
+
+[Serializable]
 public class LevelData
 {
+    public string name;
     public float time;
     public int stars;
 
