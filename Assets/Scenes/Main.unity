@@ -202,6 +202,16 @@ PrefabInstance:
       propertyPath: introMessage
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2840234190464176437, guid: c9908d47c6529493191c82865407a90c,
+        type: 3}
+      propertyPath: threeStarLimit
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840234190464176437, guid: c9908d47c6529493191c82865407a90c,
+        type: 3}
+      propertyPath: twoStarLimit
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4659592271459610058, guid: c9908d47c6529493191c82865407a90c,
         type: 3}
       propertyPath: m_Mesh
@@ -3359,8 +3369,8 @@ MonoBehaviour:
   - {fileID: 1561349146}
   - {fileID: 1888080945}
   - {fileID: 2015635050}
-  - {fileID: 1416239553}
   - {fileID: 349315019}
+  - {fileID: 1416239553}
 --- !u!4 &193827330
 Transform:
   m_ObjectHideFlags: 0
@@ -27076,12 +27086,12 @@ PrefabInstance:
     - target: {fileID: 2840234190464176437, guid: c9908d47c6529493191c82865407a90c,
         type: 3}
       propertyPath: threeStarLimit
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2840234190464176437, guid: c9908d47c6529493191c82865407a90c,
         type: 3}
       propertyPath: twoStarLimit
-      value: 8
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2814418017673586593, guid: c9908d47c6529493191c82865407a90c,
         type: 3}
