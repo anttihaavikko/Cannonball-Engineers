@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 	public int starCount = 3;
 	public int deaths;
     public bool deathPunished;
+    public bool isIntro;
 
 	private static GameManager instance = null;
     public static GameManager Instance
@@ -42,6 +43,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (isIntro) return;
+
         if (Input.GetKeyDown(KeyCode.R))
             Restart();
 

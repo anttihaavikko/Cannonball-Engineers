@@ -9693,7 +9693,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &506667425
 Transform:
   m_ObjectHideFlags: 0
@@ -23628,6 +23628,7 @@ MonoBehaviour:
   starCount: 3
   deaths: 0
   deathPunished: 0
+  isIntro: 0
 --- !u!4 &1139797585
 Transform:
   m_ObjectHideFlags: 0
@@ -44008,7 +44009,7 @@ PrefabInstance:
     - target: {fileID: 2814418017673586593, guid: c9908d47c6529493191c82865407a90c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.2
+      value: -24.2
       objectReference: {fileID: 0}
     - target: {fileID: 4659592271459610058, guid: c9908d47c6529493191c82865407a90c,
         type: 3}

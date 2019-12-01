@@ -8,6 +8,8 @@ public class StartView : MonoBehaviour
     public EffectCamera cam;
     public Toggler toggler;
 
+    private bool canStart;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +19,14 @@ public class StartView : MonoBehaviour
         SceneChanger.Instance.AttachCamera();
 
         Manager.Instance.isHoveringSomething = false;
+
+        Invoke("EnableInteraction", 0.5f);
     }
 
     private void Update()
     {
+        if (!canStart) return;
+
         if (Input.GetKeyUp(KeyCode.Escape) && Application.platform != RuntimePlatform.WebGLPlayer)
         {
 			DelayedQuit();
@@ -48,5 +54,10 @@ public class StartView : MonoBehaviour
     void Quit()
     {
         Application.Quit();
+    }
+
+    void EnableInteraction()
+    {
+        canStart = true;
     }
 }
