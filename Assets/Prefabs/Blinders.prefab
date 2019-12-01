@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 0}
+  m_AnchoredPosition: {x: 200, y: 0}
+  m_SizeDelta: {x: 600, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &7746220547713829273
 CanvasRenderer:
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 7746220547832236468}
   - component: {fileID: 368887068332869320}
   m_Layer: 5
-  m_Name: Sliders
+  m_Name: Blinders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,6 +126,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 7746220549484846835}
   right: {fileID: 7746220547713829287}
+  startsOpen: 0
+  openAtStart: 1
 --- !u!1 &7746220549484846834
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,8 +162,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 0}
+  m_AnchoredPosition: {x: -200, y: 0}
+  m_SizeDelta: {x: 600, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &7746220549484846837
 CanvasRenderer:

@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         SceneChanger.Instance.AttachCamera();
+
+        Manager.Instance.isHoveringSomething = false;
     }
 
     private void Update()
@@ -45,9 +47,6 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Escape))
             BackToLevelSelect();
-
-        if (Input.GetKeyDown(KeyCode.N))
-            NextLevel();
     }
 
     public void Success()
