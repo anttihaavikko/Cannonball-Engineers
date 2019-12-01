@@ -50,19 +50,18 @@ MonoBehaviour:
   isHoveringSomething: 0
   levels:
   - Hello World
-  - Something New
-  - Third Level
-  - Running Out Of Names
-  - Who Knows
+  - Double
+  - Doors
+  - Bends
+  - Hatch
   - Ferris Wheel
   - Oil Spill
-  - Bouncy
-  - Middle Man
   - Maze
-  - Baby Steps
+  - Teamwork
   - Suicide Mission
   - Swinger
-  - Teamwork
-  - Corner Job
   - Time to Crate
+  - Center
+  - Swinging Activator
   - Tricky Crate
+  - Null Pointer
