@@ -3350,9 +3350,9 @@ MonoBehaviour:
   - {fileID: 1618872947}
   - {fileID: 1334820996}
   - {fileID: 186359601}
-  - {fileID: 2119735562}
   - {fileID: 247939700}
   - {fileID: 449253418}
+  - {fileID: 2119735562}
   - {fileID: 175086505}
   - {fileID: 1017175797}
   - {fileID: 663999442}
@@ -3379,17 +3379,17 @@ Transform:
   - {fileID: 1618872948}
   - {fileID: 1334820997}
   - {fileID: 186359602}
-  - {fileID: 2119735563}
   - {fileID: 247939701}
   - {fileID: 449253419}
+  - {fileID: 2119735563}
   - {fileID: 175086506}
   - {fileID: 1017175798}
   - {fileID: 663999443}
   - {fileID: 1561349147}
   - {fileID: 1888080946}
   - {fileID: 2015635051}
-  - {fileID: 1416239554}
   - {fileID: 349315020}
+  - {fileID: 1416239554}
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4004,7 +4004,7 @@ Transform:
   - {fileID: 143009039}
   - {fileID: 400383950}
   m_Father: {fileID: 193827330}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &254530528
 GameObject:
@@ -5083,7 +5083,7 @@ Transform:
   - {fileID: 2073671238}
   - {fileID: 741787301}
   m_Father: {fileID: 193827330}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &353585240
 GameObject:
@@ -5937,6 +5937,11 @@ PrefabInstance:
       propertyPath: jumpers
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2840234190464176437, guid: c9908d47c6529493191c82865407a90c,
+        type: 3}
+      propertyPath: punishDeaths
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4659592271459610058, guid: c9908d47c6529493191c82865407a90c,
         type: 3}
       propertyPath: m_Mesh
@@ -6782,7 +6787,7 @@ Transform:
   - {fileID: 1815718205}
   - {fileID: 1873404612}
   m_Father: {fileID: 193827330}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &456849562
 GameObject:
@@ -9585,7 +9590,7 @@ Transform:
   m_GameObject: {fileID: 643285304}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 188.2, y: 41.3, z: 0}
-  m_LocalScale: {x: 324.5069, y: 155.26097, z: 1}
+  m_LocalScale: {x: 300.16888, y: 155.26097, z: 1}
   m_Children: []
   m_Father: {fileID: 1416239554}
   m_RootOrder: 0
@@ -9852,7 +9857,7 @@ PrefabInstance:
     - target: {fileID: 2840234190464176437, guid: c9908d47c6529493191c82865407a90c,
         type: 3}
       propertyPath: immortals
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2840234190464176437, guid: c9908d47c6529493191c82865407a90c,
         type: 3}
@@ -19354,7 +19359,7 @@ Transform:
   m_GameObject: {fileID: 1136408589}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -186.8, y: 44.5, z: 0}
-  m_LocalScale: {x: 322.58984, y: 161.39395, z: 1}
+  m_LocalScale: {x: 298.3956, y: 161.39395, z: 1}
   m_Children: []
   m_Father: {fileID: 1416239554}
   m_RootOrder: 1
@@ -25781,7 +25786,7 @@ Transform:
   - {fileID: 1300386750}
   - {fileID: 1990400214}
   m_Father: {fileID: 193827330}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1418495392
 GameObject:
@@ -37424,7 +37429,7 @@ Transform:
   - {fileID: 2078722960}
   - {fileID: 290429131}
   m_Father: {fileID: 193827330}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2122237001
 GameObject:
@@ -38045,6 +38050,12 @@ PrefabInstance:
         type: 3}
       propertyPath: twoStarLimit
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840234190464176437, guid: c9908d47c6529493191c82865407a90c,
+        type: 3}
+      propertyPath: introMessage
+      value: We've equipped our engineers with portable jump packs. Now they're way
+        more mobile.
       objectReference: {fileID: 0}
     - target: {fileID: 2814418017673586593, guid: c9908d47c6529493191c82865407a90c,
         type: 3}

@@ -23,17 +23,17 @@ public class Manager : MonoBehaviour {
         "Bends",
         "Hatch",
         "Ferris Wheel",
-        "Oil Spill",
         "Maze",
         "Teamwork",
+        "Oil Spill",
         "Suicide Mission",
         "Swinger",
         "Time to Crate",
         "Center",
         "Swinging Activator",
         "Tricky Crate",
-        "Null Pointer",
-        "Buffer Overflow"
+        "Buffer Overflow",
+        "Null Pointer"
     };
 
 	private static Manager instance = null;
