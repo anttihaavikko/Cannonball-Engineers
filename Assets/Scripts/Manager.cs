@@ -24,6 +24,7 @@ public class Manager : MonoBehaviour {
         "Hatch",
         "Ferris Wheel",
         "Maze",
+        "Hangman",
         "Teamwork",
         "Oil Spill",
         "Suicide Mission",
