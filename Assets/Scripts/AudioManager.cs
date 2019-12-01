@@ -131,8 +131,8 @@ public class AudioManager : MonoBehaviour {
 	}
 
 	public void ChangeMusicVolume(float vol) {
-		curMusic.volume = vol * 1.5f;
-		musVolume = vol * 1.5f;
+		curMusic.volume = vol;
+		musVolume = vol;
 	}
 
     public void SaveVolumes()

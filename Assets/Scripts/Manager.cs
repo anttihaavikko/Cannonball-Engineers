@@ -15,7 +15,7 @@ public class Manager : MonoBehaviour {
 	public bool isHoveringSomething;
 
 	public static string[] levels = {
-        "Hellio World",
+        "Hello World",
         "Double",
         "Doors",
         "Lost Delivery",
@@ -31,7 +31,8 @@ public class Manager : MonoBehaviour {
         "Center",
         "Swinging Activator",
         "Tricky Crate",
-        "Null Pointer"
+        "Null Pointer",
+        "Buffer Overflow"
     };
 
 	private static Manager instance = null;
