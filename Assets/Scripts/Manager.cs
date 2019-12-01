@@ -7,14 +7,32 @@ using System;
 
 public class Manager : MonoBehaviour {
 
-    public Dude hoveredDude;
-    public Dude activeDude;
-    public int levelToActivate = -1;
-    public Dictionary<string, LevelData> levelData;
-    public float levelListPosition;
-    public bool isHoveringSomething;
+	public Dude hoveredDude;
+	public Dude activeDude;
+	public int levelToActivate = -1;
+	public Dictionary<string, LevelData> levelData;
+	public float levelListPosition;
+	public bool isHoveringSomething;
 
-    public List<string> levels;
+	public static string[] levels = {
+        "Hellio World",
+        "Double",
+        "Doors",
+        "Lost Delivery",
+        "Bends",
+        "Hatch",
+        "Ferris Wheel",
+        "Oil Spill",
+        "Maze",
+        "Teamwork",
+        "Suicide Mission",
+        "Swinger",
+        "Time to Crate",
+        "Center",
+        "Swinging Activator",
+        "Tricky Crate",
+        "Null Pointer"
+    };
 
 	private static Manager instance = null;
 	public static Manager Instance {
@@ -48,7 +66,7 @@ public class Manager : MonoBehaviour {
     internal void NextLevel()
     {
         levelToActivate++;
-        if (levelToActivate >= levels.Count) levelToActivate = 0;
+        if (levelToActivate >= levels.Length) levelToActivate = 0;
     }
 
     public void LevelCompleted()

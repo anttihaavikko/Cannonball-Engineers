@@ -62,6 +62,8 @@ public class SpeechBubble : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
+        if (done) return;
+
 		if (Random.value < 0.6f) {
 			return;
 		}
@@ -99,6 +101,7 @@ public class SpeechBubble : MonoBehaviour {
                 AudioManager.Instance.PlayEffectAt(13, transform.position, 1.089f);
                 AudioManager.Instance.PlayEffectAt(28, transform.position, 0.875f);
                 AudioManager.Instance.PlayEffectAt(33, transform.position, 0.726f);
+
                 if(Random.value < 0.5f)
                 {
                     AudioManager.Instance.PlayEffectAt(Random.Range(50, 63), transform.position, 1.3f);
@@ -174,6 +177,9 @@ public class SpeechBubble : MonoBehaviour {
 	}
 
 	public void Hide() {
+
+        done = true;
+        messagePos = -1;
 
         Tweener.Instance.ScaleTo(transform, hiddenSize, 0.3f, 0f, TweenEasings.QuadraticEaseOut);
 

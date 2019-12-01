@@ -12,7 +12,7 @@ public class LevelSelector : MonoBehaviour
     void Awake()
     {
         var num = 1;
-        Manager.Instance.levels.ForEach(l => {
+        Manager.levels.ToList().ForEach(l => {
             var tile = Instantiate(tilePrefab, transform);
             tile.num1.text = tile.num2.text = num.ToString("D2");
             tile.text.text = num.ToString("D2") + ". " + l;
@@ -43,7 +43,7 @@ public class LevelSelector : MonoBehaviour
         var sum = Manager.Instance.levelData.Aggregate(0, (total, l) => total + l.Value.stars);
         var tot = Manager.Instance.levelData.Aggregate(0f, (total, l) => total + l.Value.time);
 
-        starCount.text = $"{sum}/{Manager.Instance.levels.Count * 3}";
+        starCount.text = $"{sum}/{Manager.levels.Length * 3}";
         totalTime.text = Manager.TimeToString(tot);
     }
 

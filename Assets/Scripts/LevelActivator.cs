@@ -9,8 +9,8 @@ public class LevelActivator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (Manager.Instance.levels.Count != levels.Count)
-            Debug.LogWarning("Level count do not match!");
+        if (Manager.levels.Length != levels.Count)
+            Debug.LogWarning("Level counts do not match!");
 
         if (Manager.Instance.levelToActivate == -1) return;
 
