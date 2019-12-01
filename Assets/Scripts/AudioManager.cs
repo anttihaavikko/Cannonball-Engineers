@@ -41,12 +41,22 @@ public class AudioManager : MonoBehaviour {
 			instance = this;
 		}
 
-		// reverb = GetComponent<AudioReverbFilter> ();
+        // reverb = GetComponent<AudioReverbFilter> ();
         //
-		// fromReverb = AudioReverbPreset.Hallway;
-		// toReverb = AudioReverbPreset.Off;
+        // fromReverb = AudioReverbPreset.Hallway;
+        // toReverb = AudioReverbPreset.Off;
 
-		DontDestroyOnLoad(instance.gameObject);
+        if (PlayerPrefs.HasKey("Music"))
+        {
+            curMusic.volume = PlayerPrefs.GetFloat("Music");
+        }
+
+        if (PlayerPrefs.HasKey("Sounds"))
+        {
+            volume = PlayerPrefs.GetFloat("Sounds");
+        }
+
+        DontDestroyOnLoad(instance.gameObject);
 	}
 
 	public void BackToDefaultMusic() {
@@ -124,4 +134,10 @@ public class AudioManager : MonoBehaviour {
 		curMusic.volume = vol * 1.5f;
 		musVolume = vol * 1.5f;
 	}
+
+    public void SaveVolumes()
+    {
+        PlayerPrefs.SetFloat("Music", curMusic.volume);
+        PlayerPrefs.SetFloat("Sounds", volume);
+    }
 }

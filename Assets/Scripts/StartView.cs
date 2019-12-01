@@ -15,6 +15,8 @@ public class StartView : MonoBehaviour
         toggler.Show();
 
         SceneChanger.Instance.AttachCamera();
+
+        Manager.Instance.isHoveringSomething = false;
     }
 
     private void Update()

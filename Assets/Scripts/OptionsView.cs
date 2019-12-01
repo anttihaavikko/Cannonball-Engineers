@@ -22,6 +22,8 @@ public class OptionsView : MonoBehaviour {
         GetComponent<Canvas> ().planeDistance = 1;
 
         prevSoundStep = AudioManager.Instance.volume;
+
+        SceneChanger.Instance.canvas.worldCamera = Camera.main;
 	}
 
 	void EnableQuit() {
@@ -40,34 +42,24 @@ public class OptionsView : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown (KeyCode.Escape)) {
-
-			if (optionsOpen) {
-				ToggleOptions (false);
-			}
-				
-			return;
+            SceneChanger.Instance.ChangeScene("Start");
 		}
 
 		if (Input.GetKeyDown (KeyCode.O) || Input.GetKeyDown (KeyCode.P)) {
-			ToggleOptions ();
 			return;
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
 		DoInputs ();
-
-		float optionsX = optionsOpen ? 0f : 90f;
-		options.anchoredPosition = Vector2.Lerp(options.anchoredPosition, new Vector2(optionsX, 0f), Time.deltaTime * 10f);
 	}
 
 	public void ChangeMusicVolume() {
 		AudioManager.Instance.curMusic.volume = musicSlider.value;
         AudioManager.Instance.ChangeMusicVolume(musicSlider.value);
-//		AudioManager.Instance.SaveVolumes ();
-	}
+        AudioManager.Instance.SaveVolumes();
+    }
 
 	public void ChangeSoundVolume() {
 		if (Mathf.Abs(soundSlider.value - prevSoundStep) > 0.075f) {
@@ -76,14 +68,5 @@ public class OptionsView : MonoBehaviour {
 		}
 
         AudioManager.Instance.volume = soundSlider.value;
-	}
-
-	public void ToggleOptions() {
-		ToggleOptions (!optionsOpen);
-	}
-
-	public void ToggleOptions(bool state) {
-		AudioManager.Instance.PlayEffectAt (16, Vector3.zero, 1.5f);
-		optionsOpen = state;
 	}
 }
