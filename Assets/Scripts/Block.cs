@@ -107,6 +107,8 @@ public class Block : MonoBehaviour
 
             AudioManager.Instance.PlayEffectAt(Random.Range(63, 70), transform.position, 2f);
 
+            AudioManager.Instance.ChangeMusic(1, 0.25f, 0.25f, 0f);
+
             Invoke("DoSuccess", 1f);
         }
     }

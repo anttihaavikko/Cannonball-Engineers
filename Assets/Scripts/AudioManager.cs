@@ -110,7 +110,32 @@ public class AudioManager : MonoBehaviour {
 		curMusic.pitch = Mathf.MoveTowards (curMusic.pitch, targetPitch, 0.025f * changeSpeed);
 		lowpass.cutoffFrequency = Mathf.MoveTowards (lowpass.cutoffFrequency, targetLowpass, 1500f * changeSpeed);
 		highpass.cutoffFrequency = Mathf.MoveTowards (highpass.cutoffFrequency, targetHighpass, 50f * changeSpeed);
-	}
+
+        if (fadeInPos < 1f)
+        {
+            fadeInPos += Time.unscaledDeltaTime / fadeInDuration;
+        }
+
+        if (fadeOutPos < 1f)
+        {
+            fadeOutPos += Time.unscaledDeltaTime / fadeOutDuration;
+        }
+
+        if (curMusic && fadeInPos >= 0f)
+        {
+            curMusic.volume = Mathf.Lerp(0f, musVolume, fadeInPos);
+        }
+
+        if (prevMusic)
+        {
+            prevMusic.volume = Mathf.Lerp(musVolume, 0f, fadeOutPos);
+
+            if (prevMusic.volume <= 0f)
+            {
+                prevMusic.Stop();
+            }
+        }
+    }
 
 	public void PlayEffectAt(AudioClip clip, Vector3 pos, float volume, bool pitchShift = true) {
 		SoundEffect se = Instantiate (effectPrefab, pos, Quaternion.identity);

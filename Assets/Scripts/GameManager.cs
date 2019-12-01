@@ -39,7 +39,9 @@ public class GameManager : MonoBehaviour
         SceneChanger.Instance.AttachCamera();
 
         Manager.Instance.isHoveringSomething = false;
-    }
+
+		AudioManager.Instance.BackToDefaultMusic();
+	}
 
     private void Update()
     {
@@ -71,6 +73,13 @@ public class GameManager : MonoBehaviour
     public void NextLevel()
     {
         Manager.Instance.NextLevel();
-        SceneChanger.Instance.ChangeScene("Main");
+        if(Manager.Instance.levelToActivate == 0)
+        {
+            SceneChanger.Instance.ChangeScene("End");
+        }
+        else
+        {
+            SceneChanger.Instance.ChangeScene("Main");
+        }
     }
 }
